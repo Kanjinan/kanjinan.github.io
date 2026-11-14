@@ -1,0 +1,13 @@
+{% assign liste = site.jeux | sort: "ordre" %}
+<div class="grid">
+  {% for j in liste %}
+  <a class="card" href="{{ j.url | relative_url }}">
+    <img src="{{ j.cover | relative_url }}" alt="" loading="lazy">
+    <div class="card-body">
+      <span class="card-platform">{{ j.plateforme }}</span>
+      <strong>{{ j.titre }}</strong>
+      <span class="card-text">{{ j.resume }}</span>
+    </div>
+  </a>
+  {% endfor %}
+</div>

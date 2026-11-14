@@ -1,9 +1,17 @@
 ---
 layout: default
 ---
-<article>
+{% assign jeu = site.jeux | where_exp: "j", "j.slug == page.jeu" | first %}
+<article class="post">
+  {% if jeu %}<a class="chip" href="{{ jeu.url | relative_url }}">{{ jeu.titre }}</a>{% endif %}
   <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date: '%d/%m/%Y' }}</p>
-  {{ content }}
+  <p class="meta">{{ page.date | date: '%d/%m/%Y' }}{% if page.itch %} · <a href="{{ page.itch }}">Billet d'origine sur itch.io</a>{% endif %}</p>
+  <div class="prose">{{ content }}</div>
 </article>
-<p><a href="{{ '/' | relative_url }}">← Retour aux articles</a></p>
+{% if jeu %}
+<a class="game-banner" href="{{ jeu.url | relative_url }}">
+  <img src="{{ jeu.cover | relative_url }}" alt="" loading="lazy">
+  <span><strong>{{ jeu.titre }}</strong><br>{{ jeu.resume }}</span>
+</a>
+{% endif %}
+<p><a href="{{ '/devlog/' | relative_url }}">← Tous les billets</a></p>

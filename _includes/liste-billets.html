@@ -1,0 +1,10 @@
+<ul class="posts">
+{% for post in include.billets %}
+  {% assign jeu = site.jeux | where_exp: "j", "j.slug == post.jeu" | first %}
+  <li>
+    <span class="meta">{{ post.date | date: '%d/%m/%Y' }}{% if jeu %} · {{ jeu.titre }}{% endif %}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="excerpt">{{ post.content | split: '<details' | first | strip_html | truncatewords: 28 }}</div>
+  </li>
+{% endfor %}
+</ul>

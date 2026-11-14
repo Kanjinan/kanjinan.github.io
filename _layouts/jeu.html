@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="jeu">
+  <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
+  <h1>{{ page.titre }}</h1>
+  <p class="jeu-resume">{{ page.resume }}</p>
+  <dl class="jeu-infos">
+    <div><dt>Plateforme</dt><dd>{{ page.plateforme }}</dd></div>
+    <div><dt>Genre</dt><dd>{{ page.genre }}</dd></div>
+    <div><dt>Statut</dt><dd>{{ page.statut }}</dd></div>
+  </dl>
+  <p><a class="button" href="{{ page.itch }}">Télécharger sur itch.io</a></p>
+
+  {% if page.video %}
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
+  {% endif %}
+
+  <div class="prose">{{ content }}</div>
+
+  {% if page.captures %}
+  <h2>Captures d'écran</h2>
+  <div class="gallery">
+    {% for c in page.captures %}<a href="{{ c | relative_url }}"><img src="{{ c | relative_url }}" alt="Capture {{ forloop.index }} de {{ page.titre }}" loading="lazy"></a>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.tags %}<p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
+
+  {% assign billets = site.posts | where: "jeu", page.slug %}
+  {% if billets.size > 0 %}
+  <h2>Journal de développement</h2>
+  <ul class="posts">
+    {% for post in billets %}
+    <li><span class="meta">{{ post.date | date: '%d/%m/%Y' }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>
+<p><a href="{{ '/jeux/' | relative_url }}">← Tous les jeux</a></p>

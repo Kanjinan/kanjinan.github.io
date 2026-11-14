@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Le mode Road prend forme"
+date: 2026-10-06 11:38:00 +0000
+jeu: warrior-man
+itch: https://nicoklem.itch.io/warrior-man/devlog/1693853
+---
+<h2>Le mode ROAD prend forme 🏁</h2>
+<p>Le jeu a maintenant un vrai mode course arcade, dans l&#x27;esprit d&#x27;OutRun et Lotus Turbo Challenge, qui tourne sur Neo Geo.
+</p>
+<h3>La route</h3>
+<ul><li><strong>Route pseudo-3D pré-rendue</strong>, comme Lotus Turbo Challenge 2 ou Riding Hero. Elle est faite de 100 sprites fixes dont les tuiles changent à chaque image, et le défilement passe par un cycle de palette, ce qui donne une sensation de vitesse fluide à 60 images/s.
+</li><li><strong>Virages et relief</strong>&nbsp;: la route monte et descend avec des crêtes. Les montées ralentissent, les descentes font prendre de la vitesse, jusqu&#x27;à une survitesse en pente.
+</li><li><strong>Décor en profondeur</strong>&nbsp;: arbres, lampadaires, panneaux de virage, panneaux publicitaires et nuages, tous mis à l&#x27;échelle selon la distance.
+</li></ul>
+<h3>5 circuits</h3>
+<p><strong>PARIS, ALPES, NEW YORK, DESERT et CITY</strong>, chacun avec son tracé, son fond, son décor et ses checkpoints. Les circuits s&#x27;enchaînent avec un écran de transition qui affiche le score et le circuit suivant.
+</p>
+<h3>Pilotage</h3>
+<ul><li><strong>Voiture ou moto</strong>, au choix. La moto se penche dans les virages, et les adversaires deviennent des motos eux aussi.
+</li><li><strong>4 couleurs de voiture.</strong>
+</li><li><strong>Rapports de boîte</strong>&nbsp;affichés, avec une&nbsp;<strong>jauge d&#x27;accélération</strong>.
+</li><li><strong>Turbo</strong>&nbsp;: une fois à la vitesse max sans avoir été touché, la vitesse clignote en rouge et le bouton C déclenche le turbo.
+</li><li><strong>Départ lancé</strong>&nbsp;possible, selon le timing au compte à rebours.
+</li></ul>
+<h3>Dangers sur la route</h3>
+<ul><li><strong>Voitures adverses</strong>&nbsp;: les percuter casse ta vitesse et te projette sur le côté.
+</li><li><strong>Crashs</strong>&nbsp;contre les arbres, les lampadaires, les panneaux et les poteaux du portique, avec une explosion à la clé. Le chrono continue de tourner pendant ce temps.
+</li><li><strong>Bûches</strong>&nbsp;en travers de la route, sur lesquelles on&nbsp;<strong>saute</strong>.
+</li><li><strong>Cailloux</strong>&nbsp;sur le circuit des Alpes.
+</li><li><strong>Hors-piste</strong>&nbsp;dans l&#x27;herbe, qui fait ralentir.
+</li></ul>
+<h3>Course et score</h3>
+<ul><li><strong>Départ</strong>&nbsp;sous un portique START, avec une fille, un homme et un panneau sur la grille, et un&nbsp;<strong>compte à rebours</strong>.
+</li><li><strong>2 tours par course</strong>, avec des&nbsp;<strong>checkpoints</strong>&nbsp;(banderoles CHECK puis GOAL). Chaque checkpoint rajoute du temps au chrono. Si le chrono tombe à 0, c&#x27;est&nbsp;<strong>TIME UP</strong>.
+</li><li><strong>Barre de progression</strong>&nbsp;de la course dans le HUD.
+</li><li><strong>Score</strong>&nbsp;:<ul><li>les points de pilotage montent en continu selon la distance parcourue ;
+</li><li>chaque checkpoint rapporte +1000 ;
+</li><li>l&#x27;arrivée rapporte +5000, plus 100 par seconde restante au chrono ;
+</li><li>à la fin,&nbsp;<strong>tableau des high scores</strong>&nbsp;avec saisie du nom.
+</li></ul>
+</li></ul>
+<h3>Menus et options</h3>
+<ul><li><strong>Écran d&#x27;options</strong>&nbsp;:<ul><li>difficulté EASY / NORMAL / HARD (vitesse des adversaires et tolérance au hors-piste) ;
+</li><li>véhicule ;
+</li><li>couleur ;
+</li><li>circuit de départ ;
+</li><li><strong>mode Practice</strong>&nbsp;(course sans adversaires) ;
+</li><li>son : musique ou bruit du moteur.
+</li></ul>
+</li><li><strong>Sélection de la musique</strong>&nbsp;: 3 thèmes (Paris, Alpes, New York).
+</li><li><strong>Pause</strong>&nbsp;pendant la course.
+</li><li><strong>Séquence d&#x27;intro</strong>&nbsp;avec la voiture et la moto côte à côte.
+</li><li>Le HUD est entièrement en sprites : vitesse en km/h, tour, chrono, score, rapport.</li></ul>
+<p>Prochaine étape : du peaufinage et de l&#x27;équilibrage.&nbsp;</p>
+
+<details class="original"><summary>Version originale (English)</summary>
+<h2>ROAD mode is taking shape 🏁</h2>
+<p>The game now has a proper arcade racing mode in the spirit of OutRun and Lotus Turbo Challenge, running on the Neo Geo.
+</p>
+<h3>The road</h3>
+<ul><li><strong>Pre-rendered pseudo-3D road</strong>, like Lotus Turbo Challenge 2 or Riding Hero. It&#x27;s made of 100 fixed sprites whose tiles change every frame, and the scrolling comes from palette cycling. The result is a smooth sense of speed at 60 fps.
+</li><li><strong>Curves and hills</strong>: the road rises and falls over crests. Climbs slow you down, and descents speed you up, all the way to overspeed on steep slopes.
+</li><li><strong>Scenery with depth</strong>: trees, street lamps, curve signs, billboards and clouds, all scaled by distance.
+</li></ul>
+<h3>5 circuits</h3>
+<p><strong>PARIS, ALPES, NEW YORK, DESERT and CITY</strong>, each with its own layout, background, scenery and checkpoints. Circuits are linked by a transition screen showing your score and the next track.
+</p>
+<h3>Driving</h3>
+<ul><li><strong>Car or motorbike</strong>, your choice. The bike leans into corners, and the rivals switch to bikes too.
+</li><li><strong>4 car colors.</strong>
+</li><li><strong>Gears</strong>&nbsp;shown on screen, with an&nbsp;<strong>acceleration gauge</strong>.
+</li><li><strong>Turbo</strong>: reach top speed without getting hit, and the speedometer flashes red. Press C to fire the turbo.
+</li><li><strong>Rolling start</strong>, depending on your timing during the countdown.
+</li></ul>
+<h3>Dangers on the road</h3>
+<ul><li><strong>Rival cars</strong>: hitting one kills your speed and knocks you sideways.
+</li><li><strong>Crashes</strong>&nbsp;into trees, street lamps, signs and the gantry posts, with an explosion to match. The timer keeps running while you recover.
+</li><li><strong>Logs</strong>&nbsp;lying across the road, which you&nbsp;<strong>jump</strong>&nbsp;over.
+</li><li><strong>Rocks</strong>&nbsp;on the Alps circuit.
+</li><li><strong>Going off-road</strong>&nbsp;onto the grass slows you down.
+</li></ul>
+<h3>Racing and score</h3>
+<ul><li><strong>Start</strong>&nbsp;under a START gantry, with a girl, a man and a sign on the grid, plus a&nbsp;<strong>countdown</strong>.
+</li><li><strong>2 laps per race</strong>, with&nbsp;<strong>checkpoints</strong>&nbsp;(CHECK banners, then GOAL). Each checkpoint adds time to the clock. If the timer hits 0, it&#x27;s&nbsp;<strong>TIME UP</strong>.
+</li><li><strong>Race progress bar</strong>&nbsp;in the HUD.
+</li><li><strong>Score</strong>:<ul><li>driving points climb continuously with the distance you cover;
+</li><li>each checkpoint is worth +1000;
+</li><li>the finish line is worth +5000, plus 100 per second left on the clock;
+</li><li>at the end, a&nbsp;<strong>high score table</strong>&nbsp;with name entry.
+</li></ul>
+</li></ul>
+<h3>Menus and options</h3>
+<ul><li><strong>Options screen</strong>:<ul><li>difficulty EASY / NORMAL / HARD (rival speed and off-road tolerance);
+</li><li>vehicle;
+</li><li>color;
+</li><li>starting circuit;
+</li><li><strong>Practice mode</strong>&nbsp;(race with no rivals);
+</li><li>sound: music or engine noise.
+</li></ul>
+</li><li><strong>Music select</strong>: 3 themes (Paris, Alps, New York).
+</li><li><strong>Pause</strong>&nbsp;during the race.
+</li><li><strong>Intro sequence</strong>&nbsp;with the car and the bike riding side by side.
+</li><li>The HUD is entirely sprite-based: speed in km/h, lap, timer, score, gear.</li></ul>
+<p>Next up: polish and balancing !🚗</p>
+</details>

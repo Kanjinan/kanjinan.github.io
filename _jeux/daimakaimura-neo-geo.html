@@ -1,0 +1,55 @@
+---
+layout: jeu
+titre: "Daimakaimura"
+title: "Daimakaimura"
+itch: https://nicoklem.itch.io/daimakaimura-neo-geo
+plateforme: "Neo Geo"
+genre: "Action"
+statut: En développement
+ordre: 3
+resume: "Portage de fan de Ghouls'n Ghosts (Capcom, 1988) sur Neo Geo : les six stages sont jouables."
+cover: /images/jeux/daimakaimura-neo-geo/cover.png
+tags: ["2D", "neogeo", "Pixel Art", "Retro"]
+captures:
+  - /images/jeux/daimakaimura-neo-geo/capture-1.png
+  - /images/jeux/daimakaimura-neo-geo/capture-2.png
+  - /images/jeux/daimakaimura-neo-geo/capture-3.png
+---
+<p><strong>Ghouls'n Ghosts, portage Neo Geo (projet de fan, en développement)</strong></p>
+<p>Un portage de fan du jeu arcade <em>Ghouls'n Ghosts</em> de Capcom (1988, CPS1) vers la Neo Geo.</p>
+<h3>Comment ça marche</h3>
+<p>Le code 68000 d'origine tourne presque sans modification sur la Neo Geo. Chaque accès au matériel CPS1 est intercepté et traduit vers le matériel Neo Geo :</p>
+<ul>
+<li>les décors sont reconstruits à partir de colonnes de sprites ;</li>
+<li>les palettes et les sprites sont convertis en temps réel ;</li>
+<li>la musique et les bruitages ont été enregistrés depuis l'original et sont joués en ADPCM.</li>
+</ul>
+<h3>État actuel</h3>
+<ul>
+<li>Les six stages sont jouables.</li>
+<li>Le jeu tourne à 60 images/s.</li>
+<li>Le HUD est réorganisé pour l'écran de 320 px de la Neo Geo.</li>
+<li>Le menu de réglages du BIOS MVS gère les vies, la difficulté, les continues et le stage de départ.</li>
+<li>Priorité du premier plan comme sur l'arcade : barbelés, hautes herbes et poteaux à lames passent devant Arthur et les ennemis.</li>
+<li>L'intégration du son et les transitions de scène sont encore en cours de finition.</li>
+</ul>
+<h3>Limites connues</h3>
+<ul>
+<li>L'image est recadrée de 384 à 320 px de large.</li>
+<li>Dans les scènes très chargées, la couche de premier plan rend ses sprites aux personnages pendant quelques secondes, et des éléments du premier plan peuvent alors passer derrière eux.</li>
+<li>La séquence d'orage du stage 1 est plus lente que le reste du jeu, et la pluie y est dessinée derrière les herbes du premier plan au lieu de devant.</li>
+</ul>
+<p><strong>N'hésitez pas à me signaler les problèmes ou bugs que vous rencontrez.</strong></p>
+
+<details class="original"><summary>Version originale (English)</summary>
+<p><strong>Ghouls&#x27;n Ghosts – Neo Geo port (fan project, in development)</strong></p>
+<p>A fan port of Capcom&#x27;s 1988 arcade game <em>Ghouls&#x27;n Ghosts</em> (CPS1) to the Neo Geo.</p>
+<p><strong>How it works</strong>
+The original 68000 arcade code runs almost unchanged on the Neo Geo. Every access to the CPS1 hardware is intercepted and translated to Neo Geo hardware:</p>
+<ul><li>Backgrounds are rebuilt from sprite columns.</li><li>Palettes and sprites are converted in real time.</li><li>Music and sound effects were recorded from the original and are played back as ADPCM.</li></ul>
+<p><strong>Current status</strong></p>
+<ul><li>All six stages are playable.</li><li>Gameplay runs at 60 fps.</li><li>The HUD is rearranged for the Neo Geo&#x27;s 320 px screen.</li><li>The MVS BIOS settings menu covers lives, difficulty, continues and starting stage.</li><li>Foreground priority, as on the arcade: barbed wire, tall grass and blade posts now pass in front of Arthur and the enemies.</li><li>Sound integration and scene transitions are still being polished.</li></ul>
+<p><strong>Known limitations</strong></p>
+<ul><li>The picture is cropped from 384 to 320 px wide.</li><li>In very crowded scenes, the foreground layer gives its sprites back to the characters for a few seconds, and foreground elements can then appear behind them.</li><li>The storm section of stage 1 runs slower than the rest of the game. The storm rain is drawn behind the foreground grass instead of in front of it.</li></ul>
+<p><strong>Please provide your feedback to let me know about any issues or bugs you have encountered.</strong></p>
+</details>

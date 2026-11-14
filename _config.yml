@@ -1,10 +1,17 @@
-title: Mon Blog
-description: Mes idées, mes projets, mes fichiers.
+title: NicoKlem
+description: Homebrews et portages de fan pour Neo Geo et Mega Drive, avec le journal de développement.
 lang: fr
-# Si le dépôt s'appelle "tonpseudo.github.io", laisser vide.
-# Sinon, mettre "/nom-du-depot" (ex. "/mon-blog").
+itch: https://nicoklem.itch.io
+# Le dépôt s'appelle "kanjinan.github.io" : baseurl reste vide.
 baseurl: ""
-url: ""
-permalink: /:year/:month/:day/:title/
+url: "https://kanjinan.github.io"
+permalink: /devlog/:year/:month/:title/
 markdown: kramdown
+collections:
+  jeux:
+    output: true
+    permalink: /jeux/:name/
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
 exclude: [README.md]
