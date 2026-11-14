@@ -1,0 +1,24 @@
+{% if site.giscus.repo_id and site.giscus.repo_id != "" %}
+{% assign t = site.data.i18n[page.lang] %}
+<section class="commentaires">
+  <h2>💬 {{ t.comments_title }}</h2>
+  <p class="meta">{{ t.comments_intro }}</p>
+  <script src="https://giscus.app/client.js"
+    data-repo="{{ site.giscus.repo }}"
+    data-repo-id="{{ site.giscus.repo_id }}"
+    data-category="{{ site.giscus.category }}"
+    data-category-id="{{ site.giscus.category_id }}"
+    data-mapping="specific"
+    data-term="{{ page.slug }}"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="{{ page.lang }}"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+{% endif %}

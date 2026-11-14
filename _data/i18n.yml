@@ -56,6 +56,8 @@ fr:
   tool_steps: "Placez <code>ghouls.zip</code> dans le dossier de l'outil, puis double-cliquez sur <strong>Construire - Build.bat</strong>. En une à quelques minutes, vous obtenez les fichiers pour NeoSD / MiSTer, Darksoft, BackBit et MAME."
   tool_button: Télécharger l'outil
   tool_note: "Les ROMs produites sont pour votre usage personnel : merci de ne pas les distribuer."
+  comments_title: Retours des testeurs
+  comments_intro: "Bugs, ralentissements, différences avec l'arcade : indiquez votre matériel (console AES/MVS, NeoSD, Darksoft, BackBit, MiSTer, MAME) et l'endroit du jeu. Il faut un compte GitHub (gratuit) pour commenter. Les messages en français comme en anglais sont les bienvenus."
 en:
   description: Homebrews and fan ports for the Neo Geo and Mega Drive, with the development log.
   date_format: "%b %-d, %Y"
@@ -114,3 +116,5 @@ en:
   tool_steps: "Put <code>ghouls.zip</code> in the tool's folder, then double-click <strong>Construire - Build.bat</strong>. Within a few minutes you get the files for NeoSD / MiSTer, Darksoft, BackBit and MAME."
   tool_button: Download the tool
   tool_note: "The ROMs you build are for your personal use: please do not distribute them."
+  comments_title: Tester feedback
+  comments_intro: "Bugs, slowdowns, differences from the arcade: please mention your hardware (AES/MVS console, NeoSD, Darksoft, BackBit, MiSTer, MAME) and where it happens in the game. A (free) GitHub account is needed to comment. Messages in English or French are welcome."

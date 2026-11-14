@@ -44,6 +44,8 @@ layout: default
 
   {% if page.testeurs %}{% include testeurs.html %}{% endif %}
 
+  {% if page.commentaires %}{% include commentaires.html %}{% endif %}
+
   {% if billets.size > 0 %}
   <h2>{{ t.devlog_title }}</h2>
   <ul class="posts">

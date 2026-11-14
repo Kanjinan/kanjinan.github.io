@@ -12,6 +12,12 @@ markdown: kramdown
 goatcounter: "nicoklem"
 # Pseudo Discord affiché dans la section « Devenir testeur » (mettre testeurs: true dans un jeu)
 discord_user: "nicoklem"
+# Commentaires (giscus, discussions GitHub) : mettre commentaires: true dans un jeu
+giscus:
+  repo: Kanjinan/kanjinan.github.io
+  repo_id: ""
+  category: Commentaires
+  category_id: ""
 plugins:
   - jekyll-feed
   - jekyll-sitemap
