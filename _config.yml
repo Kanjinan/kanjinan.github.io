@@ -9,7 +9,7 @@ permalink: /devlog/:year/:month/:title/
 markdown: kramdown
 # Code GoatCounter (statistiques publiques) : https://<code>.goatcounter.com
 # Laisser vide pour désactiver les statistiques.
-goatcounter: ""
+goatcounter: "nicoklem"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
