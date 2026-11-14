@@ -37,7 +37,7 @@
         <a href="{{ t.url_files | relative_url }}">{{ t.nav_files }}</a>
         <a href="{{ t.url_stats | relative_url }}">{{ t.nav_stats }}</a>
         <a href="{{ t.url_about | relative_url }}">{{ t.nav_about }}</a>
-        {% if trad %}<a class="lang-switch" href="{{ trad.url | relative_url }}" hreflang="{{ trad.lang }}" lang="{{ trad.lang }}">{% if trad.lang == "en" %}🇬🇧 EN{% else %}🇫🇷 FR{% endif %}</a>{% endif %}
+        {% if trad %}<a class="lang-switch" href="{{ trad.url | relative_url }}" hreflang="{{ trad.lang }}" lang="{{ trad.lang }}">{% if trad.lang == "en" %}EN{% else %}FR{% endif %}</a>{% endif %}
       </nav>
     </div>
   </header>
