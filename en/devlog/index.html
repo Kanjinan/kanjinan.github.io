@@ -1,0 +1,9 @@
+---
+layout: default
+title: Devlog
+ref: devlog
+---
+<h1>Devlog</h1>
+<p class="intro">The development log of all my games, newest first.</p>
+{% assign billets = site.posts | where: "lang", page.lang %}
+{% include liste-billets.html billets=billets %}

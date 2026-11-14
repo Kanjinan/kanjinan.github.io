@@ -1,23 +1,25 @@
 ---
 layout: default
 ---
+{% assign t = site.data.i18n[page.lang] %}
+{% assign versions = site.jeux | where: "slug", page.slug | map: "url" | join: "|" %}
+{% assign billets = site.posts | where: "jeu", page.slug | where: "lang", page.lang %}
 <article class="jeu">
   <header class="jeu-header">
   <div class="jeu-head-text">
   <h1>{{ page.titre }}</h1>
   <p class="jeu-resume">{{ page.resume }}</p>
   <dl class="jeu-infos">
-    <div><dt>Plateforme</dt><dd>{{ page.plateforme }}</dd></div>
-    <div><dt>Genre</dt><dd>{{ page.genre }}</dd></div>
-    <div><dt>Statut</dt><dd>{{ page.statut }}</dd></div>
+    <div><dt>{{ t.platform }}</dt><dd>{{ page.plateforme }}</dd></div>
+    <div><dt>{{ t.genre }}</dt><dd>{{ page.genre }}</dd></div>
+    <div><dt>{{ t.status }}</dt><dd>{{ page.statut }}</dd></div>
   </dl>
-  {% assign billets = site.posts | where: "jeu", page.slug %}
   <p class="stats-row">
-    <span class="vues" data-gc-path="{{ page.url }}" hidden>👁 <span class="n"></span> vues</span>
-    {% if page.itch %}<span class="vues" data-gc-path="telechargement-{{ page.slug }}" hidden>⬇ <span class="n"></span> clics sur Télécharger</span>{% endif %}
-    {% if billets.size > 0 %}<span>📝 {{ billets.size }} billet{% if billets.size > 1 %}s{% endif %} de devlog · dernier le {{ billets.first.date | date: '%d/%m/%Y' }}</span>{% endif %}
+    <span class="vues" data-gc-path="{{ versions }}" hidden>👁 <span class="n"></span> {{ t.views }}</span>
+    {% if page.itch %}<span class="vues" data-gc-path="telechargement-{{ page.slug }}" hidden>⬇ <span class="n"></span> {{ t.download_clicks }}</span>{% endif %}
+    {% if billets.size > 0 %}<span>📝 {{ billets.size }} {% if billets.size > 1 %}{{ t.post_many }}{% else %}{{ t.post_one }}{% endif %} · {{ t.last_on }} {{ billets.first.date | date: t.date_format }}</span>{% endif %}
   </p>
-  {% if page.itch %}<p><a class="button" href="{{ page.itch }}" data-goatcounter-click="telechargement-{{ page.slug }}" data-goatcounter-title="Téléchargement {{ page.titre }}">Télécharger sur itch.io</a></p>{% endif %}
+  {% if page.itch %}<p><a class="button" href="{{ page.itch }}" data-goatcounter-click="telechargement-{{ page.slug }}" data-goatcounter-title="Téléchargement {{ page.titre }}">{{ t.download_itch }}</a></p>{% endif %}
   </div>
   <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
   </header>
@@ -25,28 +27,28 @@ layout: default
   <div class="prose">{{ content }}</div>
 
   {% if page.captures %}
-  <h2>Captures d'écran</h2>
+  <h2>{{ t.screenshots }}</h2>
   <div class="gallery">
-    {% for c in page.captures %}<a href="{{ c | relative_url }}"><img src="{{ c | relative_url }}" alt="Capture {{ forloop.index }} de {{ page.titre }}" loading="lazy"></a>{% endfor %}
+    {% for c in page.captures %}<a href="{{ c | relative_url }}"><img src="{{ c | relative_url }}" alt="{{ t.screenshot }} {{ forloop.index }} {{ t.of }} {{ page.titre }}" loading="lazy"></a>{% endfor %}
   </div>
   {% endif %}
 
-  {% if page.tags %}<p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
+  {% if page.tags %}<p class="tags">{% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}</p>{% endif %}
 
   {% if page.video %}
-  <h2>Vidéo</h2>
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
+  <h2>{{ t.video }}</h2>
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="{{ t.video }} {{ t.of }} {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
   {% endif %}
 
   {% if page.testeurs %}{% include testeurs.html %}{% endif %}
 
   {% if billets.size > 0 %}
-  <h2>Journal de développement</h2>
+  <h2>{{ t.devlog_title }}</h2>
   <ul class="posts">
     {% for post in billets %}
-    <li><span class="meta">{{ post.date | date: '%d/%m/%Y' }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    <li><span class="meta">{{ post.date | date: t.date_format }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}
 </article>
-<p><a href="{{ '/jeux/' | relative_url }}">← Tous les jeux</a></p>
+<p><a href="{{ t.url_games | relative_url }}">{{ t.all_games }}</a></p>

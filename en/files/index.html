@@ -1,0 +1,16 @@
+---
+layout: default
+title: Files
+ref: files
+---
+<h1>Files</h1>
+{% assign fichiers = site.static_files | where_exp: "f", "f.path contains '/fichiers/'" %}
+{% if fichiers.size > 0 %}
+<ul class="files">
+{% for f in fichiers %}
+  <li><a href="{{ f.path | relative_url }}" download>{{ f.name }}</a> <span class="meta">{{ f.modified_time | date: '%b %-d, %Y' }}</span></li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="intro">No files yet. Games can be downloaded from <a href="{{ site.itch }}">itch.io</a>.</p>
+{% endif %}

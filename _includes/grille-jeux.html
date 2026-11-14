@@ -1,7 +1,9 @@
-{% assign liste = site.jeux | sort: "ordre" %}
+{% assign t = site.data.i18n[page.lang] %}
+{% assign liste = site.jeux | where: "lang", page.lang | sort: "ordre" %}
 <div class="grid">
   {% for j in liste %}
-  {% assign billets_jeu = site.posts | where: "jeu", j.slug %}
+  {% assign billets_jeu = site.posts | where: "jeu", j.slug | where: "lang", page.lang %}
+  {% assign versions = site.jeux | where: "slug", j.slug | map: "url" | join: "|" %}
   <a class="card" href="{{ j.url | relative_url }}">
     <img src="{{ j.cover | relative_url }}" alt="" loading="lazy">
     <div class="card-body">
@@ -9,8 +11,8 @@
       <strong>{{ j.titre }}</strong>
       <span class="card-text">{{ j.resume }}</span>
       <span class="card-stats">
-        <span class="vues" data-gc-path="{{ j.url }}" hidden>👁 <span class="n"></span></span>
-        {% if billets_jeu.size > 0 %}<span>📝 Devlog du {{ billets_jeu.first.date | date: '%d/%m/%Y' }}</span>{% endif %}
+        <span class="vues" data-gc-path="{{ versions }}" hidden>👁 <span class="n"></span></span>
+        {% if billets_jeu.size > 0 %}<span>📝 {{ t.devlog_of }} {{ billets_jeu.first.date | date: t.date_format }}</span>{% endif %}
       </span>
     </div>
   </a>

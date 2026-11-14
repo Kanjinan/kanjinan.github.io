@@ -1,0 +1,104 @@
+fr:
+  description: Homebrews et portages de fan pour Neo Geo et Mega Drive, avec le journal de développement.
+  date_format: "%d/%m/%Y"
+  nav_home: Accueil
+  nav_games: Jeux
+  nav_devlog: Devlog
+  nav_files: Fichiers
+  nav_stats: Statistiques
+  nav_about: À propos
+  url_home: /
+  url_games: /jeux/
+  url_devlog: /devlog/
+  url_files: /fichiers/
+  url_stats: /statistiques/
+  url_about: /a-propos/
+  feed: /feed/fr.xml
+  rss: Flux RSS du devlog
+  itch_link: Mes jeux sur itch.io
+  total_visits: visites au total
+  views: vues
+  read_time: min de lecture
+  itch_post: Billet d'origine sur itch.io
+  all_posts: "← Tous les billets"
+  all_games: "← Tous les jeux"
+  platform: Plateforme
+  genre: Genre
+  status: Statut
+  download_clicks: clics sur Télécharger
+  post_one: billet de devlog
+  post_many: billets de devlog
+  last_on: dernier le
+  download_itch: Télécharger sur itch.io
+  screenshots: Captures d'écran
+  screenshot: Capture
+  of: de
+  video: Vidéo
+  devlog_title: Journal de développement
+  devlog_of: Devlog du
+  my_games: Mes jeux
+  latest_posts: Derniers billets
+  see_all_devlog: "Voir tout le devlog →"
+  switch_label: English
+  suggest: "This site is also available in English."
+  suggest_link: "Read in English →"
+  tester_title: Devenir testeur
+  tester_p1: "Les versions de test de <strong>%s</strong> sont envoyées en privé aux testeurs, pour NeoSD / MiSTer, Darksoft et BackBit Platinum MVS."
+  tester_p2: "Pour en recevoir une, ajoute-moi en ami sur Discord et envoie-moi un message en précisant ton matériel (console AES/MVS, linker, MiSTer…). En échange, je compte sur tes retours : bugs, ralentissements, différences avec l'arcade."
+  tester_id: Mon pseudo Discord
+  tester_copy: Copier
+  tester_copied: "Copié ✓"
+  tester_howto: "Dans Discord : <strong>Amis</strong> → <strong>Ajouter un ami</strong> → colle le pseudo."
+  tester_open: Ouvrir Discord
+en:
+  description: Homebrews and fan ports for the Neo Geo and Mega Drive, with the development log.
+  date_format: "%b %-d, %Y"
+  nav_home: Home
+  nav_games: Games
+  nav_devlog: Devlog
+  nav_files: Files
+  nav_stats: Stats
+  nav_about: About
+  url_home: /en/
+  url_games: /en/games/
+  url_devlog: /en/devlog/
+  url_files: /en/files/
+  url_stats: /en/stats/
+  url_about: /en/about/
+  feed: /feed/en.xml
+  rss: Devlog RSS feed
+  itch_link: My games on itch.io
+  total_visits: total visits
+  views: views
+  read_time: min read
+  itch_post: Original post on itch.io
+  all_posts: "← All posts"
+  all_games: "← All games"
+  platform: Platform
+  genre: Genre
+  status: Status
+  download_clicks: Download clicks
+  post_one: devlog post
+  post_many: devlog posts
+  last_on: latest on
+  download_itch: Download on itch.io
+  screenshots: Screenshots
+  screenshot: Screenshot
+  of: of
+  video: Video
+  devlog_title: Development log
+  devlog_of: Devlog
+  my_games: My games
+  latest_posts: Latest posts
+  see_all_devlog: "See the whole devlog →"
+  switch_label: Français
+  suggest: ""
+  suggest_link: ""
+  tester_title: Become a tester
+  tester_p1: "Test builds of <strong>%s</strong> are sent privately to testers, for NeoSD / MiSTer, Darksoft and BackBit Platinum MVS."
+  tester_p2: "To get one, add me as a friend on Discord and send me a message with your hardware (AES/MVS console, flashcart, MiSTer…). In return, I count on your feedback: bugs, slowdowns, differences from the arcade."
+  tester_id: My Discord username
+  tester_copy: Copy
+  tester_copied: "Copied ✓"
+  tester_howto: "In Discord: <strong>Friends</strong> → <strong>Add Friend</strong> → paste the username."
+  tester_open: Open Discord

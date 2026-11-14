@@ -1,14 +1,15 @@
 {% if site.discord_user and site.discord_user != "" %}
+{% assign t = site.data.i18n[page.lang] %}
 <section class="testeurs">
-  <h2>🎮 Devenir testeur</h2>
-  <p>Les versions de test de <strong>{{ page.titre }}</strong> sont envoyées en privé aux testeurs, pour NeoSD / MiSTer, Darksoft et BackBit Platinum MVS.</p>
-  <p>Pour en recevoir une, ajoute-moi en ami sur Discord et envoie-moi un message en précisant ton matériel (console AES/MVS, linker, MiSTer…). En échange, je compte sur tes retours : bugs, ralentissements, différences avec l'arcade.</p>
+  <h2>🎮 {{ t.tester_title }}</h2>
+  <p>{{ t.tester_p1 | replace: "%s", page.titre }}</p>
+  <p>{{ t.tester_p2 }}</p>
   <div class="discord-id">
-    <span class="discord-label">Mon pseudo Discord</span>
+    <span class="discord-label">{{ t.tester_id }}</span>
     <code id="discord-pseudo">{{ site.discord_user }}</code>
-    <button type="button" class="button discord" id="discord-copier" data-goatcounter-click="discord-{{ page.slug }}" data-goatcounter-title="Discord testeur {{ page.titre }}">Copier</button>
+    <button type="button" class="button discord" id="discord-copier" data-copie="{{ t.tester_copy }}" data-copie-ok="{{ t.tester_copied }}" data-goatcounter-click="discord-{{ page.slug }}" data-goatcounter-title="Discord testeur {{ page.titre }}">{{ t.tester_copy }}</button>
   </div>
-  <p class="meta">Dans Discord : <strong>Amis</strong> → <strong>Ajouter un ami</strong> → colle le pseudo. <a href="https://discord.com/app" target="_blank" rel="noopener">Ouvrir Discord</a></p>
+  <p class="meta">{{ t.tester_howto }} <a href="https://discord.com/app" target="_blank" rel="noopener">{{ t.tester_open }}</a></p>
 </section>
 <script>
 (function () {
@@ -16,7 +17,7 @@
   if (!b) return;
   b.addEventListener('click', function () {
     var t = document.getElementById('discord-pseudo').textContent;
-    function ok() { b.textContent = 'Copié ✓'; setTimeout(function () { b.textContent = 'Copier'; }, 2000); }
+    function ok() { b.textContent = b.dataset.copieOk; setTimeout(function () { b.textContent = b.dataset.copie; }, 2000); }
     if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok, function () {});
     else { var r = document.createRange(); r.selectNodeContents(document.getElementById('discord-pseudo')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
   });

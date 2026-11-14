@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Devlog
+ref: devlog
 ---
 <h1>Devlog</h1>
 <p class="intro">Le journal de développement de tous mes jeux, du plus récent au plus ancien.</p>
-{% include liste-billets.html billets=site.posts %}
+{% assign billets = site.posts | where: "lang", page.lang %}
+{% include liste-billets.html billets=billets %}

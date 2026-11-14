@@ -1,10 +1,11 @@
+{% assign t = site.data.i18n[page.lang] %}
 <ul class="posts">
 {% for post in include.billets %}
-  {% assign jeu = site.jeux | where_exp: "j", "j.slug == post.jeu" | first %}
+  {% assign jeu = site.jeux | where: "slug", post.jeu | where: "lang", page.lang | first %}
   <li>
-    <span class="meta">{{ post.date | date: '%d/%m/%Y' }}{% if jeu %} · {{ jeu.titre }}{% endif %}</span>
+    <span class="meta">{{ post.date | date: t.date_format }}{% if jeu %} · {{ jeu.titre }}{% endif %}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="excerpt">{{ post.content | split: '<details' | first | strip_html | truncatewords: 28 }}</div>
+    <div class="excerpt">{{ post.content | strip_html | truncatewords: 28 }}</div>
   </li>
 {% endfor %}
 </ul>

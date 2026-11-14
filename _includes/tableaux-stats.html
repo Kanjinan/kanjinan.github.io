@@ -1,0 +1,46 @@
+{% assign t = site.data.i18n[page.lang] %}
+{% assign jeux_l = site.jeux | where: "lang", page.lang %}
+{% assign posts_l = site.posts | where: "lang", page.lang %}
+<div class="kpis">
+  <div class="kpi"><span class="kpi-label">{{ include.l_total }}</span><span class="kpi-value" data-gc-path="TOTAL">…</span></div>
+  <div class="kpi"><span class="kpi-label">{{ include.l_games }}</span><span class="kpi-value">{{ jeux_l.size }}</span></div>
+  <div class="kpi"><span class="kpi-label">{{ include.l_posts }}</span><span class="kpi-value">{{ posts_l.size }}</span></div>
+  <div class="kpi"><span class="kpi-label">{{ include.l_last }}</span><span class="kpi-value small">{{ posts_l.first.date | date: t.date_format }}</span></div>
+</div>
+
+<h2>{{ include.l_top_games }}</h2>
+<div class="table-wrap">
+<table data-sort>
+  <thead><tr><th>{{ include.l_game }}</th><th>{{ t.platform }}</th><th class="num">{{ t.views }}</th><th class="num">{{ t.download_clicks }}</th><th class="num">{{ include.l_posts_short }}</th></tr></thead>
+  <tbody>
+  {% for j in jeux_l %}
+    {% assign billets_jeu = posts_l | where: "jeu", j.slug %}
+    {% assign versions = site.jeux | where: "slug", j.slug | map: "url" | join: "|" %}
+    <tr>
+      <td><a href="{{ j.url | relative_url }}">{{ j.titre }}</a></td>
+      <td>{{ j.plateforme }}</td>
+      <td class="num" data-gc-path="{{ versions }}">…</td>
+      <td class="num">{% if j.itch %}<span data-gc-path="telechargement-{{ j.slug }}">…</span>{% else %}–{% endif %}</td>
+      <td class="num">{{ billets_jeu.size }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>{{ include.l_top_posts }}</h2>
+<div class="table-wrap">
+<table data-sort>
+  <thead><tr><th>{{ include.l_post }}</th><th>Date</th><th class="num">{{ t.views }}</th></tr></thead>
+  <tbody>
+  {% for p in posts_l %}
+    {% assign versions = site.posts | where: "ref", p.ref | map: "url" | join: "|" %}
+    <tr>
+      <td><a href="{{ p.url | relative_url }}">{{ p.title }}</a></td>
+      <td>{{ p.date | date: t.date_format }}</td>
+      <td class="num" data-gc-path="{{ versions }}">…</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>

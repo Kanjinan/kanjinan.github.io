@@ -1,35 +1,50 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+{%- assign t = site.data.i18n[page.lang] | default: site.data.i18n.fr -%}
+{%- include traduction.html -%}
+<html lang="{{ page.lang | default: 'fr' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.resume | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta name="description" content="{{ page.resume | default: page.excerpt | default: t.description | strip_html | strip_newlines | truncate: 160 }}">
   {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
+  {% if trad %}
+  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ trad.lang }}" href="{{ trad.url | absolute_url }}">
+  {% endif %}
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} – {{ t.rss }}" href="{{ t.feed | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  {% feed_meta %}
 </head>
 <body>
+  {% if page.lang != "en" and trad %}
+  <div class="lang-suggest" id="lang-suggest" hidden>
+    <div class="wrap">{{ t.suggest }} <a href="{{ trad.url | relative_url }}" hreflang="en">{{ t.suggest_link }}</a></div>
+  </div>
+  <script>
+    try { if (!/^fr/i.test(navigator.language || '')) document.getElementById('lang-suggest').hidden = false; } catch (e) {}
+  </script>
+  {% endif %}
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a class="logo" href="{{ t.url_home | relative_url }}">{{ site.title }}</a>
       <nav>
-        <a href="{{ '/' | relative_url }}">Accueil</a>
-        <a href="{{ '/jeux/' | relative_url }}">Jeux</a>
-        <a href="{{ '/devlog/' | relative_url }}">Devlog</a>
-        <a href="{{ '/fichiers/' | relative_url }}">Fichiers</a>
-        <a href="{{ '/statistiques/' | relative_url }}">Statistiques</a>
-        <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
+        <a href="{{ t.url_home | relative_url }}">{{ t.nav_home }}</a>
+        <a href="{{ t.url_games | relative_url }}">{{ t.nav_games }}</a>
+        <a href="{{ t.url_devlog | relative_url }}">{{ t.nav_devlog }}</a>
+        <a href="{{ t.url_files | relative_url }}">{{ t.nav_files }}</a>
+        <a href="{{ t.url_stats | relative_url }}">{{ t.nav_stats }}</a>
+        <a href="{{ t.url_about | relative_url }}">{{ t.nav_about }}</a>
+        {% if trad %}<a class="lang-switch" href="{{ trad.url | relative_url }}" hreflang="{{ trad.lang }}" lang="{{ trad.lang }}">{% if trad.lang == "en" %}🇬🇧 EN{% else %}🇫🇷 FR{% endif %}</a>{% endif %}
       </nav>
     </div>
   </header>
   <main class="wrap">{{ content }}</main>
   <footer class="wrap">
-    © {{ 'now' | date: '%Y' }} {{ site.title }} · <a href="{{ '/feed.xml' | relative_url }}">Flux RSS du devlog</a> · <a href="{{ site.itch }}">Mes jeux sur itch.io</a>
-    <span class="vues" data-gc-path="TOTAL" hidden> · <span class="n"></span> visites au total</span>
+    © {{ 'now' | date: '%Y' }} {{ site.title }} · <a href="{{ t.feed | relative_url }}">{{ t.rss }}</a> · <a href="{{ site.itch }}">{{ t.itch_link }}</a>
+    <span class="vues" data-gc-path="TOTAL" hidden> · <span class="n"></span> {{ t.total_visits }}</span>
   </footer>
   {% include stats.html %}
 </body>

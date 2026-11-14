@@ -1,0 +1,9 @@
+{%- comment -%} Trouve la page équivalente dans l'autre langue (variable : trad) {%- endcomment -%}
+{%- if page.lang == "en" -%}{%- assign autre = "fr" -%}{%- else -%}{%- assign autre = "en" -%}{%- endif -%}
+{%- assign trad = nil -%}
+{%- if page.collection == "jeux" -%}
+  {%- assign trad = site.jeux | where: "slug", page.slug | where: "lang", autre | first -%}
+{%- elsif page.ref -%}
+  {%- assign trad = site.posts | where: "ref", page.ref | where: "lang", autre | first -%}
+  {%- unless trad -%}{%- assign trad = site.pages | where: "ref", page.ref | where: "lang", autre | first -%}{%- endunless -%}
+{%- endif -%}

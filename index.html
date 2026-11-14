@@ -1,15 +1,18 @@
 ---
 layout: default
+ref: home
 ---
+{% assign t = site.data.i18n[page.lang] %}
+{% assign billets = site.posts | where: "lang", page.lang %}
 <section class="hero">
   <h1>{{ site.title }}</h1>
-  <p>{{ site.description }}</p>
+  <p>{{ t.description }}</p>
 </section>
 
-<h2>Mes jeux</h2>
+<h2>{{ t.my_games }}</h2>
 {% include grille-jeux.html %}
 
-<h2>Derniers billets</h2>
-{% assign derniers = site.posts | slice: 0, 4 %}
+<h2>{{ t.latest_posts }}</h2>
+{% assign derniers = billets | slice: 0, 4 %}
 {% include liste-billets.html billets=derniers %}
-<p><a href="{{ '/devlog/' | relative_url }}">Voir tout le devlog →</a></p>
+<p><a href="{{ t.url_devlog | relative_url }}">{{ t.see_all_devlog }}</a></p>

@@ -2,6 +2,7 @@
 layout: default
 title: À propos
 permalink: /a-propos/
+ref: about
 ---
 # À propos
 

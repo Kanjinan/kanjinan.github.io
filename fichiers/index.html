@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Fichiers
+ref: files
 ---
 <h1>Fichiers</h1>
 {% assign fichiers = site.static_files | where_exp: "f", "f.path contains '/fichiers/'" %}

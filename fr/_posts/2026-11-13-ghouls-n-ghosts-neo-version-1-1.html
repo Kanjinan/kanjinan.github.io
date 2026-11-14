@@ -3,6 +3,7 @@ layout: post
 title: "Ghouls'n Ghosts NEO : version 1.1"
 date: 2026-11-13 17:33:00 +0000
 jeu: daimakaimura-neo-geo
+ref: "devlog-1775499"
 ---
 <p>Merci à tous pour vos retours ! Un joueur a testé le portage sur une console AES avec une NeoSD Pro et a signalé plusieurs problèmes. Cette version les corrige et améliore aussi le mode AES.</p>
 <h3>Corrections</h3>
@@ -24,11 +25,3 @@ jeu: daimakaimura-neo-geo
 <li><strong>Bouton C pour charger la magie</strong> : avec le tir automatique activé, on ne pouvait plus charger la magie de l'armure d'or. Maintenir C tire sans répétition, ce qui permet de charger. Le menu des options l'indique désormais.</li>
 </ul>
 <p>Continuez à m'envoyer vos retours, sur vrai matériel comme sur MiSTer : chaque rapport rapproche un peu plus ce portage de l'arcade !</p>
-
-<details class="original"><summary>Version originale (English)</summary>
-<p>Thanks everyone for your feedback! One player tested the port on an AES console with a NeoSD Pro and reported several problems. This version fixes them and also improves AES mode.</p>
-<p><strong>Fixes</strong></p>
-<ul><li><strong>Player 1 credits</strong>: on some AES setups (console seen as an MVS by the BIOS), only player 2 could add credits. This is fixed.</li><li><strong>High score name entry</strong>: after a game over, you couldn&#x27;t enter your name and the countdown just ran out. The screen now works like the arcade original, with a blinking cursor and the selected letter highlighted. The text is also placed correctly now: the top row of letters is no longer hidden behind the frame artwork.</li><li><strong>Slowdown and flicker in the stage 2 fire sequences</strong>: sprite rendering has been heavily optimized. The fire sequences no longer run at half speed: the game now runs at about 83% of full speed there. Sprites that used to flicker in these scenes no longer drop out for lack of space.</li><li><strong>Two-player games</strong>: during player 2&#x27;s turn, the game read controller 1. Player 2 now uses controller 2.</li></ul>
-<p><strong>New in AES mode</strong></p>
-<ul><li><strong>5 credits per player</strong>&nbsp;right from boot, shown on the title screen: &quot;CREDIT 05&quot; bottom left for P1 and bottom right for P2. Each player spends their own credits, continues included.</li><li><strong>New ways to start a game</strong>:<ul><li>START on controller 1: single-player game for player 1;</li><li>START on controller 2: single-player game for player 2, with the score shown under PLAYER-2;</li><li>P1 holds START while P2 presses START: two-player alternating game, just like the arcade.</li></ul></li><li><strong>Button C to charge magic</strong>: with auto fire on, you couldn&#x27;t charge the gold armor&#x27;s magic anymore. Holding C fires without repeat, so you can charge. The options menu now mentions it.</li></ul><p>Keep the feedback coming, from real hardware and MiSTer alike: each report makes this port a little closer to the arcade!</p>
-</details>

@@ -17,11 +17,24 @@ plugins:
   - jekyll-sitemap
 feed:
   posts_limit: 30
+  categories: [fr, en]
 collections:
   jeux:
     output: true
     permalink: /jeux/:name/
 defaults:
+  # Français par défaut
+  - scope: { path: "" }
+    values: { lang: fr }
   - scope: { path: "", type: posts }
-    values: { layout: post }
+    values: { layout: post, lang: fr }
+  - scope: { path: "_jeux", type: jeux }
+    values: { lang: fr }
+  # Anglais : tout ce qui est sous en/ et _jeux/en/
+  - scope: { path: "en" }
+    values: { lang: en }
+  - scope: { path: "en", type: posts }
+    values: { layout: post, lang: en, permalink: "/en/devlog/:year/:month/:title/" }
+  - scope: { path: "_jeux/en", type: jeux }
+    values: { lang: en, permalink: "/en/games/:name/" }
 exclude: [README.md]

@@ -18,15 +18,21 @@
       rows.forEach(function (r) { tb.appendChild(r); });
     });
   }
-  els.forEach(function (el) {
-    fetch(base + encodeURIComponent(el.dataset.gcPath) + '.json')
+  var locale = document.documentElement.lang === 'en' ? 'en-US' : 'fr-FR';
+  function compte(path) {
+    return fetch(base + encodeURIComponent(path) + '.json')
       .then(function (r) { return r.status === 404 ? { count: '0' } : (r.ok ? r.json() : null); })
-      .then(function (d) {
-        if (!d) return;
-        var n = parseInt(String(d.count).replace(/\D/g, ''), 10) || 0;
+      .then(function (d) { return d ? (parseInt(String(d.count).replace(/\D/g, ''), 10) || 0) : null; });
+  }
+  els.forEach(function (el) {
+    // Plusieurs chemins séparés par « | » (versions FR et EN) : on additionne
+    Promise.all(el.dataset.gcPath.split('|').map(compte))
+      .then(function (ns) {
+        if (ns.every(function (n) { return n === null; })) return;
+        var n = ns.reduce(function (a, b) { return a + (b || 0); }, 0);
         el.dataset.n = n;
         var out = el.querySelector('.n') || el;
-        out.textContent = n.toLocaleString('fr-FR');
+        out.textContent = n.toLocaleString(locale);
         el.hidden = false;
       })
       .catch(function () {})
