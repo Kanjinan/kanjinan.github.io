@@ -257,13 +257,13 @@ ja:
   nav_files: ファイル
   nav_stats: 統計
   nav_about: プロフィール
-  url_home: /ja/
-  url_games: /ja/games/
-  url_devlog: /ja/devlog/
-  url_files: /ja/files/
-  url_stats: /ja/stats/
-  url_about: /ja/about/
-  feed: /feed/ja.xml
+  url_home: /jp/
+  url_games: /jp/games/
+  url_devlog: /jp/devlog/
+  url_files: /jp/files/
+  url_stats: /jp/stats/
+  url_about: /jp/about/
+  feed: /feed/jp.xml
   rss: 開発日誌のRSSフィード
   itch_link: itch.ioのゲーム一覧
   total_visits: 累計訪問数

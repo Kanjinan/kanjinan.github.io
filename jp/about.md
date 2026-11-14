@@ -1,7 +1,7 @@
 ---
 layout: default
 title: プロフィール
-permalink: /ja/about/
+permalink: /jp/about/
 ref: about
 ---
 # プロフィール

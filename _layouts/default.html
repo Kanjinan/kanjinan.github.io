@@ -55,7 +55,7 @@
         <a href="{{ t.url_about | relative_url }}">{{ t.nav_about }}</a>
         {% if versions_lang.size > 1 %}
         <details class="lang-menu">
-          <summary aria-label="{{ t.language }}">🌐 {{ page.lang | upcase }}</summary>
+          <summary aria-label="{{ t.language }}">🌐 {% if page.lang == "ja" %}JP{% else %}{{ page.lang | upcase }}{% endif %}</summary>
           <ul>
           {% for code in site.langues %}{% assign v = versions_lang | where: "lang", code | first %}{% if v %}
             <li><a href="{{ v.url | relative_url }}" hreflang="{{ code }}" lang="{{ code }}" data-langue="{{ code }}"{% if code == page.lang %} aria-current="true"{% endif %}>{{ site.data.i18n[code].lang_name }}</a></li>{% endif %}{% endfor %}
