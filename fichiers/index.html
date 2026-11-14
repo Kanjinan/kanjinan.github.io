@@ -4,13 +4,24 @@ title: Fichiers
 ref: files
 ---
 <h1>Fichiers</h1>
-{% assign fichiers = site.static_files | where_exp: "f", "f.path contains '/fichiers/'" %}
-{% if fichiers.size > 0 %}
+
+{% assign outils = site.jeux | where: "lang", page.lang | where_exp: "j", "j.outil" %}
+{% if outils.size > 0 %}
+<h2>Outils pour créer les ROMs</h2>
+<p class="intro">Pour les portages, les ROMs ne sont pas téléchargeables : un outil les construit à partir de <strong>votre propre romset MAME</strong> du jeu original. Il ne contient aucune donnée du jeu original. Il faut Windows, Python 3.9+ et MAME.</p>
 <ul class="files">
-{% for f in fichiers %}
-  <li><a href="{{ f.path | relative_url }}" download>{{ f.name }}</a> <span class="meta">{{ f.modified_time | date: '%d/%m/%Y' }}</span></li>
+{% for j in outils %}
+  <li><a href="{{ j.outil | relative_url }}" download>{{ j.outil | split: "/" | last }}</a> <span class="meta">· {{ j.titre }} v{{ j.outil_version }} · <a href="{{ j.url | relative_url }}">mode d'emploi</a></span></li>
 {% endfor %}
 </ul>
-{% else %}
-<p class="intro">Aucun fichier pour le moment. Les jeux se téléchargent sur <a href="{{ site.itch }}">itch.io</a>.</p>
+{% endif %}
+
+{% assign chemins_outils = outils | map: "outil" | join: "|" | append: "|" %}
+{% capture autres %}{% for f in site.static_files %}{% if f.path contains '/fichiers/' %}{% assign cle = f.path | append: "|" %}{% unless chemins_outils contains cle %}
+  <li><a href="{{ f.path | relative_url }}" download>{{ f.name }}</a> <span class="meta">{{ f.modified_time | date: '%d/%m/%Y' }}</span></li>{% endunless %}{% endif %}{% endfor %}{% endcapture %}
+{% assign autres_net = autres | strip %}
+{% if autres_net != "" %}
+<h2>Autres fichiers</h2>
+<ul class="files">{{ autres }}
+</ul>
 {% endif %}
