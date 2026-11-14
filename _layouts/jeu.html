@@ -3,7 +3,6 @@ layout: default
 ---
 <article class="jeu">
   <header class="jeu-header">
-  <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
   <div class="jeu-head-text">
   <h1>{{ page.titre }}</h1>
   <p class="jeu-resume">{{ page.resume }}</p>
@@ -20,6 +19,7 @@ layout: default
   </p>
   {% if page.itch %}<p><a class="button" href="{{ page.itch }}" data-goatcounter-click="telechargement-{{ page.slug }}" data-goatcounter-title="Téléchargement {{ page.titre }}">Télécharger sur itch.io</a></p>{% endif %}
   </div>
+  <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
   </header>
 
   {% if page.video %}

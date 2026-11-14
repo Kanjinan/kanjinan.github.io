@@ -107,7 +107,7 @@ code { padding: 1px 4px; }
 
 /* En-tête des pages de jeux : image réduite à côté du titre */
 .jeu { max-width: 960px; }
-.jeu-header { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; margin-bottom: 8px; }
+.jeu-header { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; margin-bottom: 8px; }
 .jeu-header .jeu-cover { width: 100%; max-width: none; aspect-ratio: 315 / 250; object-fit: cover; }
 .jeu-head-text h1 { margin-top: 0; }
 .jeu-head-text .jeu-resume { margin-top: 0; }
