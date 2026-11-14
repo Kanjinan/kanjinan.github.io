@@ -1,0 +1,10 @@
+title: Mon Blog
+description: Mes idées, mes projets, mes fichiers.
+lang: fr
+# Si le dépôt s'appelle "tonpseudo.github.io", laisser vide.
+# Sinon, mettre "/nom-du-depot" (ex. "/mon-blog").
+baseurl: ""
+url: ""
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+exclude: [README.md]

@@ -1,0 +1,11 @@
+---
+layout: default
+title: Fichiers
+---
+<h1>Fichiers</h1>
+<p>Dépose tes fichiers dans le dossier <code>fichiers/</code> du dépôt : ils apparaissent ici automatiquement.</p>
+<ul class="files">
+{% for f in site.static_files %}{% if f.path contains '/fichiers/' %}
+  <li><a href="{{ f.path | relative_url }}" download>{{ f.name }}</a> <span class="meta">{{ f.modified_time | date: '%d/%m/%Y' }}</span></li>
+{% endif %}{% endfor %}
+</ul>
