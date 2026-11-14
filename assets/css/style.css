@@ -137,3 +137,8 @@ code { padding: 1px 4px; }
 .hero { padding-bottom: 0; }
 .hero p { max-width: none; margin-bottom: 0; }
 .hero + h2 { margin-top: 1.2em; }
+
+/* Section outil de construction */
+.outil { margin: 32px 0; padding: 4px 20px 20px; max-width: 760px; background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; }
+.outil h2 { margin-top: 16px; }
+.outil .vues { color: var(--muted); font-size: .9rem; margin-left: 8px; }

@@ -50,6 +50,12 @@ fr:
   tester_copied: "Copié ✓"
   tester_howto: "Dans Discord : <strong>Amis</strong> → <strong>Ajouter un ami</strong> → colle le pseudo."
   tester_open: Ouvrir Discord
+  tool_title: Construire le jeu
+  tool_p1: "Le jeu se construit à partir de <strong>votre propre romset MAME</strong> du jeu arcade original (<code>ghouls.zip</code>). L'outil ne contient aucune donnée du jeu original : uniquement le travail du portage."
+  tool_need: "Il faut : Windows, Python 3.9+ et MAME (0.250 ou plus récent)."
+  tool_steps: "Placez <code>ghouls.zip</code> dans le dossier de l'outil, puis double-cliquez sur <strong>Construire - Build.bat</strong>. En une à quelques minutes, vous obtenez les fichiers pour NeoSD / MiSTer, Darksoft, BackBit et MAME."
+  tool_button: Télécharger l'outil
+  tool_note: "Les ROMs produites sont pour votre usage personnel : merci de ne pas les distribuer."
 en:
   description: Homebrews and fan ports for the Neo Geo and Mega Drive, with the development log.
   date_format: "%b %-d, %Y"
@@ -102,3 +108,9 @@ en:
   tester_copied: "Copied ✓"
   tester_howto: "In Discord: <strong>Friends</strong> → <strong>Add Friend</strong> → paste the username."
   tester_open: Open Discord
+  tool_title: Build the game
+  tool_p1: "The game is built from <strong>your own MAME romset</strong> of the original arcade game (<code>ghouls.zip</code>). The tool contains no data from the original game: only the port's own work."
+  tool_need: "You need: Windows, Python 3.9+ and MAME (0.250 or newer)."
+  tool_steps: "Put <code>ghouls.zip</code> in the tool's folder, then double-click <strong>Construire - Build.bat</strong>. Within a few minutes you get the files for NeoSD / MiSTer, Darksoft, BackBit and MAME."
+  tool_button: Download the tool
+  tool_note: "The ROMs you build are for your personal use: please do not distribute them."

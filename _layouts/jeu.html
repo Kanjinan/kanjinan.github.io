@@ -40,6 +40,8 @@ layout: default
   <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="{{ t.video }} {{ t.of }} {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
   {% endif %}
 
+  {% if page.outil %}{% include outil.html %}{% endif %}
+
   {% if page.testeurs %}{% include testeurs.html %}{% endif %}
 
   {% if billets.size > 0 %}

@@ -1,0 +1,10 @@
+{% assign t = site.data.i18n[page.lang] %}
+<section class="outil">
+  <h2>🛠️ {{ t.tool_title }}</h2>
+  <p>{{ t.tool_p1 }}</p>
+  <p>{{ t.tool_need }}</p>
+  <p>{{ t.tool_steps }}</p>
+  <p><a class="button" href="{{ page.outil | relative_url }}" download data-goatcounter-click="outil-{{ page.slug }}" data-goatcounter-title="Outil {{ page.titre }} {{ page.outil_version }}">⬇ {{ t.tool_button }} (v{{ page.outil_version }})</a>
+  <span class="vues" data-gc-path="outil-{{ page.slug }}" hidden>· <span class="n"></span> {{ t.download_clicks | downcase }}</span></p>
+  <p class="meta">{{ t.tool_note }}</p>
+</section>
