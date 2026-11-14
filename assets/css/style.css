@@ -116,3 +116,13 @@ code { padding: 1px 4px; }
   .jeu-header { grid-template-columns: 1fr; gap: 12px; }
   .jeu-header .jeu-cover { max-height: 180px; width: 100%; }
 }
+
+/* Images réduites sur les pages de jeux */
+.jeu-header { grid-template-columns: 1fr 160px; }
+.jeu .gallery { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; max-width: 600px; }
+.jeu .gallery img { aspect-ratio: 4 / 3; }
+@media (max-width: 640px) {
+  .jeu-header { grid-template-columns: 1fr; }
+  .jeu-header .jeu-cover { width: 160px; max-height: none; }
+  .jeu .gallery { grid-template-columns: repeat(3, 1fr); }
+}
