@@ -10,7 +10,7 @@ layout: default
     <div><dt>Genre</dt><dd>{{ page.genre }}</dd></div>
     <div><dt>Statut</dt><dd>{{ page.statut }}</dd></div>
   </dl>
-  <p><a class="button" href="{{ page.itch }}">Télécharger sur itch.io</a></p>
+  {% if page.itch %}<p><a class="button" href="{{ page.itch }}">Télécharger sur itch.io</a></p>{% endif %}
 
   {% if page.video %}
   <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
