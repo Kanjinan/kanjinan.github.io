@@ -2,7 +2,9 @@
 layout: default
 ---
 <article class="jeu">
+  <header class="jeu-header">
   <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
+  <div class="jeu-head-text">
   <h1>{{ page.titre }}</h1>
   <p class="jeu-resume">{{ page.resume }}</p>
   <dl class="jeu-infos">
@@ -17,6 +19,8 @@ layout: default
     {% if billets.size > 0 %}<span>📝 {{ billets.size }} billet{% if billets.size > 1 %}s{% endif %} de devlog · dernier le {{ billets.first.date | date: '%d/%m/%Y' }}</span>{% endif %}
   </p>
   {% if page.itch %}<p><a class="button" href="{{ page.itch }}" data-goatcounter-click="telechargement-{{ page.slug }}" data-goatcounter-title="Téléchargement {{ page.titre }}">Télécharger sur itch.io</a></p>{% endif %}
+  </div>
+  </header>
 
   {% if page.video %}
   <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
