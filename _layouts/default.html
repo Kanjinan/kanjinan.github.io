@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
 </head>
 <body>
   <header class="site-header">
@@ -20,13 +21,16 @@
         <a href="{{ '/jeux/' | relative_url }}">Jeux</a>
         <a href="{{ '/devlog/' | relative_url }}">Devlog</a>
         <a href="{{ '/fichiers/' | relative_url }}">Fichiers</a>
+        <a href="{{ '/statistiques/' | relative_url }}">Statistiques</a>
         <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
       </nav>
     </div>
   </header>
   <main class="wrap">{{ content }}</main>
   <footer class="wrap">
-    © {{ 'now' | date: '%Y' }} {{ site.title }} · <a href="{{ site.itch }}">Mes jeux sur itch.io</a>
+    © {{ 'now' | date: '%Y' }} {{ site.title }} · <a href="{{ '/feed.xml' | relative_url }}">Flux RSS du devlog</a> · <a href="{{ site.itch }}">Mes jeux sur itch.io</a>
+    <span class="vues" data-gc-path="TOTAL" hidden> · <span class="n"></span> visites au total</span>
   </footer>
+  {% include stats.html %}
 </body>
 </html>

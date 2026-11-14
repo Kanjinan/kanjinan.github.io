@@ -1,0 +1,54 @@
+---
+layout: default
+title: Statistiques
+---
+<h1>Statistiques</h1>
+<p class="intro">Les chiffres publics du blog, mis à jour en direct. Le comptage se fait sans cookies et sans données personnelles, avec <a href="https://www.goatcounter.com">GoatCounter</a>.</p>
+
+{% if site.goatcounter and site.goatcounter != "" %}
+<div class="kpis">
+  <div class="kpi"><span class="kpi-label">Visites au total</span><span class="kpi-value" data-gc-path="TOTAL">…</span></div>
+  <div class="kpi"><span class="kpi-label">Jeux</span><span class="kpi-value">{{ site.jeux.size }}</span></div>
+  <div class="kpi"><span class="kpi-label">Billets de devlog</span><span class="kpi-value">{{ site.posts.size }}</span></div>
+  <div class="kpi"><span class="kpi-label">Dernier billet</span><span class="kpi-value small">{{ site.posts.first.date | date: '%d/%m/%Y' }}</span></div>
+</div>
+
+<h2>Jeux les plus consultés</h2>
+<div class="table-wrap">
+<table data-sort>
+  <thead><tr><th>Jeu</th><th>Plateforme</th><th class="num">Vues</th><th class="num">Clics sur Télécharger</th><th class="num">Billets</th></tr></thead>
+  <tbody>
+  {% for j in site.jeux %}
+    {% assign billets_jeu = site.posts | where: "jeu", j.slug %}
+    <tr>
+      <td><a href="{{ j.url | relative_url }}">{{ j.titre }}</a></td>
+      <td>{{ j.plateforme }}</td>
+      <td class="num" data-gc-path="{{ j.url }}">…</td>
+      <td class="num">{% if j.itch %}<span data-gc-path="telechargement-{{ j.slug }}">…</span>{% else %}–{% endif %}</td>
+      <td class="num">{{ billets_jeu.size }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Billets les plus lus</h2>
+<div class="table-wrap">
+<table data-sort>
+  <thead><tr><th>Billet</th><th>Date</th><th class="num">Vues</th></tr></thead>
+  <tbody>
+  {% for p in site.posts %}
+    <tr>
+      <td><a href="{{ p.url | relative_url }}">{{ p.title }}</a></td>
+      <td>{{ p.date | date: '%d/%m/%Y' }}</td>
+      <td class="num" data-gc-path="{{ p.url }}">…</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<p class="meta">Pour plus de détails (pays, navigateurs, provenance des visiteurs, évolution dans le temps), consultez le <a href="https://{{ site.goatcounter }}.goatcounter.com">tableau de bord public</a>.</p>
+{% else %}
+<p class="intro">Les statistiques seront bientôt disponibles.</p>
+{% endif %}

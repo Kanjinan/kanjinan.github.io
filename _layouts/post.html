@@ -5,7 +5,8 @@ layout: default
 <article class="post">
   {% if jeu %}<a class="chip" href="{{ jeu.url | relative_url }}">{{ jeu.titre }}</a>{% endif %}
   <h1>{{ page.title }}</h1>
-  <p class="meta">{{ page.date | date: '%d/%m/%Y' }}{% if page.itch %} · <a href="{{ page.itch }}">Billet d'origine sur itch.io</a>{% endif %}</p>
+  {% assign fr_texte = content | split: '<details' | first | strip_html | number_of_words %}
+  <p class="meta">{{ page.date | date: '%d/%m/%Y' }} · {{ fr_texte | divided_by: 200 | plus: 1 }} min de lecture<span class="vues" data-gc-path="{{ page.url }}" hidden> · 👁 <span class="n"></span> vues</span>{% if page.itch %} · <a href="{{ page.itch }}">Billet d'origine sur itch.io</a>{% endif %}</p>
   <div class="prose">{{ content }}</div>
 </article>
 {% if jeu %}

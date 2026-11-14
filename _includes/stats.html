@@ -1,0 +1,37 @@
+{% if site.goatcounter and site.goatcounter != "" %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  var base = 'https://{{ site.goatcounter }}.goatcounter.com/counter/';
+  var els = document.querySelectorAll('[data-gc-path]');
+  var pending = els.length;
+  function done() {
+    if (--pending > 0) return;
+    // Classe les tableaux de la page Statistiques par nombre de vues
+    document.querySelectorAll('table[data-sort] tbody').forEach(function (tb) {
+      var rows = Array.prototype.slice.call(tb.rows);
+      rows.sort(function (a, b) {
+        var na = +(a.querySelector('[data-n]') || {dataset: {n: 0}}).dataset.n;
+        var nb = +(b.querySelector('[data-n]') || {dataset: {n: 0}}).dataset.n;
+        return nb - na;
+      });
+      rows.forEach(function (r) { tb.appendChild(r); });
+    });
+  }
+  els.forEach(function (el) {
+    fetch(base + encodeURIComponent(el.dataset.gcPath) + '.json')
+      .then(function (r) { return r.status === 404 ? { count: '0' } : (r.ok ? r.json() : null); })
+      .then(function (d) {
+        if (!d) return;
+        var n = parseInt(String(d.count).replace(/\D/g, ''), 10) || 0;
+        el.dataset.n = n;
+        var out = el.querySelector('.n') || el;
+        out.textContent = n.toLocaleString('fr-FR');
+        el.hidden = false;
+      })
+      .catch(function () {})
+      .then(done, done);
+  });
+})();
+</script>
+{% endif %}

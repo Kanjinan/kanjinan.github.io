@@ -10,7 +10,13 @@ layout: default
     <div><dt>Genre</dt><dd>{{ page.genre }}</dd></div>
     <div><dt>Statut</dt><dd>{{ page.statut }}</dd></div>
   </dl>
-  {% if page.itch %}<p><a class="button" href="{{ page.itch }}">Télécharger sur itch.io</a></p>{% endif %}
+  {% assign billets = site.posts | where: "jeu", page.slug %}
+  <p class="stats-row">
+    <span class="vues" data-gc-path="{{ page.url }}" hidden>👁 <span class="n"></span> vues</span>
+    {% if page.itch %}<span class="vues" data-gc-path="telechargement-{{ page.slug }}" hidden>⬇ <span class="n"></span> clics sur Télécharger</span>{% endif %}
+    {% if billets.size > 0 %}<span>📝 {{ billets.size }} billet{% if billets.size > 1 %}s{% endif %} de devlog · dernier le {{ billets.first.date | date: '%d/%m/%Y' }}</span>{% endif %}
+  </p>
+  {% if page.itch %}<p><a class="button" href="{{ page.itch }}" data-goatcounter-click="telechargement-{{ page.slug }}" data-goatcounter-title="Téléchargement {{ page.titre }}">Télécharger sur itch.io</a></p>{% endif %}
 
   {% if page.video %}
   <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
@@ -27,7 +33,6 @@ layout: default
 
   {% if page.tags %}<p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
 
-  {% assign billets = site.posts | where: "jeu", page.slug %}
   {% if billets.size > 0 %}
   <h2>Journal de développement</h2>
   <ul class="posts">

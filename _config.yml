@@ -7,6 +7,14 @@ baseurl: ""
 url: "https://kanjinan.github.io"
 permalink: /devlog/:year/:month/:title/
 markdown: kramdown
+# Code GoatCounter (statistiques publiques) : https://<code>.goatcounter.com
+# Laisser vide pour désactiver les statistiques.
+goatcounter: ""
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  posts_limit: 30
 collections:
   jeux:
     output: true

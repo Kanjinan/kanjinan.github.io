@@ -73,6 +73,20 @@ details.original summary { cursor: pointer; font-weight: 600; color: var(--muted
 .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; image-rendering: pixelated; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tags span { font-size: .82rem; color: var(--muted); background: var(--code); padding: 2px 8px; border-radius: 4px; }
+/* Statistiques */
+.card-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; font-size: .82rem; color: var(--muted); }
+.stats-row { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: .92rem; color: var(--muted); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 24px 0; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.kpi-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.kpi-value { font-size: 1.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi-value.small { font-size: 1.2rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
 pre, code { background: var(--code); border-radius: 4px; }
 pre { padding: 12px; overflow-x: auto; }
 code { padding: 1px 4px; }

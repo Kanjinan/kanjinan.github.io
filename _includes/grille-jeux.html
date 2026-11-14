@@ -1,12 +1,17 @@
 {% assign liste = site.jeux | sort: "ordre" %}
 <div class="grid">
   {% for j in liste %}
+  {% assign billets_jeu = site.posts | where: "jeu", j.slug %}
   <a class="card" href="{{ j.url | relative_url }}">
     <img src="{{ j.cover | relative_url }}" alt="" loading="lazy">
     <div class="card-body">
       <span class="card-platform">{{ j.plateforme }}</span>
       <strong>{{ j.titre }}</strong>
       <span class="card-text">{{ j.resume }}</span>
+      <span class="card-stats">
+        <span class="vues" data-gc-path="{{ j.url }}" hidden>👁 <span class="n"></span></span>
+        {% if billets_jeu.size > 0 %}<span>📝 Devlog du {{ billets_jeu.first.date | date: '%d/%m/%Y' }}</span>{% endif %}
+      </span>
     </div>
   </a>
   {% endfor %}
