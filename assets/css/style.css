@@ -126,3 +126,4 @@ code { padding: 1px 4px; }
   .jeu-header .jeu-cover { width: 160px; max-height: none; }
   .jeu .gallery { grid-template-columns: repeat(3, 1fr); }
 }
+.jeu .video { max-width: 600px; }

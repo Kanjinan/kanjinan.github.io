@@ -22,13 +22,7 @@ layout: default
   <img class="jeu-cover" src="{{ page.cover | relative_url }}" alt="{{ page.titre }}">
   </header>
 
-  {% if page.video %}
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
-  {% endif %}
-
   <div class="prose">{{ content }}</div>
-
-  {% if page.testeurs %}{% include testeurs.html %}{% endif %}
 
   {% if page.captures %}
   <h2>Captures d'écran</h2>
@@ -38,6 +32,13 @@ layout: default
   {% endif %}
 
   {% if page.tags %}<p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
+
+  {% if page.video %}
+  <h2>Vidéo</h2>
+  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}" title="Vidéo de {{ page.titre }}" loading="lazy" allowfullscreen></iframe></div>
+  {% endif %}
+
+  {% if page.testeurs %}{% include testeurs.html %}{% endif %}
 
   {% if billets.size > 0 %}
   <h2>Journal de développement</h2>
