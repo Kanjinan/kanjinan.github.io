@@ -132,3 +132,8 @@ code { padding: 1px 4px; }
 .lang-switch { border: 1px solid var(--line); border-radius: 6px; padding: 0 8px; }
 .lang-suggest { background: var(--accent); color: var(--accent-text); font-size: .92rem; padding: 8px 0; }
 .lang-suggest a { color: inherit; font-weight: 700; }
+
+/* Accueil : phrase d'intro sur une ligne, moins d'espace avant les jeux */
+.hero { padding-bottom: 0; }
+.hero p { max-width: none; margin-bottom: 0; }
+.hero + h2 { margin-top: 1.2em; }
