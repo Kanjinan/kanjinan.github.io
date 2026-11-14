@@ -95,3 +95,12 @@ code { padding: 1px 4px; }
   body { font-size: 16px; }
   .game-banner img { width: 80px; }
 }
+
+/* Section testeurs */
+.testeurs { margin: 32px 0; padding: 4px 20px 20px; background: var(--surface); border: 2px solid #5865f2; border-radius: 12px; }
+.testeurs h2 { margin-top: 16px; }
+.button.discord { background: #5865f2; color: #fff; }
+.discord-id { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 16px 0 8px; }
+.discord-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); width: 100%; }
+.discord-id code { font-size: 1.15rem; padding: 6px 12px; }
+.discord-id .button { border: 0; font: inherit; font-weight: 700; cursor: pointer; }

@@ -24,6 +24,8 @@ layout: default
 
   <div class="prose">{{ content }}</div>
 
+  {% if page.testeurs %}{% include testeurs.html %}{% endif %}
+
   {% if page.captures %}
   <h2>Captures d'écran</h2>
   <div class="gallery">

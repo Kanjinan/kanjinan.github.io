@@ -10,6 +10,8 @@ markdown: kramdown
 # Code GoatCounter (statistiques publiques) : https://<code>.goatcounter.com
 # Laisser vide pour désactiver les statistiques.
 goatcounter: "nicoklem"
+# Pseudo Discord affiché dans la section « Devenir testeur » (mettre testeurs: true dans un jeu)
+discord_user: "nicoklem"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
