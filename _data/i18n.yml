@@ -53,9 +53,10 @@ fr:
   tester_howto: "Dans Discord : <strong>Amis</strong> → <strong>Ajouter un ami</strong> → colle le pseudo."
   tester_open: Ouvrir Discord
   tool_title: Construire le jeu
-  tool_p1: "Le jeu se construit à partir de <strong>votre propre romset MAME</strong> du jeu arcade original (<code>ghouls.zip</code>). L'outil ne contient aucune donnée du jeu original : uniquement le travail du portage."
-  tool_need: "Il faut : Windows, Python 3.9+ et MAME (0.250 ou plus récent)."
-  tool_steps: "Placez <code>ghouls.zip</code> dans le dossier de l'outil, puis double-cliquez sur <strong>Construire - Build.bat</strong>. En une à quelques minutes, vous obtenez les fichiers pour NeoSD / MiSTer, Darksoft, BackBit et MAME."
+  tool_p1: "Le jeu se construit à partir de <strong>votre propre romset MAME</strong> du jeu d'origine (<code>%s</code>). L'outil ne contient aucune donnée du jeu original : uniquement mon travail."
+  tool_need: "Il faut : Windows et Python 3.9+."
+  tool_need_mame: "Il faut : Windows, Python 3.9+ et MAME (0.250 ou plus récent)."
+  tool_steps: "Placez <code>%s</code> dans le dossier de l'outil, puis double-cliquez sur <strong>Construire - Build.bat</strong>. Vous obtenez les fichiers pour NeoSD / MiSTer, Darksoft, BackBit et MAME."
   tool_button: Télécharger l'outil
   tool_note: "Les ROMs produites sont pour votre usage personnel : merci de ne pas les distribuer."
   comments_title: Retours des testeurs
@@ -115,9 +116,10 @@ en:
   tester_howto: "In Discord: <strong>Friends</strong> → <strong>Add Friend</strong> → paste the username."
   tester_open: Open Discord
   tool_title: Build the game
-  tool_p1: "The game is built from <strong>your own MAME romset</strong> of the original arcade game (<code>ghouls.zip</code>). The tool contains no data from the original game: only the port's own work."
-  tool_need: "You need: Windows, Python 3.9+ and MAME (0.250 or newer)."
-  tool_steps: "Put <code>ghouls.zip</code> in the tool's folder, then double-click <strong>Construire - Build.bat</strong>. Within a few minutes you get the files for NeoSD / MiSTer, Darksoft, BackBit and MAME."
+  tool_p1: "The game is built from <strong>your own MAME romset</strong> of the original game (<code>%s</code>). The tool contains no data from the original game: only my own work."
+  tool_need: "You need: Windows and Python 3.9+."
+  tool_need_mame: "You need: Windows, Python 3.9+ and MAME (0.250 or newer)."
+  tool_steps: "Put <code>%s</code> in the tool's folder, then double-click <strong>Construire - Build.bat</strong>. You get the files for NeoSD / MiSTer, Darksoft, BackBit and MAME."
   tool_button: Download the tool
   tool_note: "The ROMs you build are for your personal use: please do not distribute them."
   comments_title: Tester feedback
@@ -177,9 +179,10 @@ de:
   tester_howto: "In Discord: <strong>Freunde</strong> → <strong>Freund hinzufügen</strong> → Namen einfügen."
   tester_open: Discord öffnen
   tool_title: Das Spiel erstellen
-  tool_p1: "Das Spiel wird aus <strong>deinem eigenen MAME-Romset</strong> des Arcade-Originals (<code>ghouls.zip</code>) erstellt. Das Tool enthält keine Daten des Originalspiels, nur die Arbeit der Portierung."
-  tool_need: "Du brauchst: Windows, Python 3.9+ und MAME (0.250 oder neuer)."
-  tool_steps: "Lege <code>ghouls.zip</code> in den Ordner des Tools und doppelklicke dann auf <strong>Construire - Build.bat</strong>. Nach ein paar Minuten hast du die Dateien für NeoSD / MiSTer, Darksoft, BackBit und MAME."
+  tool_p1: "Das Spiel wird aus <strong>deinem eigenen MAME-Romset</strong> des Originalspiels (<code>%s</code>) erstellt. Das Tool enthält keine Daten des Originalspiels, nur meine eigene Arbeit."
+  tool_need: "Du brauchst: Windows und Python 3.9+."
+  tool_need_mame: "Du brauchst: Windows, Python 3.9+ und MAME (0.250 oder neuer)."
+  tool_steps: "Lege <code>%s</code> in den Ordner des Tools und doppelklicke dann auf <strong>Construire - Build.bat</strong>. Du erhältst die Dateien für NeoSD / MiSTer, Darksoft, BackBit und MAME."
   tool_button: Tool herunterladen
   tool_note: "Die erstellten ROMs sind nur für deinen persönlichen Gebrauch: Bitte nicht weitergeben."
   comments_title: Feedback der Tester
@@ -239,9 +242,10 @@ es:
   tester_howto: "En Discord: <strong>Amigos</strong> → <strong>Añadir amigo</strong> → pega el nombre de usuario."
   tester_open: Abrir Discord
   tool_title: Crear el juego
-  tool_p1: "El juego se crea a partir de <strong>tu propio romset de MAME</strong> del juego arcade original (<code>ghouls.zip</code>). La herramienta no contiene ningún dato del juego original: solo el trabajo del port."
-  tool_need: "Necesitas: Windows, Python 3.9+ y MAME (0.250 o más reciente)."
-  tool_steps: "Coloca <code>ghouls.zip</code> en la carpeta de la herramienta y haz doble clic en <strong>Construire - Build.bat</strong>. En unos minutos obtendrás los archivos para NeoSD / MiSTer, Darksoft, BackBit y MAME."
+  tool_p1: "El juego se crea a partir de <strong>tu propio romset de MAME</strong> del juego original (<code>%s</code>). La herramienta no contiene ningún dato del juego original: solo mi trabajo."
+  tool_need: "Necesitas: Windows y Python 3.9+."
+  tool_need_mame: "Necesitas: Windows, Python 3.9+ y MAME (0.250 o más reciente)."
+  tool_steps: "Coloca <code>%s</code> en la carpeta de la herramienta y haz doble clic en <strong>Construire - Build.bat</strong>. Obtendrás los archivos para NeoSD / MiSTer, Darksoft, BackBit y MAME."
   tool_button: Descargar la herramienta
   tool_note: "Las ROMs que crees son para tu uso personal: por favor, no las distribuyas."
   comments_title: Comentarios de los testers
@@ -301,9 +305,10 @@ ja:
   tester_howto: "Discordで <strong>フレンド</strong> → <strong>フレンドに追加</strong> → ユーザー名を貼り付けます。"
   tester_open: Discordを開く
   tool_title: ゲームのビルド
-  tool_p1: "ゲームは、<strong>ご自身でお持ちのアーケード版のMAME用ROMセット</strong>（<code>ghouls.zip</code>）からビルドします。ツールには元のゲームのデータは一切含まれておらず、移植のために作ったものだけが入っています。"
-  tool_need: "必要なもの：Windows、Python 3.9以上、MAME（0.250以降）。"
-  tool_steps: "<code>ghouls.zip</code> をツールのフォルダに置き、<strong>Construire - Build.bat</strong> をダブルクリックします。数分で NeoSD / MiSTer、Darksoft、BackBit、MAME 用のファイルができあがります。"
+  tool_p1: "ゲームは、<strong>ご自身でお持ちの元のゲームのMAME用ROMセット</strong>（<code>%s</code>）からビルドします。ツールには元のゲームのデータは一切含まれておらず、私が作ったものだけが入っています。"
+  tool_need: "必要なもの：Windows、Python 3.9以上。"
+  tool_need_mame: "必要なもの：Windows、Python 3.9以上、MAME（0.250以降）。"
+  tool_steps: "<code>%s</code> をツールのフォルダに置き、<strong>Construire - Build.bat</strong> をダブルクリックします。NeoSD / MiSTer、Darksoft、BackBit、MAME 用のファイルができあがります。"
   tool_button: ツールをダウンロード
   tool_note: "ビルドしたROMは個人での使用に限ります。配布はご遠慮ください。"
   comments_title: テスターからのフィードバック

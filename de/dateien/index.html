@@ -9,7 +9,7 @@ ref: files
 {% assign outils = site.jeux | where: "lang", page.lang | where_exp: "j", "j.outil" %}
 {% if outils.size > 0 %}
 <h2>Tools zum Erstellen der ROMs</h2>
-<p class="intro">Bei den Portierungen kann man die ROMs nicht herunterladen: Ein Tool erstellt sie aus <strong>deinem eigenen MAME-Romset</strong> des Originalspiels. Es enthält keine Daten des Originalspiels. Du brauchst Windows, Python 3.9+ und MAME.</p>
+<p class="intro">Bei den Portierungen und ROM-Hacks kann man die ROMs nicht herunterladen: Ein Tool erstellt sie aus <strong>deinem eigenen MAME-Romset</strong> des Originalspiels. Es enthält keine Daten des Originalspiels. Die Voraussetzungen stehen auf der Seite des jeweiligen Spiels.</p>
 <ul class="files">
 {% for j in outils %}
   <li><a href="{{ j.outil | relative_url }}" download>{{ j.outil | split: "/" | last }}</a> <span class="meta">· {{ j.titre }} v{{ j.outil_version }} · <a href="{{ j.url | relative_url }}">Anleitung</a></span></li>

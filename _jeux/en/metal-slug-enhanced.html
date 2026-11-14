@@ -4,22 +4,43 @@ titre: "Metal Slug Enhanced"
 title: "Metal Slug Enhanced"
 plateforme: "Neo Geo (MVS/AES)"
 genre: "Run and gun"
-statut: In preparation
+statut: Available (version 1.0)
+outil: /fichiers/metal-slug-enhanced/MS_Enhanced_Patcher_1.0.zip
+outil_version: "1.0"
+outil_romset: mslug.zip
+commentaires: true
 ordre: 2
-resume: "An enhancement ROM hack of the first Metal Slug (Nazca / SNK, 1996), released as an IPS patch."
+resume: "A ROM hack of the first Metal Slug (1996): an options menu for the starting weapon, ammo, grenades, lives, timer, mission, and less slowdown."
 cover: /images/jeux/metal-slug-enhanced/cover.png
 tags: ["2D", "neogeo", "Metal Slug", "ROM hack", "snk"]
+captures:
+  - /images/jeux/metal-slug-enhanced/capture-1.png
+  - /images/jeux/metal-slug-enhanced/capture-2.png
+  - /images/jeux/metal-slug-enhanced/capture-3.png
+  - /images/jeux/metal-slug-enhanced/capture-4.png
 ---
-<p><strong>Metal Slug Enhanced: the original Metal Slug, made better (project in preparation)</strong></p>
-<p>A ROM hack of the first <em>Metal Slug</em> (Nazca / SNK, 1996) for the Neo Geo. The game stays the same, with a series of small improvements made directly to the original 68000 code.</p>
-<h3>How it works</h3>
-<p>Each improvement is a separate patch, applied to the game's program after checking the original bytes. The result is released only as an <strong>IPS patch</strong>, to apply to your own <code>mslug</code> ROM: no data from the original game is included.</p>
-<h3>Already in</h3>
+<p><strong>Metal Slug Enhanced: the original Metal Slug, set up the way you like.</strong></p>
+<p>A ROM hack of the first <em>Metal Slug</em> (Nazca / SNK, 1996) for the Neo Geo. The game stays the same: the hack adds an options menu, built directly into the original 68000 code. <strong>With the default settings, the game is identical to the original.</strong></p>
+<h3>The START / OPTION screen</h3>
+<p>When a game starts, a START / OPTION screen appears, on arcade (MVS) as on console (AES). The word <strong>ENHANCED</strong> is shown under the logo, on the title screen and in attract mode.</p>
+<h3>The OPTION menu</h3>
 <ul>
-<li>30 grenades at the start and on every respawn, instead of 10.</li>
+<li><strong>LEVEL</strong>: difficulty (EASY, NORMAL, HARD, MVS).</li>
+<li><strong>MISSION</strong>: starting mission, 1 to 6.</li>
+<li><strong>HERO</strong>: number of lives, 1 to 9, or infinite lives.</li>
+<li><strong>LANGUAGE</strong>: tutorial language: automatic, English, Portuguese, Japanese, and <strong>Spanish</strong>, a language hidden in the original game.</li>
+<li><strong>ARMS</strong>: starting weapon for every life: handgun, Heavy Machine Gun, Rocket Launcher, Flame Shot or Shotgun.</li>
+<li><strong>KEEP ARMS</strong>: when you die, you keep your weapon and its ammo.</li>
+<li><strong>AMMO</strong>: infinite ammo.</li>
+<li><strong>BOMBS</strong>: starting grenades (10, 20, 30, 50, 99) or infinite grenades.</li>
+<li><strong>TIME</strong>: the timer (game setting, 60 to 90 seconds, or infinite).</li>
+<li><strong>EFFECTS</strong>: FULL or LIGHT. LIGHT removes a few purely decorative visual effects to reduce slowdown. In mission 5, the busiest one, the share of slowed-down frames drops from 25% to 7%.</li>
 </ul>
+<p>Up and Down pick a line, Left and Right change the value, A on EXIT confirms. On MVS (and in MAME), settings are saved. On AES, they are kept until power-off. In two-player games, each player gets their own weapon and ammo.</p>
+<h3>Installation</h3>
+<p>The hack comes as IPS patches, bundled in a tool that builds the game from your MAME romset <code>mslug.zip</code> (see below). Runs on MAME, MiSTer and NeoSD. The tool also builds the files for Darksoft and BackBit Platinum MVS. The IPS patches are included in the archive too, if you prefer to apply them with your own tool.</p>
 <h3>Notes</h3>
 <ul>
 <li>Fan project, not affiliated with or endorsed by SNK. <em>Metal Slug</em> is © SNK.</li>
-<li>The project has just started: the list of improvements will grow.</li>
+<li>Found a bug, or have an idea for an option? Tell me in the comments.</li>
 </ul>

@@ -4,22 +4,43 @@ titre: "Metal Slug Enhanced"
 title: "Metal Slug Enhanced"
 plateforme: "ネオジオ（MVS/AES）"
 genre: "ラン&ガン"
-statut: 準備中
+statut: 公開中（バージョン1.0）
+outil: /fichiers/metal-slug-enhanced/MS_Enhanced_Patcher_1.0.zip
+outil_version: "1.0"
+outil_romset: mslug.zip
+commentaires: true
 ordre: 2
-resume: "初代『メタルスラッグ』（ナスカ／SNK、1996年）を改良するROMハック。IPSパッチとして公開予定です。"
+resume: "初代『メタルスラッグ』（1996年）のROMハック。初期装備、弾数、グレネード、残機、タイム、開始ミッションを設定できるオプションメニューを追加し、処理落ちも軽減。"
 cover: /images/jeux/metal-slug-enhanced/cover.png
 tags: ["2D", "neogeo", "Metal Slug", "ROM hack", "snk"]
+captures:
+  - /images/jeux/metal-slug-enhanced/capture-1.png
+  - /images/jeux/metal-slug-enhanced/capture-2.png
+  - /images/jeux/metal-slug-enhanced/capture-3.png
+  - /images/jeux/metal-slug-enhanced/capture-4.png
 ---
-<p><strong>Metal Slug Enhanced：オリジナルの『メタルスラッグ』を、もっと遊びやすく（準備中のプロジェクト）</strong></p>
-<p>ネオジオ版の初代『<em>メタルスラッグ</em>』（ナスカ／SNK、1996年）のROMハックです。ゲームそのものはそのままに、オリジナルの68000コードに直接、細かな改良を加えていきます。</p>
-<h3>しくみ</h3>
-<p>改良はひとつずつ独立したパッチになっていて、元のバイトを確認してからゲームのプログラムに適用します。公開するのは<strong>IPSパッチ</strong>だけで、ご自身でお持ちの <code>mslug</code> のROMに当てて使います。元のゲームのデータは一切含まれません。</p>
-<h3>実装済み</h3>
+<p><strong>Metal Slug Enhanced：オリジナルの『メタルスラッグ』を、好きな設定で。</strong></p>
+<p>ネオジオ版の初代『<em>メタルスラッグ</em>』（ナスカ／SNK、1996年）のROMハックです。ゲームそのものはそのままに、オリジナルの68000コードに直接オプションメニューを組み込みました。<strong>初期設定のままなら、ゲームはオリジナルとまったく同じです。</strong></p>
+<h3>START / OPTION画面</h3>
+<p>ゲームを始めると、アーケード（MVS）でも家庭用（AES）でもSTART / OPTION画面が表示されます。タイトル画面とアトラクトモードでは、ロゴの下に<strong>ENHANCED</strong>の文字が入ります。</p>
+<h3>OPTIONメニュー</h3>
 <ul>
-<li>ゲーム開始時と復活時のグレネードが10個から30個に。</li>
+<li><strong>LEVEL</strong>：難易度（EASY、NORMAL、HARD、MVS）。</li>
+<li><strong>MISSION</strong>：開始ミッション（1〜6）。</li>
+<li><strong>HERO</strong>：残機数（1〜9、または無限）。</li>
+<li><strong>LANGUAGE</strong>：チュートリアルの言語。自動、英語、ポルトガル語、日本語、そしてオリジナルに隠されていた<strong>スペイン語</strong>。</li>
+<li><strong>ARMS</strong>：毎回の初期装備。ハンドガン、ヘビーマシンガン、ロケットランチャー、フレイムショット、ショットガン。</li>
+<li><strong>KEEP ARMS</strong>：ミスしても武器と残弾をそのまま引き継ぎます。</li>
+<li><strong>AMMO</strong>：弾数無限。</li>
+<li><strong>BOMBS</strong>：開始時のグレネード数（10、20、30、50、99、または無限）。</li>
+<li><strong>TIME</strong>：タイム（ゲームの設定、60〜90秒、または無限）。</li>
+<li><strong>EFFECTS</strong>：FULLまたはLIGHT。LIGHTは純粋に装飾的な演出をいくつか省いて処理落ちを減らします。いちばん重いミッション5では、処理落ちしたフレームの割合が25%から7%に下がります。</li>
 </ul>
+<p>上下で項目を選び、左右で値を変え、EXITでAボタンを押すと決定です。MVS（とMAME）では設定が保存されます。AESでは電源を切るまで保持されます。2人プレイでは、プレイヤーごとに武器と弾数が別々に管理されます。</p>
+<h3>導入方法</h3>
+<p>このハックはIPSパッチとして配布しており、MAME用ROMセット <code>mslug.zip</code> からゲームをビルドするツールに同梱しています（下記参照）。MAME、MiSTer、NeoSDで動作します。DarksoftとBackBit Platinum MVS用のファイルも作成できます。お好きなツールで当てたい方のために、IPSパッチもアーカイブに入っています。</p>
 <h3>注意事項</h3>
 <ul>
 <li>ファンプロジェクトであり、SNKとは関係なく、SNKの承認も受けていません。『<em>メタルスラッグ</em>』は© SNKです。</li>
-<li>プロジェクトは始まったばかりです。改良点はこれから増えていきます。</li>
+<li>バグを見つけたら、またはオプションのアイデアがあれば、コメント欄で教えてください。</li>
 </ul>

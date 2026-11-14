@@ -4,22 +4,43 @@ titre: "Metal Slug Enhanced"
 title: "Metal Slug Enhanced"
 plateforme: "Neo Geo (MVS/AES)"
 genre: "Run and Gun"
-statut: In Vorbereitung
+statut: Verfügbar (Version 1.0)
+outil: /fichiers/metal-slug-enhanced/MS_Enhanced_Patcher_1.0.zip
+outil_version: "1.0"
+outil_romset: mslug.zip
+commentaires: true
 ordre: 2
-resume: "Ein ROM-Hack, der das erste Metal Slug (Nazca / SNK, 1996) verbessert, veröffentlicht als IPS-Patch."
+resume: "ROM-Hack des ersten Metal Slug (1996): ein Optionsmenü für Startwaffe, Munition, Granaten, Leben, Timer und Mission, dazu weniger Ruckler."
 cover: /images/jeux/metal-slug-enhanced/cover.png
 tags: ["2D", "neogeo", "Metal Slug", "ROM hack", "snk"]
+captures:
+  - /images/jeux/metal-slug-enhanced/capture-1.png
+  - /images/jeux/metal-slug-enhanced/capture-2.png
+  - /images/jeux/metal-slug-enhanced/capture-3.png
+  - /images/jeux/metal-slug-enhanced/capture-4.png
 ---
-<p><strong>Metal Slug Enhanced: das originale Metal Slug, nur besser (Projekt in Vorbereitung)</strong></p>
-<p>Ein ROM-Hack des ersten <em>Metal Slug</em> (Nazca / SNK, 1996) für das Neo Geo. Das Spiel bleibt dasselbe, bekommt aber eine Reihe kleiner Verbesserungen, die direkt im originalen 68000-Code vorgenommen werden.</p>
-<h3>So funktioniert es</h3>
-<p>Jede Verbesserung ist ein eigener Patch, der erst nach einer Prüfung der Originalbytes auf das Programm des Spiels angewendet wird. Veröffentlicht wird das Ergebnis nur als <strong>IPS-Patch</strong>, den du auf dein eigenes <code>mslug</code>-ROM anwendest: Es sind keine Daten des Originalspiels enthalten.</p>
-<h3>Schon umgesetzt</h3>
+<p><strong>Metal Slug Enhanced: das originale Metal Slug, so eingestellt, wie du willst.</strong></p>
+<p>Ein ROM-Hack des ersten <em>Metal Slug</em> (Nazca / SNK, 1996) für das Neo Geo. Das Spiel bleibt dasselbe: Der Hack fügt ein Optionsmenü hinzu, direkt im originalen 68000-Code umgesetzt. <strong>Mit den Standardeinstellungen ist das Spiel identisch mit dem Original.</strong></p>
+<h3>Der START-/OPTION-Bildschirm</h3>
+<p>Beim Start einer Partie erscheint ein START-/OPTION-Bildschirm, am Automaten (MVS) wie auf der Konsole (AES). Das Wort <strong>ENHANCED</strong> steht unter dem Logo, auf dem Titelbildschirm und im Attract-Modus.</p>
+<h3>Das OPTION-Menü</h3>
 <ul>
-<li>30 Granaten zu Beginn und nach jedem Respawn statt 10.</li>
+<li><strong>LEVEL</strong>: der Schwierigkeitsgrad (EASY, NORMAL, HARD, MVS).</li>
+<li><strong>MISSION</strong>: die Startmission, 1 bis 6.</li>
+<li><strong>HERO</strong>: die Zahl der Leben, 1 bis 9, oder unendlich viele.</li>
+<li><strong>LANGUAGE</strong>: die Sprache des Tutorials: automatisch, Englisch, Portugiesisch, Japanisch und <strong>Spanisch</strong>, eine im Originalspiel versteckte Sprache.</li>
+<li><strong>ARMS</strong>: die Startwaffe für jedes Leben: Pistole, Heavy Machine Gun, Rocket Launcher, Flame Shot oder Shotgun.</li>
+<li><strong>KEEP ARMS</strong>: Wenn du stirbst, behältst du deine Waffe und ihre Munition.</li>
+<li><strong>AMMO</strong>: unendlich Munition.</li>
+<li><strong>BOMBS</strong>: die Granaten zu Beginn (10, 20, 30, 50, 99) oder unendlich viele.</li>
+<li><strong>TIME</strong>: der Timer (Spieleinstellung, 60 bis 90 Sekunden oder unendlich).</li>
+<li><strong>EFFECTS</strong>: FULL oder LIGHT. LIGHT entfernt ein paar rein dekorative Grafikeffekte, um Ruckler zu verringern. In Mission 5, der vollsten, sinkt der Anteil verlangsamter Bilder von 25 % auf 7 %.</li>
 </ul>
+<p>Oben und Unten wählen die Zeile, Links und Rechts ändern den Wert, A auf EXIT bestätigt. Auf dem MVS (und in MAME) werden die Einstellungen gespeichert. Auf dem AES bleiben sie bis zum Ausschalten erhalten. Zu zweit bekommt jeder Spieler seine eigene Waffe und Munition.</p>
+<h3>Installation</h3>
+<p>Der Hack wird als IPS-Patches verteilt, verpackt in einem Tool, das das Spiel aus deinem MAME-Romset <code>mslug.zip</code> erstellt (siehe unten). Läuft auf MAME, MiSTer und NeoSD. Das Tool erzeugt auch die Dateien für Darksoft und BackBit Platinum MVS. Die IPS-Patches liegen ebenfalls im Archiv, falls du sie mit einem eigenen Tool anwenden willst.</p>
 <h3>Hinweise</h3>
 <ul>
 <li>Fanprojekt ohne Verbindung zu SNK und nicht von SNK unterstützt. <em>Metal Slug</em> ist © SNK.</li>
-<li>Das Projekt hat gerade erst begonnen: Die Liste der Verbesserungen wird noch wachsen.</li>
+<li>Einen Bug gefunden oder eine Idee für eine Option? Schreib es mir in die Kommentare.</li>
 </ul>
