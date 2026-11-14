@@ -15,9 +15,9 @@ discord_user: "nicoklem"
 # Commentaires (giscus, discussions GitHub) : mettre commentaires: true dans un jeu
 giscus:
   repo: Kanjinan/kanjinan.github.io
-  repo_id: ""
+  repo_id: "R_kgDOVuOIgQ"
   category: Commentaires
-  category_id: ""
+  category_id: "DIC_kwDOVuOIgc4DLH49"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
