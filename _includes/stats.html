@@ -27,7 +27,9 @@
     // pour ne pas relire une réponse mise en cache 4 h par GoatCounter (un 0 y resterait figé).
     return fetch(base + encodeURIComponent(path) + '.json?start=2020-01-01&t=' + tranche)
       .then(function (r) { return r.status === 404 ? { count: '0' } : (r.ok ? r.json() : null); })
-      .then(function (d) { return d ? (parseInt(String(d.count).replace(/\D/g, ''), 10) || 0) : null; });
+      .then(function (d) { return d ? (parseInt(String(d.count).replace(/\D/g, ''), 10) || 0) : null; })
+      // Une requête qui échoue (réseau, limite de débit…) ne doit pas masquer tout le compteur
+      .catch(function () { return null; });
   }
   els.forEach(function (el) {
     // Plusieurs chemins séparés par « | » (toutes les langues) : on additionne
