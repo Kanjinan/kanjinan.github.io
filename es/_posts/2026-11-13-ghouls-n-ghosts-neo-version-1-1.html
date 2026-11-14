@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Ghouls'n Ghosts NEO: versión 1.1"
+date: 2026-11-13 17:33:00 +0000
+jeu: daimakaimura-neo-geo
+ref: "devlog-1775499"
+---
+<p>¡Gracias a todos por vuestros comentarios! Un jugador probó el port en una consola AES con una NeoSD Pro e informó de varios problemas. Esta versión los corrige y además mejora el modo AES.</p>
+<h3>Correcciones</h3>
+<ul>
+<li><strong>Créditos del jugador 1</strong>: en algunas configuraciones AES (consola detectada como MVS por la BIOS), solo el jugador 2 podía añadir créditos. Ya está corregido.</li>
+<li><strong>Introducción del nombre en los récords</strong>: tras un game over, no se podía escribir el nombre y la cuenta atrás simplemente se agotaba. La pantalla funciona ahora como en el arcade original, con un cursor parpadeante y la letra seleccionada resaltada. El texto también está bien colocado: la fila superior de letras ya no queda oculta detrás del marco.</li>
+<li><strong>Ralentizaciones y parpadeos en las secuencias de fuego del nivel 2</strong>: el dibujado de sprites se ha optimizado mucho. Las secuencias de fuego ya no van a media velocidad: el juego funciona ahí a un 83 % de la velocidad completa. Los sprites que parpadeaban en esas escenas ya no desaparecen por falta de espacio.</li>
+<li><strong>Partidas a dos jugadores</strong>: durante el turno del jugador 2, el juego leía el mando 1. El jugador 2 usa ahora el mando 2.</li>
+</ul>
+<h3>Novedades del modo AES</h3>
+<ul>
+<li><strong>5 créditos por jugador</strong> desde el arranque, mostrados en la pantalla de título: «CREDIT 05» abajo a la izquierda para P1 y abajo a la derecha para P2. Cada jugador gasta sus propios créditos, continues incluidos.</li>
+<li><strong>Nuevas formas de empezar una partida</strong>:<ul>
+<li>START en el mando 1: partida de un jugador para el jugador 1;</li>
+<li>START en el mando 2: partida de un jugador para el jugador 2, con la puntuación bajo PLAYER-2;</li>
+<li>P1 mantiene START mientras P2 pulsa START: partida alterna a dos jugadores, como en el arcade.</li>
+</ul></li>
+<li><strong>Botón C para cargar la magia</strong>: con el disparo automático activado, ya no se podía cargar la magia de la armadura dorada. Mantener C dispara sin repetición, así que puedes cargar. El menú de opciones ahora lo indica.</li>
+</ul>
+<p>Seguid enviando vuestros comentarios, tanto desde hardware real como desde MiSTer: ¡cada informe acerca un poco más este port al arcade!</p>

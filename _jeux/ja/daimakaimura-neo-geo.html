@@ -1,0 +1,44 @@
+---
+layout: jeu
+titre: "大魔界村"
+title: "大魔界村"
+plateforme: "ネオジオ"
+genre: "アクション"
+statut: 開発中
+outil: /fichiers/daimakaimura/GnG_NEO_Builder_1.1.zip
+outil_version: "1.1"
+commentaires: true
+ordre: 4
+resume: "『大魔界村』（カプコン、1988年）のネオジオ向けファン移植。全6ステージをプレイできます。"
+cover: /images/jeux/daimakaimura-neo-geo/cover.png
+tags: ["2D", "neogeo", "Pixel Art", "Retro"]
+captures:
+  - /images/jeux/daimakaimura-neo-geo/capture-1.png
+  - /images/jeux/daimakaimura-neo-geo/capture-2.png
+  - /images/jeux/daimakaimura-neo-geo/capture-3.png
+---
+<p><strong>『大魔界村』ネオジオ移植版（ファンプロジェクト、開発中）</strong></p>
+<p>カプコンのアーケードゲーム『<em>大魔界村</em>』（1988年、CPS1）を、ファンがネオジオに移植したものです。</p>
+<h3>しくみ</h3>
+<p>オリジナルの68000コードは、ほぼそのままネオジオ上で動いています。CPS1のハードウェアへのアクセスをすべて横取りし、ネオジオのハードウェア向けに変換しています：</p>
+<ul>
+<li>背景はスプライトの列で組み立て直しています。</li>
+<li>パレットとスプライトはリアルタイムで変換しています。</li>
+<li>音楽と効果音はオリジナルから録音し、ADPCMで再生しています。</li>
+</ul>
+<h3>現在の状況</h3>
+<ul>
+<li>全6ステージをプレイできます。</li>
+<li>60fpsで動作します。</li>
+<li>HUDはネオジオの横320pxの画面に合わせて配置し直しています。</li>
+<li>MVS BIOSの設定メニューで、残機、難易度、コンティニュー、開始ステージを設定できます。</li>
+<li>アーケード版と同じ前景の優先順位：有刺鉄線、背の高い草、刃の付いた柱がアーサーや敵の手前に表示されます。</li>
+<li>サウンドの組み込みと場面転換は、まだ仕上げの段階です。</li>
+</ul>
+<h3>既知の制限</h3>
+<ul>
+<li>画面は横384pxから320pxに切り詰めています。</li>
+<li>非常に混み合った場面では、前景レイヤーが数秒間スプライトをキャラクターに譲るため、前景の要素がキャラクターの後ろに回ることがあります。</li>
+<li>ステージ1の嵐の場面は他より動作が遅く、雨が前景の草の手前ではなく奥に描かれます。</li>
+</ul>
+<p><strong>問題やバグを見つけたら、お気軽にお知らせください。</strong></p>

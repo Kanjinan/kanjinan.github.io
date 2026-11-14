@@ -7,7 +7,7 @@ layout: default
 <article class="post">
   {% if jeu %}<a class="chip" href="{{ jeu.url | relative_url }}">{{ jeu.titre }}</a>{% endif %}
   <h1>{{ page.title }}</h1>
-  {% assign mots = content | strip_html | number_of_words %}
+  {% if page.lang == "ja" %}{% assign mots = content | strip_html | strip_newlines | size | divided_by: 2 %}{% else %}{% assign mots = content | strip_html | number_of_words %}{% endif %}
   <p class="meta">{{ page.date | date: t.date_format }} · {{ mots | divided_by: 200 | plus: 1 }} {{ t.read_time }}<span class="vues" data-gc-path="{{ versions | default: page.url }}" hidden> · 👁 <span class="n"></span> {{ t.views }}</span>{% if page.itch %} · <a href="{{ page.itch }}">{{ t.itch_post }}</a>{% endif %}</p>
   <div class="prose">{{ content }}</div>
 </article>

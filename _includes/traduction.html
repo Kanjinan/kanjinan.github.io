@@ -1,9 +1,11 @@
-{%- comment -%} Trouve la page équivalente dans l'autre langue (variable : trad) {%- endcomment -%}
-{%- if page.lang == "en" -%}{%- assign autre = "fr" -%}{%- else -%}{%- assign autre = "en" -%}{%- endif -%}
-{%- assign trad = nil -%}
+{%- comment -%}
+  Trouve les versions de la page dans toutes les langues (variable : versions_lang, une liste de documents).
+  Jeux : même slug. Billets et pages : même ref.
+{%- endcomment -%}
+{%- assign versions_lang = "" | split: "" -%}
 {%- if page.collection == "jeux" -%}
-  {%- assign trad = site.jeux | where: "slug", page.slug | where: "lang", autre | first -%}
+  {%- assign versions_lang = site.jeux | where: "slug", page.slug -%}
 {%- elsif page.ref -%}
-  {%- assign trad = site.posts | where: "ref", page.ref | where: "lang", autre | first -%}
-  {%- unless trad -%}{%- assign trad = site.pages | where: "ref", page.ref | where: "lang", autre | first -%}{%- endunless -%}
+  {%- assign versions_lang = site.posts | where: "ref", page.ref -%}
+  {%- if versions_lang.size == 0 -%}{%- assign versions_lang = site.pages | where: "ref", page.ref -%}{%- endif -%}
 {%- endif -%}

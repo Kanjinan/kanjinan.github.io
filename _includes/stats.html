@@ -18,7 +18,7 @@
       rows.forEach(function (r) { tb.appendChild(r); });
     });
   }
-  var locale = document.documentElement.lang === 'en' ? 'en-US' : 'fr-FR';
+  var locale = { fr: 'fr-FR', en: 'en-US', de: 'de-DE', es: 'es-ES', ja: 'ja-JP' }[document.documentElement.lang] || 'fr-FR';
   function compte(path) {
     // GoatCounter enregistre les chemins sans barre finale (/jeux/x et non /jeux/x/)
     if (path.length > 1) path = path.replace(/\/$/, '');
@@ -27,7 +27,7 @@
       .then(function (d) { return d ? (parseInt(String(d.count).replace(/\D/g, ''), 10) || 0) : null; });
   }
   els.forEach(function (el) {
-    // Plusieurs chemins séparés par « | » (versions FR et EN) : on additionne
+    // Plusieurs chemins séparés par « | » (toutes les langues) : on additionne
     Promise.all(el.dataset.gcPath.split('|').map(compte))
       .then(function (ns) {
         if (ns.every(function (n) { return n === null; })) return;

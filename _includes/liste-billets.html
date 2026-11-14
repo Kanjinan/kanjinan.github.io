@@ -5,7 +5,7 @@
   <li>
     <span class="meta">{{ post.date | date: t.date_format }}{% if jeu %} · {{ jeu.titre }}{% endif %}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="excerpt">{{ post.content | strip_html | truncatewords: 28 }}</div>
+    <div class="excerpt">{% if page.lang == "ja" %}{{ post.content | strip_html | strip_newlines | truncate: 90 }}{% else %}{{ post.content | strip_html | truncatewords: 28 }}{% endif %}</div>
   </li>
 {% endfor %}
 </ul>

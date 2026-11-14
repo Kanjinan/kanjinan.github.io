@@ -1,0 +1,62 @@
+---
+layout: post
+title: "Road Modeをアップデート！"
+date: 2026-10-06 11:38:00 +0000
+jeu: warrior-man
+itch: https://nicoklem.itch.io/warrior-man/devlog/1693853
+ref: "devlog-1693853"
+---
+<h2>ROADモードが形になってきました 🏁</h2>
+<p>『アウトラン』や『Lotus Turbo Challenge』の流れをくむ本格的なアーケードレースモードが、ネオジオで動くようになりました。</p>
+<h3>コース</h3>
+<ul>
+<li><strong>あらかじめ描画した疑似3Dのコース</strong>：『Lotus Turbo Challenge 2』や『ライディングヒーロー』と同じ方式です。100個の固定スプライトのタイルを毎フレーム書き換え、スクロールはパレットの循環で表現しています。60fpsでなめらかなスピード感が出ます。</li>
+<li><strong>カーブと起伏</strong>：コースは丘を越えて上り下りします。上り坂では減速し、下り坂では加速して、急な下りではオーバースピードにもなります。</li>
+<li><strong>奥行きのある沿道</strong>：木、街灯、カーブの標識、看板、雲を、距離に合わせて拡大縮小しています。</li>
+</ul>
+<h3>5つのコース</h3>
+<p><strong>PARIS、ALPES、NEW YORK、DESERT、CITY</strong>。それぞれにコースレイアウト、背景、沿道の風景、チェックポイントがあります。コースの合間には、スコアと次のコースを表示する画面が入ります。</p>
+<h3>ドライブ</h3>
+<ul>
+<li><strong>車かバイク</strong>を選べます。バイクはカーブで車体を傾け、ライバルもバイクに変わります。</li>
+<li><strong>車の色は4色。</strong></li>
+<li><strong>ギア</strong>を画面に表示し、<strong>加速ゲージ</strong>も付いています。</li>
+<li><strong>ターボ</strong>：ぶつからずに最高速度に達すると、スピードメーターが赤く点滅します。Cボタンでターボを発動します。</li>
+<li>カウントダウン中のタイミング次第で<strong>ロケットスタート</strong>。</li>
+</ul>
+<h3>コース上の危険</h3>
+<ul>
+<li><strong>ライバル車</strong>：ぶつかると速度が落ち、横にはじき飛ばされます。</li>
+<li>木、街灯、標識、ゲートの柱への<strong>クラッシュ</strong>。派手な爆発付きです。立て直している間もタイマーは進みます。</li>
+<li>コースをふさぐ<strong>丸太</strong>は<strong>ジャンプ</strong>で飛び越えます。</li>
+<li>アルプスのコースには<strong>岩</strong>。</li>
+<li>コースを外れて草地に入ると減速します。</li>
+</ul>
+<h3>レースとスコア</h3>
+<ul>
+<li>STARTゲートの下から<strong>スタート</strong>。グリッドには女の子、男性、看板が並び、<strong>カウントダウン</strong>もあります。</li>
+<li><strong>1レース2周</strong>で、<strong>チェックポイント</strong>（CHECKの横断幕、最後にGOAL）があります。チェックポイントを通るたびに残り時間が増え、タイマーが0になると<strong>TIME UP</strong>です。</li>
+<li>HUDにレースの<strong>進行バー</strong>を表示。</li>
+<li><strong>スコア</strong>：<ul>
+<li>走った距離に応じて走行ポイントが加算され続けます；</li>
+<li>チェックポイントごとに+1000；</li>
+<li>ゴールで+5000、さらに残り1秒ごとに100；</li>
+<li>最後に<strong>ハイスコア表</strong>とネームエントリー。</li>
+</ul></li>
+</ul>
+<h3>メニューとオプション</h3>
+<ul>
+<li><strong>オプション画面</strong>：<ul>
+<li>難易度 EASY / NORMAL / HARD（ライバルの速さとコースアウトの許容範囲）；</li>
+<li>車種；</li>
+<li>色；</li>
+<li>最初のコース；</li>
+<li><strong>練習モード</strong>（ライバルなしのレース）；</li>
+<li>サウンド：音楽またはエンジン音。</li>
+</ul></li>
+<li><strong>音楽選択</strong>：3曲（パリ、アルプス、ニューヨーク）。</li>
+<li>レース中の<strong>ポーズ</strong>。</li>
+<li>車とバイクが並んで走る<strong>オープニング</strong>。</li>
+<li>HUDはすべてスプライトで表示：速度（km/h）、周回、タイマー、スコア、ギア。</li>
+</ul>
+<p>次は仕上げとバランス調整です！🚗</p>

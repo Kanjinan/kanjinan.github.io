@@ -8,9 +8,9 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: page.excerpt | default: t.description | strip_html | strip_newlines | truncate: 160 }}">
   {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
-  {% if trad %}
-  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
-  <link rel="alternate" hreflang="{{ trad.lang }}" href="{{ trad.url | absolute_url }}">
+  {% if versions_lang.size > 1 %}{% for v in versions_lang %}
+  <link rel="alternate" hreflang="{{ v.lang | default: 'fr' }}" href="{{ v.url | absolute_url }}">{% if v.lang == "fr" or v.lang == nil %}
+  <link rel="alternate" hreflang="x-default" href="{{ v.url | absolute_url }}">{% endif %}{% endfor %}
   {% endif %}
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} – {{ t.rss }}" href="{{ t.feed | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,12 +19,28 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-  {% if page.lang != "en" and trad %}
-  <div class="lang-suggest" id="lang-suggest" hidden>
-    <div class="wrap">{{ t.suggest }} <a href="{{ trad.url | relative_url }}" hreflang="en">{{ t.suggest_link }}</a></div>
-  </div>
+  {% if versions_lang.size > 1 and page.lang == "fr" %}
+  {%- comment -%} Bandeau proposant la langue du navigateur, sur les pages françaises (langue par défaut) {%- endcomment -%}
+  <div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"></div></div>
   <script>
-    try { if (!/^fr/i.test(navigator.language || '')) document.getElementById('lang-suggest').hidden = false; } catch (e) {}
+  (function () {
+    var trads = { {% for v in versions_lang %}{% assign tv = site.data.i18n[v.lang] %}{% if v.lang != page.lang %}{{ v.lang | jsonify }}: { url: {{ v.url | relative_url | jsonify }}, texte: {{ tv.suggest | jsonify }}, lien: {{ tv.suggest_link | jsonify }} },{% endif %}{% endfor %} };
+    try {
+      if (localStorage.getItem('langue-choisie')) return;
+      var prefs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < prefs.length; i++) {
+        var code = String(prefs[i]).slice(0, 2).toLowerCase();
+        if (code === 'fr') return;
+        if (trads[code]) {
+          var box = document.getElementById('lang-suggest'), w = box.firstChild, a = document.createElement('a');
+          w.appendChild(document.createTextNode(trads[code].texte + ' '));
+          a.href = trads[code].url; a.hreflang = a.lang = code; a.textContent = trads[code].lien; a.setAttribute('data-langue', code);
+          w.appendChild(a); box.lang = code; box.hidden = false;
+          return;
+        }
+      }
+    } catch (e) {}
+  })();
   </script>
   {% endif %}
   <header class="site-header">
@@ -37,7 +53,15 @@
         <a href="{{ t.url_files | relative_url }}">{{ t.nav_files }}</a>
         <a href="{{ t.url_stats | relative_url }}">{{ t.nav_stats }}</a>
         <a href="{{ t.url_about | relative_url }}">{{ t.nav_about }}</a>
-        {% if trad %}<a class="lang-switch" href="{{ trad.url | relative_url }}" hreflang="{{ trad.lang }}" lang="{{ trad.lang }}">{% if trad.lang == "en" %}EN{% else %}FR{% endif %}</a>{% endif %}
+        {% if versions_lang.size > 1 %}
+        <details class="lang-menu">
+          <summary aria-label="{{ t.language }}">🌐 {{ page.lang | upcase }}</summary>
+          <ul>
+          {% for code in site.langues %}{% assign v = versions_lang | where: "lang", code | first %}{% if v %}
+            <li><a href="{{ v.url | relative_url }}" hreflang="{{ code }}" lang="{{ code }}" data-langue="{{ code }}"{% if code == page.lang %} aria-current="true"{% endif %}>{{ site.data.i18n[code].lang_name }}</a></li>{% endif %}{% endfor %}
+          </ul>
+        </details>
+        {% endif %}
       </nav>
     </div>
   </header>
@@ -47,5 +71,13 @@
     <span class="vues" data-gc-path="TOTAL" hidden> · <span class="n"></span> {{ t.total_visits }}</span>
   </footer>
   {% include stats.html %}
+  <script>
+  // Mémorise la langue choisie (sélecteur ou bandeau) pour ne plus proposer de changer
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-langue]');
+    if (a) { try { localStorage.setItem('langue-choisie', a.getAttribute('data-langue')); } catch (err) {} }
+    document.querySelectorAll('details.lang-menu[open]').forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
+  });
+  </script>
 </body>
 </html>

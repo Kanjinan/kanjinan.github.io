@@ -18,12 +18,14 @@ giscus:
   repo_id: "R_kgDOVuOIgQ"
   category: Commentaires
   category_id: "DIC_kwDOVuOIgc4DLH49"
+# Langues du site, dans l'ordre du sélecteur (le français est la langue par défaut, à la racine)
+langues: [fr, en, de, es, ja]
 plugins:
   - jekyll-feed
   - jekyll-sitemap
 feed:
   posts_limit: 30
-  categories: [fr, en]
+  categories: [fr, en, de, es, ja]
 collections:
   jeux:
     output: true
@@ -43,4 +45,23 @@ defaults:
     values: { layout: post, lang: en, permalink: "/en/devlog/:year/:month/:title/" }
   - scope: { path: "_jeux/en", type: jeux }
     values: { lang: en, permalink: "/en/games/:name/" }
+  # Allemand, espagnol, japonais : même principe (de/, es/, ja/ et _jeux/de|es|ja/)
+  - scope: { path: "de" }
+    values: { lang: de }
+  - scope: { path: "de", type: posts }
+    values: { layout: post, lang: de, permalink: "/de/devlog/:year/:month/:title/" }
+  - scope: { path: "_jeux/de", type: jeux }
+    values: { lang: de, permalink: "/de/spiele/:name/" }
+  - scope: { path: "es" }
+    values: { lang: es }
+  - scope: { path: "es", type: posts }
+    values: { layout: post, lang: es, permalink: "/es/devlog/:year/:month/:title/" }
+  - scope: { path: "_jeux/es", type: jeux }
+    values: { lang: es, permalink: "/es/juegos/:name/" }
+  - scope: { path: "ja" }
+    values: { lang: ja }
+  - scope: { path: "ja", type: posts }
+    values: { layout: post, lang: ja, permalink: "/ja/devlog/:year/:month/:title/" }
+  - scope: { path: "_jeux/ja", type: jeux }
+    values: { lang: ja, permalink: "/ja/games/:name/" }
 exclude: [README.md]

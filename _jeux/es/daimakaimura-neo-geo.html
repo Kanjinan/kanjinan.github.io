@@ -1,0 +1,44 @@
+---
+layout: jeu
+titre: "Daimakaimura"
+title: "Daimakaimura"
+plateforme: "Neo Geo"
+genre: "Acción"
+statut: En desarrollo
+outil: /fichiers/daimakaimura/GnG_NEO_Builder_1.1.zip
+outil_version: "1.1"
+commentaires: true
+ordre: 4
+resume: "Port hecho por fans de Ghouls'n Ghosts (Capcom, 1988) para Neo Geo: los seis niveles son jugables."
+cover: /images/jeux/daimakaimura-neo-geo/cover.png
+tags: ["2D", "neogeo", "Pixel Art", "Retro"]
+captures:
+  - /images/jeux/daimakaimura-neo-geo/capture-1.png
+  - /images/jeux/daimakaimura-neo-geo/capture-2.png
+  - /images/jeux/daimakaimura-neo-geo/capture-3.png
+---
+<p><strong>Ghouls'n Ghosts, port para Neo Geo (proyecto de fans, en desarrollo)</strong></p>
+<p>Un port hecho por fans del arcade <em>Ghouls'n Ghosts</em> de Capcom (1988, CPS1) para Neo Geo.</p>
+<h3>Cómo funciona</h3>
+<p>El código 68000 original funciona casi sin cambios en la Neo Geo. Cada acceso al hardware CPS1 se intercepta y se traduce al hardware de Neo Geo:</p>
+<ul>
+<li>los fondos se reconstruyen a partir de columnas de sprites;</li>
+<li>las paletas y los sprites se convierten en tiempo real;</li>
+<li>la música y los efectos de sonido se grabaron del original y se reproducen en ADPCM.</li>
+</ul>
+<h3>Estado actual</h3>
+<ul>
+<li>Los seis niveles son jugables.</li>
+<li>El juego funciona a 60 fps.</li>
+<li>El HUD está reorganizado para la pantalla de 320 px de la Neo Geo.</li>
+<li>El menú de ajustes de la BIOS MVS controla las vidas, la dificultad, los continues y el nivel inicial.</li>
+<li>Prioridad del primer plano como en el arcade: las alambradas, la hierba alta y los postes con cuchillas pasan por delante de Arthur y de los enemigos.</li>
+<li>La integración del sonido y las transiciones de escena aún se están puliendo.</li>
+</ul>
+<h3>Limitaciones conocidas</h3>
+<ul>
+<li>La imagen está recortada de 384 a 320 px de ancho.</li>
+<li>En las escenas muy cargadas, la capa de primer plano cede sus sprites a los personajes durante unos segundos, y algunos elementos del primer plano pueden pasar entonces por detrás de ellos.</li>
+<li>La secuencia de la tormenta del nivel 1 va más lenta que el resto del juego, y la lluvia se dibuja detrás de la hierba del primer plano en lugar de delante.</li>
+</ul>
+<p><strong>No dudes en informarme de los problemas o bugs que encuentres.</strong></p>

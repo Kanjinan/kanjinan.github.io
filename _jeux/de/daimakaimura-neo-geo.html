@@ -1,0 +1,44 @@
+---
+layout: jeu
+titre: "Daimakaimura"
+title: "Daimakaimura"
+plateforme: "Neo Geo"
+genre: "Action"
+statut: In Entwicklung
+outil: /fichiers/daimakaimura/GnG_NEO_Builder_1.1.zip
+outil_version: "1.1"
+commentaires: true
+ordre: 4
+resume: "Fan-Portierung von Ghouls'n Ghosts (Capcom, 1988) für das Neo Geo: Alle sechs Stages sind spielbar."
+cover: /images/jeux/daimakaimura-neo-geo/cover.png
+tags: ["2D", "neogeo", "Pixel Art", "Retro"]
+captures:
+  - /images/jeux/daimakaimura-neo-geo/capture-1.png
+  - /images/jeux/daimakaimura-neo-geo/capture-2.png
+  - /images/jeux/daimakaimura-neo-geo/capture-3.png
+---
+<p><strong>Ghouls'n Ghosts, Neo-Geo-Portierung (Fanprojekt, in Entwicklung)</strong></p>
+<p>Eine Fan-Portierung von Capcoms Arcade-Spiel <em>Ghouls'n Ghosts</em> (1988, CPS1) für das Neo Geo.</p>
+<h3>So funktioniert es</h3>
+<p>Der originale 68000-Code läuft fast unverändert auf dem Neo Geo. Jeder Zugriff auf die CPS1-Hardware wird abgefangen und auf die Neo-Geo-Hardware übertragen:</p>
+<ul>
+<li>Die Hintergründe werden aus Sprite-Spalten neu aufgebaut.</li>
+<li>Paletten und Sprites werden in Echtzeit umgewandelt.</li>
+<li>Musik und Soundeffekte wurden vom Original aufgenommen und werden als ADPCM abgespielt.</li>
+</ul>
+<h3>Aktueller Stand</h3>
+<ul>
+<li>Alle sechs Stages sind spielbar.</li>
+<li>Das Spiel läuft mit 60 fps.</li>
+<li>Das HUD ist für den 320 px breiten Bildschirm des Neo Geo neu angeordnet.</li>
+<li>Das Einstellungsmenü des MVS-BIOS regelt Leben, Schwierigkeit, Continues und Start-Stage.</li>
+<li>Vordergrund-Priorität wie am Automaten: Stacheldraht, hohes Gras und Klingenpfähle liegen vor Arthur und den Gegnern.</li>
+<li>Die Einbindung des Sounds und die Szenenübergänge werden noch verfeinert.</li>
+</ul>
+<h3>Bekannte Einschränkungen</h3>
+<ul>
+<li>Das Bild ist von 384 auf 320 px Breite beschnitten.</li>
+<li>In sehr vollen Szenen gibt die Vordergrundebene ihre Sprites für ein paar Sekunden an die Figuren ab, und Elemente des Vordergrunds können dann hinter ihnen erscheinen.</li>
+<li>Die Gewittersequenz in Stage 1 läuft langsamer als der Rest des Spiels, und der Regen wird dort hinter dem Gras im Vordergrund gezeichnet statt davor.</li>
+</ul>
+<p><strong>Meldet mir gern alle Probleme oder Bugs, auf die ihr stoßt.</strong></p>

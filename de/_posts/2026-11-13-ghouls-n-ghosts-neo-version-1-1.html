@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Ghouls'n Ghosts NEO: Version 1.1"
+date: 2026-11-13 17:33:00 +0000
+jeu: daimakaimura-neo-geo
+ref: "devlog-1775499"
+---
+<p>Danke an alle für euer Feedback! Ein Spieler hat die Portierung auf einer AES-Konsole mit einer NeoSD Pro getestet und mehrere Probleme gemeldet. Diese Version behebt sie und verbessert außerdem den AES-Modus.</p>
+<h3>Fehlerbehebungen</h3>
+<ul>
+<li><strong>Credits für Spieler 1</strong>: Bei manchen AES-Setups (Konsole vom BIOS als MVS erkannt) konnte nur Spieler 2 Credits hinzufügen. Das ist behoben.</li>
+<li><strong>Namenseingabe für den Highscore</strong>: Nach einem Game Over konnte man seinen Namen nicht eingeben, und der Countdown lief einfach ab. Der Bildschirm funktioniert jetzt wie am Arcade-Original, mit blinkendem Cursor und hervorgehobenem ausgewähltem Buchstaben. Auch der Text sitzt jetzt richtig: Die oberste Buchstabenreihe ist nicht mehr hinter dem Rahmen verdeckt.</li>
+<li><strong>Ruckler und Flackern in den Feuersequenzen von Stage 2</strong>: Das Sprite-Rendering wurde stark optimiert. Die Feuersequenzen laufen nicht mehr mit halber Geschwindigkeit: Das Spiel läuft dort jetzt mit etwa 83 % der vollen Geschwindigkeit. Sprites, die in diesen Szenen flackerten, fallen nicht mehr aus Platzmangel weg.</li>
+<li><strong>Spiele zu zweit</strong>: Während des Zugs von Spieler 2 las das Spiel Controller 1. Spieler 2 nutzt jetzt Controller 2.</li>
+</ul>
+<h3>Neu im AES-Modus</h3>
+<ul>
+<li><strong>5 Credits pro Spieler</strong> direkt nach dem Einschalten, auf dem Titelbildschirm angezeigt: „CREDIT 05“ unten links für P1 und unten rechts für P2. Jeder Spieler verbraucht seine eigenen Credits, Continues eingeschlossen.</li>
+<li><strong>Neue Arten, ein Spiel zu starten</strong>:<ul>
+<li>START auf Controller 1: Einzelspieler-Partie für Spieler 1;</li>
+<li>START auf Controller 2: Einzelspieler-Partie für Spieler 2, mit der Punktzahl unter PLAYER-2;</li>
+<li>P1 hält START gedrückt, während P2 START drückt: abwechselnde Partie zu zweit, genau wie am Automaten.</li>
+</ul></li>
+<li><strong>C-Taste zum Aufladen der Magie</strong>: Mit eingeschaltetem Dauerfeuer ließ sich die Magie der goldenen Rüstung nicht mehr aufladen. Wer C gedrückt hält, schießt ohne Wiederholung und kann so aufladen. Das Optionsmenü weist jetzt darauf hin.</li>
+</ul>
+<p>Schickt mir weiter euer Feedback, von echter Hardware wie vom MiSTer: Jeder Bericht bringt diese Portierung ein Stück näher an das Arcade-Original!</p>

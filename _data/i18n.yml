@@ -1,4 +1,6 @@
 fr:
+  lang_name: Français
+  language: Langue
   description: Homebrews et portages de fan pour Neo Geo et Mega Drive, avec le journal de développement.
   date_format: "%d/%m/%Y"
   nav_home: Accueil
@@ -40,8 +42,8 @@ fr:
   latest_posts: Derniers billets
   see_all_devlog: "Voir tout le devlog →"
   switch_label: English
-  suggest: "This site is also available in English."
-  suggest_link: "Read in English →"
+  suggest: "Ce site existe aussi en français."
+  suggest_link: "Lire en français →"
   tester_title: Devenir testeur
   tester_p1: "Les versions de test de <strong>%s</strong> sont envoyées en privé aux testeurs, pour NeoSD / MiSTer, Darksoft et BackBit Platinum MVS."
   tester_p2: "Pour en recevoir une, ajoute-moi en ami sur Discord et envoie-moi un message en précisant ton matériel (console AES/MVS, linker, MiSTer…). En échange, je compte sur tes retours : bugs, ralentissements, différences avec l'arcade."
@@ -59,6 +61,8 @@ fr:
   comments_title: Retours des testeurs
   comments_intro: "Bugs, ralentissements, différences avec l'arcade : indiquez votre matériel (console AES/MVS, NeoSD, Darksoft, BackBit, MiSTer, MAME) et l'endroit du jeu. Il faut un compte GitHub (gratuit) pour commenter. Les messages en français comme en anglais sont les bienvenus."
 en:
+  lang_name: English
+  language: Language
   description: Homebrews and fan ports for the Neo Geo and Mega Drive, with the development log.
   date_format: "%b %-d, %Y"
   nav_home: Home
@@ -100,8 +104,8 @@ en:
   latest_posts: Latest posts
   see_all_devlog: "See the whole devlog →"
   switch_label: Français
-  suggest: ""
-  suggest_link: ""
+  suggest: "This site is also available in English."
+  suggest_link: "Read in English →"
   tester_title: Become a tester
   tester_p1: "Test builds of <strong>%s</strong> are sent privately to testers, for NeoSD / MiSTer, Darksoft and BackBit Platinum MVS."
   tester_p2: "To get one, add me as a friend on Discord and send me a message with your hardware (AES/MVS console, flashcart, MiSTer…). In return, I count on your feedback: bugs, slowdowns, differences from the arcade."
@@ -118,3 +122,189 @@ en:
   tool_note: "The ROMs you build are for your personal use: please do not distribute them."
   comments_title: Tester feedback
   comments_intro: "Bugs, slowdowns, differences from the arcade: please mention your hardware (AES/MVS console, NeoSD, Darksoft, BackBit, MiSTer, MAME) and where it happens in the game. A (free) GitHub account is needed to comment. Messages in English or French are welcome."
+de:
+  lang_name: Deutsch
+  language: Sprache
+  description: Homebrews und Fan-Portierungen für Neo Geo und Mega Drive, mit Entwicklungstagebuch.
+  date_format: "%d.%m.%Y"
+  nav_home: Startseite
+  nav_games: Spiele
+  nav_devlog: Devlog
+  nav_files: Dateien
+  nav_stats: Statistiken
+  nav_about: Über mich
+  url_home: /de/
+  url_games: /de/spiele/
+  url_devlog: /de/devlog/
+  url_files: /de/dateien/
+  url_stats: /de/statistiken/
+  url_about: /de/ueber-mich/
+  feed: /feed/de.xml
+  rss: RSS-Feed des Devlogs
+  itch_link: Meine Spiele auf itch.io
+  total_visits: Besuche insgesamt
+  views: Aufrufe
+  read_time: Min. Lesezeit
+  itch_post: Originalbeitrag auf itch.io
+  all_posts: "← Alle Beiträge"
+  all_games: "← Alle Spiele"
+  platform: Plattform
+  genre: Genre
+  status: Status
+  download_clicks: Klicks auf Download
+  post_one: Devlog-Beitrag
+  post_many: Devlog-Beiträge
+  last_on: zuletzt am
+  download_itch: Auf itch.io herunterladen
+  screenshots: Screenshots
+  screenshot: Screenshot
+  of: von
+  video: Video
+  devlog_title: Entwicklungstagebuch
+  devlog_of: Devlog vom
+  my_games: Meine Spiele
+  latest_posts: Neueste Beiträge
+  see_all_devlog: "Zum ganzen Devlog →"
+  switch_label: Deutsch
+  suggest: "Diese Seite gibt es auch auf Deutsch."
+  suggest_link: "Auf Deutsch lesen →"
+  tester_title: Tester werden
+  tester_p1: "Testversionen von <strong>%s</strong> werden privat an Tester verschickt, für NeoSD / MiSTer, Darksoft und BackBit Platinum MVS."
+  tester_p2: "Wenn du eine haben möchtest, füge mich auf Discord als Freund hinzu und schreib mir, welche Hardware du nutzt (AES/MVS-Konsole, Flashcart, MiSTer…). Im Gegenzug zähle ich auf dein Feedback: Bugs, Ruckler, Unterschiede zum Arcade-Original."
+  tester_id: Mein Discord-Name
+  tester_copy: Kopieren
+  tester_copied: "Kopiert ✓"
+  tester_howto: "In Discord: <strong>Freunde</strong> → <strong>Freund hinzufügen</strong> → Namen einfügen."
+  tester_open: Discord öffnen
+  tool_title: Das Spiel erstellen
+  tool_p1: "Das Spiel wird aus <strong>deinem eigenen MAME-Romset</strong> des Arcade-Originals (<code>ghouls.zip</code>) erstellt. Das Tool enthält keine Daten des Originalspiels, nur die Arbeit der Portierung."
+  tool_need: "Du brauchst: Windows, Python 3.9+ und MAME (0.250 oder neuer)."
+  tool_steps: "Lege <code>ghouls.zip</code> in den Ordner des Tools und doppelklicke dann auf <strong>Construire - Build.bat</strong>. Nach ein paar Minuten hast du die Dateien für NeoSD / MiSTer, Darksoft, BackBit und MAME."
+  tool_button: Tool herunterladen
+  tool_note: "Die erstellten ROMs sind nur für deinen persönlichen Gebrauch: Bitte nicht weitergeben."
+  comments_title: Feedback der Tester
+  comments_intro: "Bugs, Ruckler, Unterschiede zum Arcade-Original: Bitte nenne deine Hardware (AES/MVS-Konsole, NeoSD, Darksoft, BackBit, MiSTer, MAME) und die Stelle im Spiel. Zum Kommentieren brauchst du ein (kostenloses) GitHub-Konto. Nachrichten auf Deutsch, Englisch oder Französisch sind willkommen."
+es:
+  lang_name: Español
+  language: Idioma
+  description: Homebrews y ports hechos por fans para Neo Geo y Mega Drive, con el diario de desarrollo.
+  date_format: "%d/%m/%Y"
+  nav_home: Inicio
+  nav_games: Juegos
+  nav_devlog: Devlog
+  nav_files: Archivos
+  nav_stats: Estadísticas
+  nav_about: Acerca de
+  url_home: /es/
+  url_games: /es/juegos/
+  url_devlog: /es/devlog/
+  url_files: /es/archivos/
+  url_stats: /es/estadisticas/
+  url_about: /es/acerca-de/
+  feed: /feed/es.xml
+  rss: Feed RSS del devlog
+  itch_link: Mis juegos en itch.io
+  total_visits: visitas en total
+  views: vistas
+  read_time: min de lectura
+  itch_post: Entrada original en itch.io
+  all_posts: "← Todas las entradas"
+  all_games: "← Todos los juegos"
+  platform: Plataforma
+  genre: Género
+  status: Estado
+  download_clicks: clics en Descargar
+  post_one: entrada del devlog
+  post_many: entradas del devlog
+  last_on: la última el
+  download_itch: Descargar en itch.io
+  screenshots: Capturas de pantalla
+  screenshot: Captura
+  of: de
+  video: Vídeo
+  devlog_title: Diario de desarrollo
+  devlog_of: Devlog del
+  my_games: Mis juegos
+  latest_posts: Últimas entradas
+  see_all_devlog: "Ver todo el devlog →"
+  switch_label: Español
+  suggest: "Este sitio también está disponible en español."
+  suggest_link: "Leer en español →"
+  tester_title: Hazte tester
+  tester_p1: "Las versiones de prueba de <strong>%s</strong> se envían en privado a los testers, para NeoSD / MiSTer, Darksoft y BackBit Platinum MVS."
+  tester_p2: "Para recibir una, agrégame como amigo en Discord y envíame un mensaje indicando tu hardware (consola AES/MVS, flashcart, MiSTer…). A cambio, cuento con tus comentarios: bugs, ralentizaciones, diferencias con el arcade."
+  tester_id: Mi nombre de usuario de Discord
+  tester_copy: Copiar
+  tester_copied: "Copiado ✓"
+  tester_howto: "En Discord: <strong>Amigos</strong> → <strong>Añadir amigo</strong> → pega el nombre de usuario."
+  tester_open: Abrir Discord
+  tool_title: Crear el juego
+  tool_p1: "El juego se crea a partir de <strong>tu propio romset de MAME</strong> del juego arcade original (<code>ghouls.zip</code>). La herramienta no contiene ningún dato del juego original: solo el trabajo del port."
+  tool_need: "Necesitas: Windows, Python 3.9+ y MAME (0.250 o más reciente)."
+  tool_steps: "Coloca <code>ghouls.zip</code> en la carpeta de la herramienta y haz doble clic en <strong>Construire - Build.bat</strong>. En unos minutos obtendrás los archivos para NeoSD / MiSTer, Darksoft, BackBit y MAME."
+  tool_button: Descargar la herramienta
+  tool_note: "Las ROMs que crees son para tu uso personal: por favor, no las distribuyas."
+  comments_title: Comentarios de los testers
+  comments_intro: "Bugs, ralentizaciones, diferencias con el arcade: indica tu hardware (consola AES/MVS, NeoSD, Darksoft, BackBit, MiSTer, MAME) y el lugar del juego. Necesitas una cuenta de GitHub (gratuita) para comentar. Los mensajes en español, inglés o francés son bienvenidos."
+ja:
+  lang_name: 日本語
+  language: 言語
+  description: ネオジオとメガドライブ向けの自作ゲームとファン移植、そして開発日誌。
+  date_format: "%Y年%-m月%-d日"
+  nav_home: ホーム
+  nav_games: ゲーム
+  nav_devlog: 開発日誌
+  nav_files: ファイル
+  nav_stats: 統計
+  nav_about: プロフィール
+  url_home: /ja/
+  url_games: /ja/games/
+  url_devlog: /ja/devlog/
+  url_files: /ja/files/
+  url_stats: /ja/stats/
+  url_about: /ja/about/
+  feed: /feed/ja.xml
+  rss: 開発日誌のRSSフィード
+  itch_link: itch.ioのゲーム一覧
+  total_visits: 累計訪問数
+  views: 閲覧
+  read_time: 分で読めます
+  itch_post: itch.ioの元記事
+  all_posts: "← 記事一覧へ"
+  all_games: "← ゲーム一覧へ"
+  platform: 機種
+  genre: ジャンル
+  status: 状態
+  download_clicks: ダウンロードのクリック数
+  post_one: 件の開発日誌
+  post_many: 件の開発日誌
+  last_on: 最新：
+  download_itch: itch.ioでダウンロード
+  screenshots: スクリーンショット
+  screenshot: スクリーンショット
+  of: ／
+  video: 動画
+  devlog_title: 開発日誌
+  devlog_of: 開発日誌
+  my_games: ゲーム
+  latest_posts: 最新の記事
+  see_all_devlog: "開発日誌をすべて見る →"
+  switch_label: 日本語
+  suggest: "このサイトは日本語でもご覧いただけます。"
+  suggest_link: "日本語で読む →"
+  tester_title: テスターになる
+  tester_p1: "<strong>%s</strong> のテスト版は、NeoSD / MiSTer、Darksoft、BackBit Platinum MVS 向けにテスターへ個別にお送りしています。"
+  tester_p2: "ご希望の方は、Discordでフレンドに追加したうえで、お使いの機材（AES/MVS本体、フラッシュカート、MiSTerなど）を書いてメッセージをください。その代わり、バグや処理落ち、アーケード版との違いなどのフィードバックをお願いします。"
+  tester_id: Discordのユーザー名
+  tester_copy: コピー
+  tester_copied: "コピーしました ✓"
+  tester_howto: "Discordで <strong>フレンド</strong> → <strong>フレンドに追加</strong> → ユーザー名を貼り付けます。"
+  tester_open: Discordを開く
+  tool_title: ゲームのビルド
+  tool_p1: "ゲームは、<strong>ご自身でお持ちのアーケード版のMAME用ROMセット</strong>（<code>ghouls.zip</code>）からビルドします。ツールには元のゲームのデータは一切含まれておらず、移植のために作ったものだけが入っています。"
+  tool_need: "必要なもの：Windows、Python 3.9以上、MAME（0.250以降）。"
+  tool_steps: "<code>ghouls.zip</code> をツールのフォルダに置き、<strong>Construire - Build.bat</strong> をダブルクリックします。数分で NeoSD / MiSTer、Darksoft、BackBit、MAME 用のファイルができあがります。"
+  tool_button: ツールをダウンロード
+  tool_note: "ビルドしたROMは個人での使用に限ります。配布はご遠慮ください。"
+  comments_title: テスターからのフィードバック
+  comments_intro: "バグ、処理落ち、アーケード版との違いなど：お使いの機材（AES/MVS本体、NeoSD、Darksoft、BackBit、MiSTer、MAME）と、ゲーム内の場所を書いてください。コメントには（無料の）GitHubアカウントが必要です。日本語・英語・フランス語のメッセージを歓迎します。"
