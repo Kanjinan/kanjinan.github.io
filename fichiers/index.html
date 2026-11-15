@@ -8,7 +8,7 @@ ref: files
 {% assign outils = site.jeux | where: "lang", page.lang | where_exp: "j", "j.outil" %}
 {% if outils.size > 0 %}
 <h2>Outils pour créer les ROMs</h2>
-<p class="intro">Pour les portages et les ROM hacks, les ROMs ne sont pas téléchargeables : un outil les construit à partir de <strong>votre propre romset MAME</strong> du jeu original. Il ne contient aucune donnée du jeu original. Les prérequis sont indiqués sur la page de chaque jeu.</p>
+<p class="intro">Pour les portages et les ROM hacks, les ROMs ne sont pas téléchargeables : un outil les construit à partir de <strong>vos propres fichiers du jeu original</strong> (romset MAME ou disquettes). Il ne contient aucune donnée du jeu original. Les prérequis sont indiqués sur la page de chaque jeu.</p>
 <ul class="files">
 {% for j in outils %}
   <li><a href="{{ j.outil | relative_url }}" download>{{ j.outil | split: "/" | last }}</a> <span class="meta">· {{ j.titre }} v{{ j.outil_version }} · <a href="{{ j.url | relative_url }}">mode d'emploi</a></span></li>

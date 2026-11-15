@@ -9,7 +9,7 @@ ref: files
 {% assign outils = site.jeux | where: "lang", page.lang | where_exp: "j", "j.outil" %}
 {% if outils.size > 0 %}
 <h2>ROMをビルドするツール</h2>
-<p class="intro">移植作品とROMハックのROMはダウンロードできません。ツールが、<strong>ご自身でお持ちの元のゲームのMAME用ROMセット</strong>からROMをビルドします。ツールには元のゲームのデータは含まれていません。必要な環境は各ゲームのページに記載しています。</p>
+<p class="intro">移植作品とROMハックのROMはダウンロードできません。ツールが、<strong>ご自身でお持ちの元のゲームのファイル</strong>（MAME用ROMセットやディスク）からROMをビルドします。ツールには元のゲームのデータは含まれていません。必要な環境は各ゲームのページに記載しています。</p>
 <ul class="files">
 {% for j in outils %}
   <li><a href="{{ j.outil | relative_url }}" download>{{ j.outil | split: "/" | last }}</a> <span class="meta">· {{ j.titre }} v{{ j.outil_version }} · <a href="{{ j.url | relative_url }}">使い方</a></span></li>

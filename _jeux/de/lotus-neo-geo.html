@@ -2,26 +2,45 @@
 layout: jeu
 titre: "Lotus Neo"
 title: "Lotus Neo"
-plateforme: "Neo Geo"
+plateforme: "Neo Geo (MVS/AES)"
 genre: "Rennspiel"
-statut: In Entwicklung
+statut: Verfügbar (Version 1.0)
+outil: /fichiers/lotus-neo-geo/LotusNeo_Builder_1.0.zip
+outil_version: "1.0"
+outil_p1: "Das Spiel wird aus <strong>deinen eigenen Amiga-Disketten von Lotus III</strong> erstellt (die 2 ADF-Dateien der TOSEC-Version <code>[cr FLT - Crack Inc]</code>, als <code>.adf</code> oder <code>.zip</code>). Das Tool enthält keine Daten des Originalspiels, nur meine eigene Arbeit."
+outil_need: "Du brauchst: Windows, Python 3.9+ und das Neo-Geo-BIOS von MAME (<code>neogeo.zip</code>) für die Schrift des BIOS."
+outil_steps: "Lege die 2 Disketten und <code>neogeo.zip</code> in den Ordner des Tools und doppelklicke dann auf <strong>Construire - Build.bat</strong>. Nach etwa einer Minute hast du die Dateien für NeoSD / MiSTer, Darksoft, BackBit und MAME."
 commentaires: true
 ordre: 1
-resume: "Fan-Portierung von Lotus III: The Ultimate Challenge für das Neo Geo, mit Pseudo-3D-Strecke in 60 fps."
+resume: "Lotus III: The Ultimate Challenge (Amiga, 1992) auf dem Neo Geo: Meisterschaft mit 3 Stufen, der originale RECS-Streckengenerator, 13 Kulissen und Splitscreen für 2 Spieler."
 cover: /images/jeux/lotus-neo-geo/cover.png
+tags: ["pseudo-3D", "neogeo", "Lotus", "Amiga", "Rennspiel"]
+captures:
+  - /images/jeux/lotus-neo-geo/capture-1.png
+  - /images/jeux/lotus-neo-geo/capture-2.png
+  - /images/jeux/lotus-neo-geo/capture-3.png
+  - /images/jeux/lotus-neo-geo/capture-4.png
 ---
-<p><strong>LOTUS NEO</strong>: eine Lotus-III-Rennengine für das Neo Geo.</p>
-<p>Eine Fan-Portierung des Amiga-Klassikers <em>Lotus III: The Ultimate Challenge</em> für das Neo Geo. Das Spiel wurde von Grund auf in C und 68000-Assembler neu geschrieben, auf Basis der Daten des Originalspiels.</p>
-<h3>Features</h3>
+<p><strong>Lotus Neo: Lotus III auf dem Neo Geo, mit Meisterschaft und unendlich vielen Strecken.</strong></p>
+<p>Eine Fan-Portierung des Amiga-Klassikers <em>Lotus III: The Ultimate Challenge</em> (Magnetic Fields / Gremlin, 1992) für das Neo Geo. Das Spiel wurde von Grund auf in C und 68000-Assembler neu geschrieben, auf Basis der Daten und des Codes des Originalspiels: Physik, Gegner-KI und Streckengenerator stammen aus Lotus III.</p>
+<h3>Inhalt</h3>
 <ul>
-<li>Schnelle Pseudo-3D-Strecke mit zeilenweisem Raster-Effekt, flüssig in 60 fps</li>
-<li>Die 7 Rennen der Meisterschaft auf Level 1, jedes mit eigener Kulisse: Futureworld, Rally, Motorway, Wind, Mountain, Forest, Storm</li>
-<li>3 Autos zur Wahl: Esprit Turbo SE, Elan SE, M200</li>
-<li>Meisterschaftsmodus mit dem originalen Punkte- und Qualifikationssystem, oder Einzelrennen</li>
-<li>6 KI-Gegner, die überholen, blockieren und rempeln, mit den originalen Parodie-Fahrernamen</li>
-<li>Originale Titelbildschirme, Auto- und Streckenauswahl, Panorama-Horizonte und Kulissen am Streckenrand</li>
-<li>Originaler ProTracker-Soundtrack, dazu Soundeffekte für Motor, Unfälle, Schleudern und Überholen</li>
+<li><strong>Pseudo-3D-Strecke</strong>, Zeile für Zeile gezeichnet (Raster-Effekt), mit echten Kurven, Hügeln und einem Horizont, der der Strecke folgt: konstante 30 fps im Rennen (das Original lief mit 25), 20 fps zu zweit.</li>
+<li><strong>3 Autos</strong>: Esprit Turbo SE, Elan SE und M200, mit Automatik oder manuellem 5-Gang-Getriebe.</li>
+<li><strong>Meisterschaft</strong> über 3 Stufen (7, 10 und 15 Rennen) mit den originalen Punkten, Qualifikation, Treibstoff und Boxenstopps, oder Einzelrennen gegen die Uhr.</li>
+<li><strong>RECS</strong>: Der originale Streckengenerator läuft unverändert auf dem 68000 des Neo Geo. Gib einen Code ein oder stelle die Regler ein, um eine neue Strecke zu erstellen, und speichere bis zu 9 Codes (DEFINE).</li>
+<li><strong>13 Kulissen</strong>: Wald, Nacht, Nebel, Schnee, Wüste, Autobahn, Sumpf, Gewitter, Baustelle, Rallye, Wind, Futureworld und Gebirge, mit Tunneln, Turbozonen, Sprüngen, Furten, Verkehr auf der Autobahn, Blitzen, Schnee und Regen.</li>
+<li><strong>2 Spieler</strong> im Splitscreen, im Einzelrennen wie in der Meisterschaft.</li>
+<li>19 Gegner mit den originalen Parodie-Fahrernamen.</li>
+<li>Originales Intro, Menüs und Bildschirme, Demo-Modus, Highscores werden auf dem MVS gespeichert.</li>
+<li><strong>Originaler Soundtrack</strong>: die ProTracker-Module, für das Neo Geo umgewandelt, das Autoradio zur Wahl der Musik und alle Soundeffekte.</li>
 </ul>
-<p><strong>Steuerung:</strong> A = Gas, B = Bremse, Steuerkreuz = lenken. A oder START bestätigt in den Menüs, B geht zurück.</p>
-<p>Läuft auf MAME, MiSTer und NeoSD (.neo-Datei).</p>
-<p><em>Inoffizielles Fanprojekt ohne Verbindung zu den Rechteinhabern von Lotus III.</em></p>
+<h3>Steuerung</h3>
+<p>Steuerkreuz = lenken, A = Gas, B = Bremse, C / D = hoch- / runterschalten, START = Pause. In den Menüs bestätigt A oder START, B geht zurück.</p>
+<h3>Installation</h3>
+<p>Das Spiel wird nicht als ROM verteilt: Ein Tool erstellt es aus deinen Amiga-Disketten von Lotus III (siehe unten). Es erzeugt die Dateien für NeoSD / MiSTer, MAME, Darksoft und BackBit Platinum MVS. Läuft auf MAME, MiSTer und NeoSD.</p>
+<h3>Hinweise</h3>
+<ul>
+<li>Inoffizielles Fanprojekt ohne Verbindung zu den Rechteinhabern von Lotus III. <em>Lotus III: The Ultimate Challenge</em> © 1992 Magnetic Fields / Gremlin Graphics.</li>
+<li>Einen Fehler gefunden, eine Idee? Schreib es mir in die Kommentare.</li>
+</ul>

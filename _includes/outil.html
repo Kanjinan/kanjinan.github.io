@@ -1,9 +1,9 @@
 {% assign t = site.data.i18n[page.lang] %}
 <section class="outil">
   <h2>🛠️ {{ t.tool_title }}</h2>
-  <p>{{ t.tool_p1 | replace: "%s", page.outil_romset }}</p>
-  <p>{% if page.outil_mame %}{{ t.tool_need_mame }}{% else %}{{ t.tool_need }}{% endif %}</p>
-  <p>{{ t.tool_steps | replace: "%s", page.outil_romset }}</p>
+  <p>{% if page.outil_p1 %}{{ page.outil_p1 }}{% else %}{{ t.tool_p1 | replace: "%s", page.outil_romset }}{% endif %}</p>
+  <p>{% if page.outil_need %}{{ page.outil_need }}{% elsif page.outil_mame %}{{ t.tool_need_mame }}{% else %}{{ t.tool_need }}{% endif %}</p>
+  <p>{% if page.outil_steps %}{{ page.outil_steps }}{% else %}{{ t.tool_steps | replace: "%s", page.outil_romset }}{% endif %}</p>
   <p><a class="button" href="{{ page.outil | relative_url }}" download data-goatcounter-click="outil-{{ page.slug }}" data-goatcounter-title="Outil {{ page.titre }} {{ page.outil_version }}">⬇ {{ t.tool_button }} (v{{ page.outil_version }})</a>
   <span class="vues" data-gc-path="outil-{{ page.slug }}" hidden>· <span class="n"></span> {{ t.download_clicks | downcase }}</span></p>
   <p class="meta">{{ t.tool_note }}</p>
