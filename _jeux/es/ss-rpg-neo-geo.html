@@ -4,7 +4,12 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "Neo Geo (MiSTer)"
 genre: "RPG / Aventura"
-statut: En desarrollo
+statut: Disponible (versión 1.0)
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.0.zip
+outil_version: "1.0"
+outil_p1: "El juego se crea a partir de <strong>tu propia imagen del CD japonés</strong> (dump de Redump: <code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> y sus 32 archivos <code>.bin</code>). La herramienta no contiene ningún dato del juego original: solo mi trabajo (código del port, traducciones, fuente, iconos)."
+outil_need: "Necesitas: Windows, Python 3.9+ (64 bits) y alrededor de 1 GB de memoria libre."
+outil_steps: "Coloca el <code>.cue</code> y sus <code>.bin</code> en la carpeta de la herramienta y haz doble clic en <strong>Construire - Build.bat</strong>. En un minuto aproximadamente obtendrás el archivo <code>.neo</code> para MiSTer."
 commentaires: true
 ordre: 3
 resume: "El RPG de Samurai Shodown de Neo Geo CD reconstruido como ROM de cartucho, traducido al francés, inglés y español."
@@ -33,7 +38,7 @@ captures:
 <ul>
 <li><strong>Sin voces en la historia</strong>: no queda espacio para ellas en la ROM de sonido.</li>
 <li>En la pantalla <strong>«Battle mode»</strong>, las dos opciones son una imagen que sigue en japonés. El texto que las explica está traducido.</li>
-<li>El proyecto <strong>sigue en desarrollo</strong>: informa de cualquier bug o bloqueo indicando el personaje y el lugar.</li>
+<li>¿Un bug o un bloqueo? Cuéntamelo en los comentarios indicando el personaje y el lugar.</li>
 </ul>
 <h3>Requisitos</h3>
 <ul>
@@ -42,5 +47,7 @@ captures:
 <li><strong>Módulo SDRAM de 128 MB</strong></li>
 <li>Tamaño de la ROM: 16 MB de programa, 65 MB de sprites, 16 MB de efectos de sonido y 16 MB de música (un archivo .neo de unos 119 MB)</li>
 </ul>
+<h3>Instalación</h3>
+<p>La ROM no se distribuye: una herramienta la crea a partir de tu imagen del CD de Neo Geo (ver más abajo). Genera el archivo <code>.neo</code> de 119 MB que se copia en <code>games/NeoGeo</code> en la tarjeta SD del MiSTer.</p>
 <h3>Aviso legal</h3>
 <p>Proyecto de fans sin ánimo de lucro, sin relación con SNK ni respaldado por SNK. <em>Samurai Spirits</em> y <em>Samurai Shodown</em> son © SNK. Por favor, no vendáis repros hechas a partir de este trabajo.</p>

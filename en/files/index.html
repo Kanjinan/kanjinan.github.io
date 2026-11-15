@@ -8,7 +8,7 @@ ref: files
 {% assign outils = site.jeux | where: "lang", page.lang | where_exp: "j", "j.outil" %}
 {% if outils.size > 0 %}
 <h2>Tools to build the ROMs</h2>
-<p class="intro">For the ports and ROM hacks, the ROMs are not available for download: a tool builds them from <strong>your own files of the original game</strong> (MAME romset or disks). It contains no data from the original game. The requirements are listed on each game's page.</p>
+<p class="intro">For the ports and ROM hacks, the ROMs are not available for download: a tool builds them from <strong>your own files of the original game</strong> (MAME romset, disks or CD). It contains no data from the original game. The requirements are listed on each game's page.</p>
 <ul class="files">
 {% for j in outils %}
   <li><a href="{{ j.outil | relative_url }}" download>{{ j.outil | split: "/" | last }}</a> <span class="meta">· {{ j.titre }} v{{ j.outil_version }} · <a href="{{ j.url | relative_url }}">instructions</a></span></li>

@@ -4,7 +4,12 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "ネオジオ（MiSTer）"
 genre: "RPG / アドベンチャー"
-statut: 開発中
+statut: 公開中（バージョン1.0）
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.0.zip
+outil_version: "1.0"
+outil_p1: "ゲームは、<strong>ご自身でお持ちの日本版CDのイメージ</strong>（Redump形式：<code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> と32個の <code>.bin</code> ファイル）からビルドします。ツールには元のゲームのデータは一切含まれておらず、私が作ったもの（移植用のコード、翻訳、フォント、アイコン）だけが入っています。"
+outil_need: "必要なもの：Windows、Python 3.9以上（64ビット）、約1GBの空きメモリ。"
+outil_steps: "<code>.cue</code> と <code>.bin</code> をツールのフォルダに置き、<strong>Construire - Build.bat</strong> をダブルクリックします。1分ほどでMiSTer用の <code>.neo</code> ファイルができあがります。"
 commentaires: true
 ordre: 3
 resume: "ネオジオCDの『真説サムライスピリッツ 武士道烈伝』をカートリッジ用ROMとして再構築し、フランス語・英語・スペイン語に翻訳。"
@@ -33,7 +38,7 @@ captures:
 <ul>
 <li><strong>ストーリーのボイスはなし</strong>：サウンドROMに空きがありません。</li>
 <li><strong>「Battle mode」</strong>画面の2つの選択肢は画像のため、日本語のままです。説明文は翻訳済みです。</li>
-<li>本プロジェクトは<strong>まだ開発中</strong>です。バグやフリーズを見つけたら、キャラクターと場所を添えてお知らせください。</li>
+<li>バグやフリーズを見つけたら、キャラクターと場所を添えてコメントでお知らせください。</li>
 </ul>
 <h3>動作環境</h3>
 <ul>
@@ -42,5 +47,7 @@ captures:
 <li><strong>128MBのSDRAMモジュール</strong></li>
 <li>ROMサイズ：プログラム16MB、スプライト65MB、効果音16MB、音楽16MB（約119MBの.neoファイル）</li>
 </ul>
+<h3>インストール</h3>
+<p>ROMは配布していません。ツールが、お持ちのネオジオCDのイメージからROMをビルドします（下記参照）。できあがる119MBの <code>.neo</code> ファイルを、MiSTerのSDカードの <code>games/NeoGeo</code> にコピーしてください。</p>
 <h3>法的事項</h3>
 <p>非営利のファンプロジェクトであり、SNKとは関係なく、SNKの承認も受けていません。『<em>サムライスピリッツ</em>』は© SNKです。本作をもとにしたリプロの販売はご遠慮ください。</p>
