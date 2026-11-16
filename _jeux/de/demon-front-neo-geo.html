@@ -1,0 +1,38 @@
+---
+layout: jeu
+titre: "Demon Front Neo"
+title: "Demon Front Neo"
+plateforme: "Neo Geo (MVS/AES)"
+genre: "Run and Gun"
+statut: In Entwicklung
+commentaires: true
+ordre: 1
+resume: "Fan-Portierung von Demon Front (IGS, 2002, PGM) auf das Neo Geo, neu aufgebaut aus Code und Daten des Originalspiels."
+cover: /images/jeux/demon-front-neo-geo/cover.png
+tags: ["2D", "igs", "neogeo", "PGM", "Pixel Art"]
+captures:
+  - /images/jeux/demon-front-neo-geo/capture-1.png
+  - /images/jeux/demon-front-neo-geo/capture-2.png
+  - /images/jeux/demon-front-neo-geo/capture-3.png
+  - /images/jeux/demon-front-neo-geo/capture-4.png
+  - /images/jeux/demon-front-neo-geo/capture-5.png
+---
+<p><strong>Demon Front Neo: das Run and Gun von IGS auf dem Neo Geo (Fanprojekt, in Entwicklung)</strong></p>
+<p>Eine Fan-Portierung von <em>Demon Front</em> (IGS, 2002), dem Run and Gun der PGM-Arcadeplatine, auf das Neo Geo (MVS/AES), geschrieben in C und 68000-Assembler.</p>
+<h3>So funktioniert es</h3>
+<p>Auf der PGM läuft das gesamte Spiel (Logik, KI, Level, Animationen) auf einem geschützten ARM7-Prozessor. Der 68000 dient nur als Grafik- und Soundserver: In jedem Frame führt er die Befehlsliste aus, die ihm der ARM schickt.</p>
+<p>Die Portierung spielt keine Aufnahmen ab, sondern übernimmt die Original-Engine. Der ARM-Code (533 Funktionen) und das 68000-Programm wurden disassembliert und entschlüsselt und dann für das Neo Geo in C umgesetzt. Grafiken (über 22.000 Einzelbilder), Paletten, Animationen, Level-Skripte, Gegnerverhalten und Sounds werden direkt aus den ROMs des Spiels konvertiert. MAME dient nur noch dazu, Frame für Frame zu prüfen, dass sich die Portierung wie das Original verhält.</p>
+<h3>Bereits umgesetzt</h3>
+<ul>
+<li>Die originale Bildschirmabfolge: IGS-Logo, Story, Titelbild und Demos</li>
+<li>Heldenauswahl (HERO CHOOSE) und Stage-Auswahl (SELECT STAGE)</li>
+<li>Die erste Stage, spielbar, mit HUD, Waffen, Power-ups, Combo-Zähler und Bossen</li>
+<li>Die Bildschirme für Stage-Ende, CONTINUE und GAME OVER</li>
+<li>Die Originalmusik und -soundeffekte</li>
+</ul>
+<h3>Hinweise</h3>
+<ul>
+<li>Fanprojekt, nicht mit IGS verbunden und nicht von IGS genehmigt. <em>Demon Front</em> ist © IGS.</li>
+<li>Wie bei meinen anderen Portierungen werden keine Daten des Originalspiels verbreitet: Du brauchst dein eigenes Romset.</li>
+<li>Fragen oder Anmerkungen? Schreib sie in die Kommentare.</li>
+</ul>

@@ -1,0 +1,38 @@
+---
+layout: jeu
+titre: "Demon Front Neo"
+title: "Demon Front Neo"
+plateforme: "ネオジオ（MVS/AES）"
+genre: "ラン&ガン"
+statut: 開発中
+commentaires: true
+ordre: 1
+resume: "IGSの『デーモンフロント』（2002年、PGM）を、オリジナルのコードとデータからネオジオ用に再構築するファン移植。"
+cover: /images/jeux/demon-front-neo-geo/cover.png
+tags: ["2D", "igs", "neogeo", "PGM", "Pixel Art"]
+captures:
+  - /images/jeux/demon-front-neo-geo/capture-1.png
+  - /images/jeux/demon-front-neo-geo/capture-2.png
+  - /images/jeux/demon-front-neo-geo/capture-3.png
+  - /images/jeux/demon-front-neo-geo/capture-4.png
+  - /images/jeux/demon-front-neo-geo/capture-5.png
+---
+<p><strong>Demon Front Neo：IGSのラン&amp;ガンをネオジオで（ファンプロジェクト、開発中）</strong></p>
+<p>PGM基板のラン&amp;ガン『<em>デーモンフロント</em>』（IGS、2002年）を、C言語と68000アセンブリでネオジオ（MVS/AES）に移植するファンプロジェクトです。</p>
+<h3>しくみ</h3>
+<p>PGMでは、ゲーム全体（ロジック、AI、ステージ、アニメーション）がプロテクト付きのARM7プロセッサで動いています。68000は表示とサウンドを担当するだけで、毎フレームARMから送られるコマンドリストを実行します。</p>
+<p>この移植は録画の再生ではなく、オリジナルのエンジンをそのまま受け継いでいます。ARMのコード（533関数）と68000のプログラムを逆アセンブル・解析し、ネオジオ用にC言語で書き直しました。グラフィック（22,000枚以上）、パレット、アニメーション、ステージスクリプト、敵の挙動、サウンドはゲームのROMから直接変換しています。MAMEは、移植版がオリジナルと同じ動きをするかを1フレームずつ確認するためだけに使っています。</p>
+<h3>実装済み</h3>
+<ul>
+<li>オリジナルの画面の流れ：IGSロゴ、ストーリー、タイトル画面、デモ</li>
+<li>キャラクター選択（HERO CHOOSE）とステージ選択（SELECT STAGE）</li>
+<li>最初のステージ（プレイ可能）：HUD、武器、アイテム、コンボ、ボス</li>
+<li>ステージクリア、CONTINUE、GAME OVERの各画面</li>
+<li>オリジナルの音楽と効果音</li>
+</ul>
+<h3>注意</h3>
+<ul>
+<li>IGSとは無関係のファンプロジェクトであり、IGSの承認を受けたものではありません。『<em>デーモンフロント</em>』© IGS</li>
+<li>ほかの移植と同じく、オリジナルのゲームデータは配布しません。ご自身のromsetが必要になります。</li>
+<li>ご質問やご意見は、コメント欄へどうぞ。</li>
+</ul>
