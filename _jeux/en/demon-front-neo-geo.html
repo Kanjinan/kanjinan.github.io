@@ -24,12 +24,33 @@ captures:
 <p>The port does not replay recordings: it carries over the original engine. The ARM code (533 functions) and the 68000 program were disassembled and decoded, then rewritten in C for the Neo Geo. Graphics (more than 22,000 frames), palettes, animations, level scripts, enemy behaviour and sounds are converted directly from the game's ROMs. MAME is only used to check, frame by frame, that the port behaves like the original.</p>
 <h3>Already working</h3>
 <ul>
-<li>The original screen sequence: IGS logo, story, title screen and demos</li>
-<li>Hero selection (HERO CHOOSE) and stage selection (SELECT STAGE)</li>
-<li>The first stage, playable, with its HUD, weapons, power-ups, combo counter and bosses</li>
-<li>The stage clear, CONTINUE and GAME OVER screens</li>
-<li>The original music and sound effects</li>
+<li>The original screen sequence: IGS logo, story, title screen, demos, HOW TO PLAY and hero ranking</li>
+<li>All six stages and their bosses, with the original SELECT STAGE screen between them</li>
+<li>The four heroes (HERO CHOOSE), each with their animal companion (follow, charge attack, armour mode, super mode)</li>
+<li>Special weapons and their ammo, basic shot power levels and items dropped by enemies</li>
+<li>Score, combo, lives, and the STAGE CLEAR, CONTINUE and GAME OVER screens</li>
+<li>The ending cinematic and the staff roll</li>
+<li>A title menu with OPTIONS: autofire, number of lives (1 to 9), language (English or Japanese)</li>
+<li>Pause on AES (START)</li>
+<li>The original music and the game's 193 sound effects, at the same volume levels as the original</li>
 </ul>
+<h3>Controls</h3>
+<ul>
+<li>Joystick: move / crouch / aim</li>
+<li>A: shoot (hold to charge your companion's attack)</li>
+<li>B: jump</li>
+<li>C: companion armour mode</li>
+<li>D: charge your companion's attack when autofire is on</li>
+<li>START: start / confirm / pause (AES)</li>
+</ul>
+<h3>Still to do</h3>
+<ul>
+<li>Two-player mode (player 2 HUD and camera, enemy targeting)</li>
+<li>Difficulty in OPTIONS, name entry and the other ranking modes</li>
+<li>Performance: a few stages still slow down in busy scenes</li>
+<li>The last display glitches on MiSTer</li>
+</ul>
+<p>The port is tested in MAME and on MiSTer; it hasn't been tried on real hardware yet.</p>
 <h3>Notes</h3>
 <ul>
 <li>Fan project, not affiliated with or endorsed by IGS. <em>Demon Front</em> is © IGS.</li>

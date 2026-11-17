@@ -24,12 +24,33 @@ captures:
 <p>Le portage ne rejoue pas des captures : il reprend le moteur d'origine. Le code ARM (533 fonctions) et le programme 68000 ont été désassemblés et décodés, puis transposés en C pour la Neo Geo. Les graphismes (plus de 22 000 images), les palettes, les animations, les scripts de niveau, les comportements des ennemis et les sons sont convertis directement depuis les ROM du jeu. MAME ne sert plus qu'à vérifier, image par image, que le portage se comporte comme l'original.</p>
 <h3>Déjà en place</h3>
 <ul>
-<li>La séquence d'écrans d'origine : logo IGS, histoire, écran titre et démos</li>
-<li>Le choix du héros (HERO CHOOSE) et de l'étape (SELECT STAGE)</li>
-<li>Le premier stage jouable, avec son HUD, les armes, les bonus, le combo et les boss</li>
-<li>Les écrans de fin d'étape, CONTINUE et GAME OVER</li>
-<li>La musique et les bruitages d'origine</li>
+<li>La séquence d'écrans d'origine : logo IGS, histoire, écran titre, démos, HOW TO PLAY et classement des héros</li>
+<li>Les six étapes et leurs boss, avec l'écran SELECT STAGE d'origine entre chacune</li>
+<li>Les quatre héros (HERO CHOOSE), chacun avec son animal de compagnie (suivi, attaque chargée, mode armure, mode super)</li>
+<li>Les armes spéciales et leurs munitions, les niveaux du tir de base et les bonus lâchés par les ennemis</li>
+<li>Le score, le combo, les vies, les écrans STAGE CLEAR, CONTINUE et GAME OVER</li>
+<li>La cinématique de fin et le générique</li>
+<li>Un menu titre avec OPTIONS : tir automatique, nombre de vies (1 à 9), langue (anglais ou japonais)</li>
+<li>La pause sur AES (START)</li>
+<li>La musique d'origine et les 193 bruitages du jeu, au même niveau sonore que l'original</li>
 </ul>
+<h3>Commandes</h3>
+<ul>
+<li>Joystick : déplacement / s'accroupir / viser</li>
+<li>A : tir (maintenu : charge l'attaque de l'animal)</li>
+<li>B : saut</li>
+<li>C : mode armure de l'animal</li>
+<li>D : charge l'attaque de l'animal quand le tir automatique est activé</li>
+<li>START : commencer / valider / pause (AES)</li>
+</ul>
+<h3>Encore à faire</h3>
+<ul>
+<li>Le jeu à deux joueurs (HUD et caméra du joueur 2, ciblage par les ennemis)</li>
+<li>La difficulté dans OPTIONS, la saisie du nom et les autres modes du classement</li>
+<li>Les performances : quelques étapes ralentissent encore dans les scènes chargées</li>
+<li>Les derniers parasites d'affichage sur MiSTer</li>
+</ul>
+<p>Le portage est testé sous MAME et sur MiSTer ; il n'a pas encore été essayé sur le vrai matériel.</p>
 <h3>Notes</h3>
 <ul>
 <li>Projet de fan, sans lien avec IGS ni approuvé par IGS. <em>Demon Front</em> est © IGS.</li>
