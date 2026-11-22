@@ -1,0 +1,48 @@
+---
+layout: jeu
+titre: "Lotus 1 Neo"
+title: "Lotus 1 Neo"
+plateforme: "ネオジオ（MVS/AES）"
+genre: "レース"
+statut: 開発中
+commentaires: true
+ordre: 1
+resume: "『Lotus Esprit Turbo Challenge』（アミガ、1990年）をAGA版のグラフィックでネオジオに。全32コース、3レベルのチャンピオンシップ、ピットストップ、2人同時の画面分割プレイ。"
+cover: /images/jeux/lotus-1-neo-geo/cover.png
+tags: ["pseudo-3D", "neogeo", "Lotus", "Amiga", "AGA", "レース"]
+captures:
+  - /images/jeux/lotus-1-neo-geo/capture-1.png
+  - /images/jeux/lotus-1-neo-geo/capture-2.png
+  - /images/jeux/lotus-1-neo-geo/capture-3.png
+  - /images/jeux/lotus-1-neo-geo/capture-4.png
+  - /images/jeux/lotus-1-neo-geo/capture-5.png
+  - /images/jeux/lotus-1-neo-geo/capture-6.png
+---
+<p><strong>Lotus 1 Neo：初代ロータスをネオジオで（ファンプロジェクト、開発中）</strong></p>
+<p><a href="/jp/games/lotus-neo-geo/">Lotus Neo</a>（Lotus III）に続いて、シリーズ第1作『<em>Lotus Esprit Turbo Challenge</em>』（Magnetic Fields / Gremlin、1990年）を同じエンジンでネオジオに移植しています。C言語と68000アセンブリで書かれています。コース、レースのルール、テキスト、音楽はオリジナルのアミガ版から、グラフィックはAGA版（256色）のものです。</p>
+<h3>実装済み</h3>
+<ul>
+<li>ゲームの<strong>全32コース</strong>と練習コース。カーブ、起伏、色、周回数はオリジナルどおり。</li>
+<li>3レベル（7、10、15レース）の<strong>チャンピオンシップ</strong>：20台、逆順グリッド、オリジナルのポイントと上位10位以内の予選通過。アミガ版と同じく、コースが進むごとにライバルが速くなります。</li>
+<li><strong>燃料とピットストップ</strong>。AGA版のガレージ画面とメカニックのアニメーション付き。</li>
+<li>AGA版と同じく、<strong>1人プレイは全画面、2人プレイは画面分割</strong>。</li>
+<li>エスプリ・ターボSE（オートマチック／マニュアル）と、Lotus 1 のメーター（ギア、速度、回転数、燃料、順位、周回）。</li>
+<li>AGA版の背景パノラマ、沿道のオブジェクト、車、ゲート。</li>
+<li>オリジナルの演出すべて：ロゴ、ヘッドライトが点くエスプリ、回転するエスプリ付きの諸元表、3レベルのハイスコア、各レース前のコース紹介、結果、順位表、ライセンス番号付きのシーズン終了画面、名前入力。</li>
+<li><strong>オリジナルのサウンド</strong>：ゲームの全5曲、レース中に曲を選べるカーラジオ（00番ではチューニングの合っていないラジオのノイズ）、効果音、エンジン音。</li>
+<li>MVSではハイスコアを保存（Lotus Neo とは別）。</li>
+</ul>
+<h3>操作方法</h3>
+<p>十字キー左右＝ハンドル、A＝アクセル（Game Options で上キーにも変更可）、Bまたは下＝ブレーキ、C／D＝シフトアップ／ダウン、START＝ポーズ。</p>
+<h3>今後の予定</h3>
+<ul>
+<li>MiSTer での完全なテスト（画面、サウンド、通しプレイ）。MAME（MVS BIOS、UniBIOS）ではすでに動作しています。</li>
+<li>Lotus 1 独自の挙動と道幅、道路の細かい部分。</li>
+<li>他の移植作と同じく、ビルドツールの用意。</li>
+</ul>
+<h3>注意</h3>
+<ul>
+<li>非公式のファンプロジェクトであり、ロータスの権利者とは関係ありません。<em>Lotus Esprit Turbo Challenge</em> © 1990 Magnetic Fields / Gremlin Graphics.</li>
+<li>他の移植作と同じく、オリジナルのゲームのデータは配布しません。ゲームはお手持ちのファイルからビルドする形になります。</li>
+<li>質問や感想があれば、コメントでお知らせください。</li>
+</ul>
