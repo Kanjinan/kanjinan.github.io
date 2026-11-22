@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Samurai Spirits RPG 1.1: música del 2.º escenario y tiendas corregidas"
+date: 2026-11-22 18:00:00 +0000
+jeu: ss-rpg-neo-geo
+ref: "ssrpg-1-1"
+---
+<p>Una actualización de mi conversión a cartucho del RPG de Samurai Shodown de Neo Geo CD: <strong>Samurai Spirits RPG 1.1</strong> ya está disponible. ¡Gracias al tester que avisó de los dos primeros fallos!</p>
+<h3>Novedades</h3>
+<ul>
+<li><strong>La música del 2.º escenario por fin suena.</strong> El juego esperaba un archivo de sonido que solo cargaba el CD, y de paso se saltaba el envío de la música. Este fallo afectaba a todas las plataformas, MiSTer incluida.</li>
+<li><strong>Las tiendas ya no se quedan congeladas.</strong> Las frases traducidas de los tenderos, más largas que las japonesas, saturaban el procesador, y la lista de objetos se leía en el sitio equivocado. Ya se puede comprar, vender y salir.</li>
+<li><strong>544 frases de tenderos acortadas</strong> para que quepan en su recuadro, en francés, inglés y español.</li>
+<li><strong>Menú Compra / Vender / Salir más ancho</strong>: el cursor ya no pisa las palabras. Los nombres de las tiendas caben en sus 6 letras (Posada, Regalo, Armero…).</li>
+<li><strong>Lista de compra limpia</strong>: se acabaron los pequeños pictogramas raros delante de los precios (también en japonés) y el kanji 個 tras la cantidad fuera del japonés.</li>
+</ul>
+<h3>¿Y los emuladores?</h3>
+<p>La ROM está pensada para MiSTer, Neo SD y una Neo Geo real. Geolith (RetroArch) y MAME solo leen los primeros 256 KB de la ROM del procesador de sonido, que ocupa 512 KB: en ellos la música no suena en varias zonas, entre ellas el 2.º escenario. No se puede arreglar en la ROM por falta de espacio.</p>
+<h3>Cómo conseguirlo</h3>
+<p>Como antes, descarga la herramienta 1.1 en la <a href="/es/juegos/ss-rpg-neo-geo/">página del juego</a>, pon al lado tu imagen del CD japonés (dump de Redump, <code>.cue</code> y sus 32 <code>.bin</code>) y haz doble clic en <strong>Construire - Build.bat</strong>. Estas correcciones se han comprobado en MAME: ¡se agradecen comentarios de quien juegue en MiSTer! ⚔️</p>

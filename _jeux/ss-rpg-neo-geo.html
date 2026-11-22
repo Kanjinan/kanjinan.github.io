@@ -4,9 +4,9 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "Neo Geo (MiSTer)"
 genre: "RPG / Aventure"
-statut: Disponible (version 1.0)
-outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.0.zip
-outil_version: "1.0"
+statut: Disponible (version 1.1)
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.1.zip
+outil_version: "1.1"
 outil_p1: "Le jeu se construit à partir de <strong>votre propre image du CD japonais</strong> (dump Redump : <code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> et ses 32 fichiers <code>.bin</code>). L'outil ne contient aucune donnée du jeu original : uniquement mon travail (code du portage, traductions, police, icônes)."
 outil_need: "Il faut : Windows, Python 3.9+ (64 bits) et environ 1 Go de mémoire libre."
 outil_steps: "Placez le <code>.cue</code> et ses <code>.bin</code> dans le dossier de l'outil, puis double-cliquez sur <strong>Construire - Build.bat</strong>. En une minute environ, vous obtenez le fichier <code>.neo</code> pour MiSTer."
@@ -38,6 +38,7 @@ captures:
 <ul>
 <li><strong>Pas de voix pour l'histoire</strong> : la ROM son n'a plus de place pour elles.</li>
 <li>Sur l'écran <strong>« Battle mode »</strong>, les deux choix sont une image encore en japonais. Le texte qui les explique est traduit.</li>
+<li><strong>Émulateurs</strong> : la ROM vise le MiSTer, le Neo SD et la vraie Neo Geo. MAME ne gère pas ses 16 banques de programme, et Geolith (RetroArch) comme MAME ne lisent que les 256 premiers Ko de la ROM du processeur son : la musique y manque dans plusieurs zones, dont le 2e scénario.</li>
 <li>Un bug ou un blocage ? Signalez-le dans les commentaires en précisant le personnage et l'endroit.</li>
 </ul>
 <h3>Configuration requise</h3>

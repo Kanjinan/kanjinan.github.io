@@ -4,9 +4,9 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "Neo Geo (MiSTer)"
 genre: "RPG / Adventure"
-statut: Available (version 1.0)
-outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.0.zip
-outil_version: "1.0"
+statut: Available (version 1.1)
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.1.zip
+outil_version: "1.1"
 outil_p1: "The game is built from <strong>your own image of the Japanese CD</strong> (Redump dump: <code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> and its 32 <code>.bin</code> files). The tool contains no data from the original game: only my own work (port code, translations, font, icons)."
 outil_need: "You need: Windows, 64-bit Python 3.9+ and about 1 GB of free memory."
 outil_steps: "Put the <code>.cue</code> and its <code>.bin</code> files in the tool's folder, then double-click <strong>Construire - Build.bat</strong>. In about a minute, you get the <code>.neo</code> file for MiSTer."
@@ -25,7 +25,7 @@ captures:
 <h2>Features</h2>
 <ul><li><strong>4 languages in one ROM</strong>: Japanese (original, unchanged), French, English and Spanish. You pick the language at power-on with Up/Down, then A or START.</li><li><strong>Complete translation</strong>: title screen, opening story, all dialogue (about 246,000 Japanese characters), menus, items, equipment, techniques, shops, places, character bios, the save screen, the battle banner, the OPTION screen and GAME OVER.</li><li><strong>Battle interface redrawn for Western languages</strong>: new command icons, HP / SP / POW gauges, and readable names for techniques and items.</li><li><strong>New 8-pixel font</strong>&nbsp;with accents and Spanish punctuation (é, è, ñ, ¿, ¡&hellip;).</li><li><strong>Playable from start to finish</strong>&nbsp;with every character&#x27;s story.</li><li><strong>Memory card saves</strong>&nbsp;and CONTINUE work.</li><li><strong>All sound effects and battle cries</strong>&nbsp;are included.</li><li><strong>Music</strong>: the FM tunes plus the 44 minutes of CD audio. The CD audio is re-encoded for the Neo Geo sound chip in mono, so it sounds worse than the CD. Looping and one-shot tracks behave as on the CD.</li><li><strong>Smoother towns</strong>: slowdowns caused by the conversion code are much reduced.</li></ul>
 <h2>Known limitations</h2>
-<ul><li><strong>No story voice clips</strong>: the sound ROM has no room left for them.</li><li>On the&nbsp;<strong>&quot;Battle mode&quot;</strong>&nbsp;screen, the two choices are a picture that is still in Japanese. The text explaining them is translated.</li><li>Found a bug or a freeze? Please report it in the comments, with the character and the place where it happened.</li></ul>
+<ul><li><strong>No story voice clips</strong>: the sound ROM has no room left for them.</li><li>On the&nbsp;<strong>&quot;Battle mode&quot;</strong>&nbsp;screen, the two choices are a picture that is still in Japanese. The text explaining them is translated.</li><li><strong>Emulators</strong>: the ROM targets MiSTer, Neo SD and real Neo Geo hardware. MAME does not handle its 16 program banks, and both Geolith (RetroArch) and MAME only read the first 256 KB of the sound CPU ROM, so music is missing in several areas, including the 2nd story.</li><li>Found a bug or a freeze? Please report it in the comments, with the character and the place where it happened.</li></ul>
 <h2>Requirements</h2><ul><li><strong>Neo SD Pro not tested yet</strong></li><li><strong>MiSTer FPGA</strong>&nbsp;with the&nbsp;<strong>Neo Geo core</strong></li><li><strong>128 MB SDRAM module</strong></li><li>ROM size: 16 MB program, 65 MB sprites, 16 MB sound effects and 16 MB music (a .neo file of about 119 MB)</li></ul>
 <h2>Installation</h2><p>The ROM is not distributed: a tool builds it from your Neo Geo CD image (see below). It makes the 119 MB <code>.neo</code> file to copy to <code>games/NeoGeo</code> on the MiSTer's SD card.</p>
 <h2>Legal</h2>

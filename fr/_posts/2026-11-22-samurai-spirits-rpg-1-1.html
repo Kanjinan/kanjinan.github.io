@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Samurai Spirits RPG 1.1 : musique du 2e scénario et boutiques corrigées"
+date: 2026-11-22 18:00:00 +0000
+jeu: ss-rpg-neo-geo
+ref: "ssrpg-1-1"
+---
+<p>Une mise à jour de mon portage cartouche du RPG Samurai Shodown de la Neo Geo CD : <strong>Samurai Spirits RPG 1.1</strong> est disponible. Merci au testeur qui a signalé les deux premiers bugs !</p>
+<h3>Ce qui change</h3>
+<ul>
+<li><strong>La musique du 2e scénario se lance enfin.</strong> Le jeu attendait un fichier son que seul le CD chargeait, et sautait du même coup l'envoi de la musique. Ce bug touchait toutes les plateformes, MiSTer compris.</li>
+<li><strong>Les boutiques ne se figent plus.</strong> Les répliques traduites des marchands, plus longues que les japonaises, saturaient le processeur, et la liste des objets était lue au mauvais endroit. On peut de nouveau acheter, vendre et sortir.</li>
+<li><strong>544 répliques de marchands raccourcies</strong> pour tenir dans leur bulle, en français, en anglais et en espagnol.</li>
+<li><strong>Menu Achat / Vente / Fin élargi</strong> : le curseur ne mord plus sur les mots. Les noms de boutiques tiennent dans leurs 6 lettres (Relais, Remède, Armure…).</li>
+<li><strong>Liste d'achat nettoyée</strong> : plus de petits pictogrammes parasites devant les prix (le japonais en profite aussi), et plus de kanji 個 après la quantité hors japonais.</li>
+</ul>
+<h3>Et les émulateurs ?</h3>
+<p>La ROM vise le MiSTer, le Neo SD et la vraie Neo Geo. Geolith (RetroArch) et MAME ne lisent que les 256 premiers Ko de la ROM du processeur son, alors qu'elle en fait 512 : la musique y reste muette dans plusieurs zones, dont le 2e scénario. Ça ne se corrige pas dans la ROM, faute de place.</p>
+<h3>Comment l'obtenir</h3>
+<p>Comme avant, téléchargez l'outil 1.1 sur la <a href="/jeux/ss-rpg-neo-geo/">page du jeu</a>, placez à côté votre image du CD japonais (dump Redump, <code>.cue</code> et ses 32 <code>.bin</code>) et double-cliquez sur <strong>Construire - Build.bat</strong>. Ces correctifs ont été vérifiés dans MAME : vos retours sur MiSTer sont les bienvenus dans les commentaires ! ⚔️</p>
