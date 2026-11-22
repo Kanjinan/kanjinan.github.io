@@ -15,6 +15,6 @@ ref: "ssrpg-1-1"
 <li><strong>Aufgeräumte Warenliste</strong>: keine kleinen Störsymbole mehr vor den Preisen (auch auf Japanisch), und außerhalb des Japanischen kein Kanji 個 mehr nach der Menge.</li>
 </ul>
 <h3>Und die Emulatoren?</h3>
-<p>Das ROM ist für MiSTer, Neo SD und echte Neo-Geo-Hardware gedacht. Geolith (RetroArch) und MAME lesen nur die ersten 256 KB des Soundprozessor-ROMs, das aber 512 KB groß ist: Dort bleibt die Musik in mehreren Gebieten stumm, auch im 2. Szenario. Im ROM lässt sich das mangels Platz nicht beheben.</p>
+<p>Das ROM ist für MiSTer, Neo SD und echte Neo-Geo-Hardware gedacht. In MAME startet es nicht, da MAME nur 8 seiner 16 Programmbänke unterstützt. In Geolith (RetroArch) startet das Spiel und das 1. Szenario hat Musik, aber Geolith liest nur die ersten 256 KB des Soundprozessor-ROMs, das 512 KB groß ist. Im 2. Szenario und vielleicht in weiteren Gebieten bleibt die Musik stumm, und der Soundprozessor kann abstürzen, wodurch auch die Soundeffekte verstummen. Im ROM lässt sich das mangels Platz nicht beheben.</p>
 <h3>So bekommt ihr es</h3>
 <p>Wie bisher: Ladet das Tool 1.1 auf der <a href="/de/spiele/ss-rpg-neo-geo/">Spielseite</a> herunter, legt euer Abbild der japanischen CD daneben (Redump-Dump, <code>.cue</code> und die 32 <code>.bin</code>) und doppelklickt auf <strong>Construire - Build.bat</strong>. Die Korrekturen wurden in MAME geprüft: Rückmeldungen vom MiSTer sind in den Kommentaren willkommen! ⚔️</p>

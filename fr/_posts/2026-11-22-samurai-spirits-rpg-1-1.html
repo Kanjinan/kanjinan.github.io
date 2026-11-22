@@ -15,6 +15,6 @@ ref: "ssrpg-1-1"
 <li><strong>Liste d'achat nettoyée</strong> : plus de petits pictogrammes parasites devant les prix (le japonais en profite aussi), et plus de kanji 個 après la quantité hors japonais.</li>
 </ul>
 <h3>Et les émulateurs ?</h3>
-<p>La ROM vise le MiSTer, le Neo SD et la vraie Neo Geo. Geolith (RetroArch) et MAME ne lisent que les 256 premiers Ko de la ROM du processeur son, alors qu'elle en fait 512 : la musique y reste muette dans plusieurs zones, dont le 2e scénario. Ça ne se corrige pas dans la ROM, faute de place.</p>
+<p>La ROM vise le MiSTer, le Neo SD et la vraie Neo Geo. Elle ne se lance pas dans MAME, qui ne gère que 8 de ses 16 banques de programme. Dans Geolith (RetroArch), le jeu se lance et le 1er scénario a sa musique, mais Geolith ne lit que les 256 premiers Ko de la ROM du processeur son, qui en fait 512. Dans le 2e scénario, et peut-être dans d'autres zones, la musique reste muette et le processeur son peut planter, ce qui coupe aussi les bruitages. Ça ne se corrige pas dans la ROM, faute de place.</p>
 <h3>Comment l'obtenir</h3>
 <p>Comme avant, téléchargez l'outil 1.1 sur la <a href="/jeux/ss-rpg-neo-geo/">page du jeu</a>, placez à côté votre image du CD japonais (dump Redump, <code>.cue</code> et ses 32 <code>.bin</code>) et double-cliquez sur <strong>Construire - Build.bat</strong>. Ces correctifs ont été vérifiés dans MAME : vos retours sur MiSTer sont les bienvenus dans les commentaires ! ⚔️</p>
