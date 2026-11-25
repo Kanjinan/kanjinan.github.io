@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Samurai Spirits RPG 1.2: a smaller ROM for the Neo SD Pro"
+date: 2026-11-25 20:00:00 +0000
+jeu: ss-rpg-neo-geo
+ref: "ssrpg-1-2"
+---
+<p><strong>Samurai Spirits RPG 1.2</strong> is out. A tester reported that 1.1 did not boot on the <strong>Neo SD Pro</strong>: garbled UniBIOS boot screen, unreadable language menu, then nothing. Thanks to them! This version is mainly about making the game fit on that cart.</p>
+<h3>What's new</h3>
+<ul>
+<li><strong>ROM reduced from 909 to 765 Mbit.</strong> Sprites are stored more efficiently: each duplicate tile is now stored only once, and the sprites go from 65 to 51 MB without losing a single frame. The game is now under the Neo SD Pro's estimated 768 Mbit per-game limit.</li>
+<li><strong>No more graphics garbage at the top of the UniBIOS boot screen.</strong> The UniBIOS draws the cart's first tiles there, meant for a logo on official games; they are now blank. This also showed on MiSTer.</li>
+<li><strong>CD track music converted at 9.6 kHz</strong> instead of 12.7 kHz, to save 4 MB: it sounds a bit more muffled. Sound effects and FM tunes are unchanged.</li>
+<li>Title screen: <strong>NK V1.2</strong> signature.</li>
+</ul>
+<p>The game was checked in MAME (same frames as 1.1) and on MiSTer, including the water animations in the 2nd story. It has <strong>not been tested on a Neo SD Pro yet</strong>: if you own one, your feedback is very welcome.</p>
+<h3>How to get it</h3>
+<p>Download the 1.2 tool from the <a href="/en/games/ss-rpg-neo-geo/">game page</a>, put your Japanese CD image next to it (Redump dump, <code>.cue</code> and its 32 <code>.bin</code> files) and double-click <strong>Construire - Build.bat</strong>. The <code>.neo</code> file is now about 96 MB. ⚔️</p>

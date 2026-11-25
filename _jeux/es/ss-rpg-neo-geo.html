@@ -4,9 +4,9 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "Neo Geo (MiSTer)"
 genre: "RPG / Aventura"
-statut: Disponible (versión 1.1)
-outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.1.zip
-outil_version: "1.1"
+statut: Disponible (versión 1.2)
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.2.zip
+outil_version: "1.2"
 outil_p1: "El juego se crea a partir de <strong>tu propia imagen del CD japonés</strong> (dump de Redump: <code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> y sus 32 archivos <code>.bin</code>). La herramienta no contiene ningún dato del juego original: solo mi trabajo (código del port, traducciones, fuente, iconos)."
 outil_need: "Necesitas: Windows, Python 3.9+ (64 bits) y alrededor de 1 GB de memoria libre."
 outil_steps: "Coloca el <code>.cue</code> y sus <code>.bin</code> en la carpeta de la herramienta y haz doble clic en <strong>Construire - Build.bat</strong>. En un minuto aproximadamente obtendrás el archivo <code>.neo</code> para MiSTer."
@@ -31,7 +31,7 @@ captures:
 <li><strong>Jugable de principio a fin</strong>, con la historia de cada personaje.</li>
 <li><strong>Guardado en tarjeta de memoria</strong> y CONTINUE funcionales.</li>
 <li><strong>Todos los efectos de sonido y gritos de combate</strong> están incluidos.</li>
-<li><strong>Música</strong>: las piezas FM y los 44 minutos de audio CD. El audio CD está recodificado en mono para el chip de sonido de Neo Geo, así que suena peor que el CD. Las pistas en bucle y las que suenan una sola vez se comportan como en el CD.</li>
+<li><strong>Música</strong>: las piezas FM y los 44 minutos de audio CD. El audio CD está recodificado en mono a 9,6 kHz para el chip de sonido de Neo Geo, así que suena peor que el CD. Las pistas en bucle y las que suenan una sola vez se comportan como en el CD.</li>
 <li><strong>Ciudades más fluidas</strong>: las ralentizaciones causadas por el código de conversión se han reducido mucho.</li>
 </ul>
 <h3>Limitaciones conocidas</h3>
@@ -44,12 +44,12 @@ captures:
 </ul>
 <h3>Requisitos</h3>
 <ul>
-<li><strong>Neo SD Pro aún sin probar</strong></li>
+<li><strong>Neo SD Pro</strong>: la versión 1.1 no arrancaba en ella. La 1.2 ocupa 765 Mbit, por debajo del límite estimado de 768 Mbit por juego, pero aún no se ha probado en ese cartucho.</li>
 <li><strong>MiSTer FPGA</strong> con el <strong>core de Neo Geo</strong></li>
 <li><strong>Módulo SDRAM de 128 MB</strong></li>
-<li>Tamaño de la ROM: 16 MB de programa, 65 MB de sprites, 16 MB de efectos de sonido y 16 MB de música (un archivo .neo de unos 119 MB)</li>
+<li>Tamaño de la ROM: 16 MB de programa, 51 MB de sprites, 16 MB de efectos de sonido y 12 MB de música (un archivo .neo de unos 96 MB, es decir, 765 Mbit)</li>
 </ul>
 <h3>Instalación</h3>
-<p>La ROM no se distribuye: una herramienta la crea a partir de tu imagen del CD de Neo Geo (ver más abajo). Genera el archivo <code>.neo</code> de 119 MB que se copia en <code>games/NeoGeo</code> en la tarjeta SD del MiSTer.</p>
+<p>La ROM no se distribuye: una herramienta la crea a partir de tu imagen del CD de Neo Geo (ver más abajo). Genera el archivo <code>.neo</code> de 96 MB que se copia en <code>games/NeoGeo</code> en la tarjeta SD del MiSTer.</p>
 <h3>Aviso legal</h3>
 <p>Proyecto de fans sin ánimo de lucro, sin relación con SNK ni respaldado por SNK. <em>Samurai Spirits</em> y <em>Samurai Shodown</em> son © SNK. Por favor, no vendáis repros hechas a partir de este trabajo.</p>

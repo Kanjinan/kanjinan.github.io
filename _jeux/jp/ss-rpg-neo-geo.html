@@ -4,9 +4,9 @@ titre: "Samurai Spirits RPG"
 title: "Samurai Spirits RPG"
 plateforme: "ネオジオ（MiSTer）"
 genre: "RPG / アドベンチャー"
-statut: 公開中（バージョン1.1）
-outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.1.zip
-outil_version: "1.1"
+statut: 公開中（バージョン1.2）
+outil: /fichiers/ss-rpg-neo-geo/SSRPG_Builder_1.2.zip
+outil_version: "1.2"
 outil_p1: "ゲームは、<strong>ご自身でお持ちの日本版CDのイメージ</strong>（Redump形式：<code>Shinsetsu Samurai Spirits - Bushidou Retsuden (Japan).cue</code> と32個の <code>.bin</code> ファイル）からビルドします。ツールには元のゲームのデータは一切含まれておらず、私が作ったもの（移植用のコード、翻訳、フォント、アイコン）だけが入っています。"
 outil_need: "必要なもの：Windows、Python 3.9以上（64ビット）、約1GBの空きメモリ。"
 outil_steps: "<code>.cue</code> と <code>.bin</code> をツールのフォルダに置き、<strong>Construire - Build.bat</strong> をダブルクリックします。1分ほどでMiSTer用の <code>.neo</code> ファイルができあがります。"
@@ -31,7 +31,7 @@ captures:
 <li><strong>最初から最後までプレイ可能</strong>で、全キャラクターのストーリーを収録。</li>
 <li><strong>メモリーカードへのセーブ</strong>とCONTINUEに対応。</li>
 <li><strong>すべての効果音と戦闘中の掛け声</strong>を収録。</li>
-<li><strong>音楽</strong>：FM音源の曲と、44分のCD音源。CD音源はネオジオの音源チップ用にモノラルで再エンコードしているため、CDより音質は落ちます。ループする曲と一度だけ流れる曲は、CD版と同じように再生されます。</li>
+<li><strong>音楽</strong>：FM音源の曲と、44分のCD音源。CD音源はネオジオの音源チップ用にモノラル・9.6kHzで再エンコードしているため、CDより音質は落ちます。ループする曲と一度だけ流れる曲は、CD版と同じように再生されます。</li>
 <li><strong>町の動作が軽く</strong>：変換コードによる処理落ちを大きく減らしました。</li>
 </ul>
 <h3>既知の制限</h3>
@@ -44,12 +44,12 @@ captures:
 </ul>
 <h3>動作環境</h3>
 <ul>
-<li><strong>Neo SD Proは未検証</strong></li>
+<li><strong>Neo SD Pro</strong>：バージョン1.1は起動しませんでした。1.2は765Mbitで、1ゲームあたりの推定上限768Mbitを下回りますが、このカートリッジではまだ検証していません。</li>
 <li><strong>MiSTer FPGA</strong>と<strong>ネオジオコア</strong></li>
 <li><strong>128MBのSDRAMモジュール</strong></li>
-<li>ROMサイズ：プログラム16MB、スプライト65MB、効果音16MB、音楽16MB（約119MBの.neoファイル）</li>
+<li>ROMサイズ：プログラム16MB、スプライト51MB、効果音16MB、音楽12MB（約96MB＝765Mbitの.neoファイル）</li>
 </ul>
 <h3>インストール</h3>
-<p>ROMは配布していません。ツールが、お持ちのネオジオCDのイメージからROMをビルドします（下記参照）。できあがる119MBの <code>.neo</code> ファイルを、MiSTerのSDカードの <code>games/NeoGeo</code> にコピーしてください。</p>
+<p>ROMは配布していません。ツールが、お持ちのネオジオCDのイメージからROMをビルドします（下記参照）。できあがる96MBの <code>.neo</code> ファイルを、MiSTerのSDカードの <code>games/NeoGeo</code> にコピーしてください。</p>
 <h3>法的事項</h3>
 <p>非営利のファンプロジェクトであり、SNKとは関係なく、SNKの承認も受けていません。『<em>サムライスピリッツ</em>』は© SNKです。本作をもとにしたリプロの販売はご遠慮ください。</p>
