@@ -1,0 +1,48 @@
+---
+layout: jeu
+titre: "U.N. Squadron Neo"
+title: "U.N. Squadron Neo"
+plateforme: "Neo Geo (MVS/AES)"
+genre: "Shoot 'em up"
+statut: In Entwicklung
+commentaires: true
+ordre: 1
+resume: "Fan-Portierung von U.N. Squadron (Capcom, 1989, CPS1) auf das Neo Geo: das originale 68000-Programm, die CPS1-Hardware wird übersetzt."
+cover: /images/jeux/un-squadron-neo-geo/cover.jpg
+tags: ["2D", "capcom", "CPS1", "neogeo", "Pixel Art", "Shmup"]
+captures:
+  - /images/jeux/un-squadron-neo-geo/flyer-1.jpg
+  - /images/jeux/un-squadron-neo-geo/flyer-2.jpg
+---
+<p><strong>U.N. Squadron Neo: Capcoms Shoot 'em up auf dem Neo Geo (Fanprojekt, in Entwicklung)</strong></p>
+<p>Eine Fan-Portierung des Arcade-Spiels <em>U.N. Squadron</em> (in Japan <em>Area 88</em>), Capcoms horizontal scrollendes Shoot 'em up (1989, CPS1), auf das Neo Geo (MVS/AES). Als Shin Kazama, Mickey Simon oder Greg Gates fliegt man Söldnermissionen, verdient Geld und kauft damit zwischen den Missionen neue Jets und Waffen.</p>
+<h3>So funktioniert es</h3>
+<p>Es ist weder ein Remake noch eine Nachbildung: <strong>Das originale 68000-Programm läuft unverändert auf dem Neo Geo</strong>. Die CPS1-Platine und das Neo Geo haben beide einen Motorola 68000; Spiellogik, Gegnerwellen, Timing und Schwierigkeit bleiben also die der Arcade-Fassung. Nur die Hardwarezugriffe ändern sich: Jeder Befehl, der die Videochips, die Eingaben oder den Sound des CPS1 anspricht, wird an eine Übersetzungsschicht umgeleitet, die das Bild auf der Neo-Geo-Hardware neu aufbaut:</p>
+<ul>
+<li>CPS1-Sprites werden zu Neo-Geo-Sprites;</li>
+<li>die scrollenden Hintergrundebenen werden aus Sprite-Spalten aufgebaut;</li>
+<li>Text und HUD kommen auf die Fix-Ebene;</li>
+<li>die Paletten werden während der vertikalen Austastlücke umgerechnet.</li>
+</ul>
+<p>Es ist dieselbe Technik wie bei meiner <a href="{{ '/de/spiele/daimakaimura-neo-geo/' | relative_url }}">Ghouls'n Ghosts</a>-Portierung.</p>
+<h3>Geplant</h3>
+<ul>
+<li>Das komplette Arcade-Spiel, alle Missionen und Bosse, mit 60 Bildern/s</li>
+<li>Die originale Musik und die Soundeffekte, vom Arcade-Spiel aufgenommen und vom YM2610 als ADPCM abgespielt</li>
+<li>Der 384 Pixel breite CPS1-Bildschirm auf 320 Pixel zugeschnitten, mit neu angeordnetem HUD</li>
+<li>MVS-Einstellungen im BIOS-Menü: Schwierigkeit, Schaden, Continues</li>
+<li>AES-Modus: Credits über START und Pause</li>
+<li>Ein Optionsbildschirm beim Start: Schwierigkeit, Schaden, Tasten, Dauerfeuer, Soundtest</li>
+<li>Tests auf echter Hardware und auf MiSTer</li>
+</ul>
+<h3>Aktueller Stand</h3>
+<ul>
+<li>Analyse des ROM-Sets abgeschlossen: CPS-B-11-Platine, Grafik-Mapper AR24B, Sound OKI + YM2151.</li>
+<li>Nächste Schritte: Start des originalen Programms auf dem Neo Geo, danach Grafik, spielbare Missionen, Sound und Optionen.</li>
+</ul>
+<h3>Hinweise</h3>
+<ul>
+<li>Fanprojekt, nicht mit Capcom verbunden oder von Capcom genehmigt. <em>U.N. Squadron</em> / <em>Area 88</em> © Capcom; <em>Area 88</em> basiert auf dem Manga von Kaoru Shintani.</li>
+<li>Wie bei meinen anderen Portierungen werden keine Daten des Originalspiels verbreitet: Das Tool baut die ROMs aus eurem eigenen MAME-ROM-Set (<code>unsquad.zip</code>, US-Version) neu auf.</li>
+<li>Fragen oder Anmerkungen? Schreibt sie in die Kommentare.</li>
+</ul>
