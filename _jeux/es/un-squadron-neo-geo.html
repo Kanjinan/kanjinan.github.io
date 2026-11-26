@@ -5,6 +5,10 @@ title: "U.N. Squadron Neo"
 plateforme: "Neo Geo (MVS/AES)"
 genre: "Shoot 'em up"
 statut: En desarrollo
+outil: /fichiers/un-squadron-neo-geo/UNSquadron_NEO_Builder_0.1.zip
+outil_version: "0.1"
+outil_romset: unsquad.zip
+outil_mame: true
 commentaires: true
 ordre: 1
 resume: "Port de fan de U.N. Squadron (Capcom, 1989, CPS1) a Neo Geo: el programa 68000 original, con el hardware CPS1 traducido."
@@ -40,8 +44,9 @@ captures:
 <li>La música, los efectos y las voces originales, grabados de la arcade y reproducidos en ADPCM por el YM2610</li>
 <li>Los decorados que pasan por delante de los aviones (grúas de la misión 1, árboles de la jungla…) gestionados misión por misión, como en la CPS1</li>
 <li>La pantalla de 384 px reencuadrada a 320 px: HUD reorganizado (uno y dos jugadores) y dentro de la zona visible de los televisores CRT, logo del título redibujado, selección, briefing y tienda reescalados</li>
-<li>Una pantalla de opciones al arrancar: dificultad (8 niveles), daño, continue, partida gratis, disparo automático; sin pulsar nada durante 30 s, el juego arranca solo (máquinas MVS)</li>
-<li>Modo AES: partida gratis por defecto, START inicia la partida</li>
+<li>Una pantalla de opciones al arrancar: dificultad (8 niveles), daño, continue, partida gratis, misión inicial (1 a 10) e idioma; sin pulsar nada durante 30 s, el juego arranca solo (máquinas MVS)</li>
+<li>Modo AES: partida gratis por defecto, START inicia la partida y la pone en pausa</li>
+<li>Una traducción al francés (opción LANGUAGE): historia, fichas de los pilotos, briefings, tienda y diálogos, con letras acentuadas</li>
 <li>Primer comentario de MiSTer aplicado: las paletas se escriben durante el retorno vertical, sin parásitos en los fundidos</li>
 </ul>
 <h3>Pendiente</h3>
@@ -49,11 +54,10 @@ captures:
 <li>Comprobar las misiones 2 a 10 hasta el final, con todos sus jefes</li>
 <li>Pruebas en hardware real y en MiSTer (se agradecen los comentarios)</li>
 <li>Los fundidos entre pantallas, aún algo más lentos que en la arcade</li>
-<li>La herramienta para construir las ROM</li>
 </ul>
 <h3>Notas</h3>
 <ul>
 <li>Proyecto de fan, sin relación con Capcom ni aprobado por Capcom. <em>U.N. Squadron</em> / <em>Area 88</em> © Capcom; <em>Area 88</em> se basa en el manga de Kaoru Shintani.</li>
-<li>Como en mis otros ports, no se distribuirá ningún dato del juego original: la herramienta reconstruirá las ROM a partir de tu propio romset de MAME (<code>unsquad.zip</code>, versión USA).</li>
+<li>Como en mis otros ports, no se distribuye ningún dato del juego original: la herramienta de abajo reconstruye las ROM a partir de tu propio romset de MAME (<code>unsquad.zip</code>, versión USA). La versión 0.1 es una versión de prueba: se agradecen los comentarios.</li>
 <li>¿Alguna pregunta o comentario? Dímelo en los comentarios.</li>
 </ul>

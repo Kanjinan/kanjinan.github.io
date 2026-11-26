@@ -5,6 +5,10 @@ title: "U.N. Squadron Neo"
 plateforme: "Neo Geo (MVS/AES)"
 genre: "Shoot 'em up"
 statut: In Entwicklung
+outil: /fichiers/un-squadron-neo-geo/UNSquadron_NEO_Builder_0.1.zip
+outil_version: "0.1"
+outil_romset: unsquad.zip
+outil_mame: true
 commentaires: true
 ordre: 1
 resume: "Fan-Portierung von U.N. Squadron (Capcom, 1989, CPS1) auf das Neo Geo: das originale 68000-Programm, die CPS1-Hardware wird übersetzt."
@@ -40,8 +44,9 @@ captures:
 <li>Originalmusik, Soundeffekte und Sprachausgabe, vom Arcade-Spiel aufgenommen und vom YM2610 als ADPCM abgespielt</li>
 <li>Kulissen, die vor den Flugzeugen liegen (Kräne in Mission 1, Dschungelbäume…), werden wie auf dem CPS1 für jede Mission einzeln behandelt</li>
 <li>Der 384 Pixel breite Bildschirm auf 320 Pixel angepasst: HUD neu angeordnet (ein und zwei Spieler) und im sichtbaren Bereich von Röhrenfernsehern, Titellogo neu gezeichnet, Pilotenwahl, Briefing und Shop neu skaliert</li>
-<li>Ein Optionsmenü beim Start: Schwierigkeit (8 Stufen), Schaden, Continue, Free Play, Dauerfeuer; ohne Eingabe startet das Spiel nach 30 Sekunden von selbst (MVS-Automaten)</li>
-<li>AES-Modus: standardmäßig Free Play, START beginnt das Spiel</li>
+<li>Ein Optionsmenü beim Start: Schwierigkeit (8 Stufen), Schaden, Continue, Free Play, Startmission (1 bis 10) und Sprache; ohne Eingabe startet das Spiel nach 30 Sekunden von selbst (MVS-Automaten)</li>
+<li>AES-Modus: standardmäßig Free Play, START beginnt und pausiert das Spiel</li>
+<li>Eine französische Übersetzung (Option LANGUAGE): Geschichte, Pilotenprofile, Briefings, Shop und Dialoge, mit Akzentbuchstaben</li>
 <li>Erste MiSTer-Rückmeldung umgesetzt: Paletten werden in der vertikalen Austastlücke geschrieben, keine Störungen mehr bei Überblendungen</li>
 </ul>
 <h3>Noch zu tun</h3>
@@ -49,11 +54,10 @@ captures:
 <li>Missionen 2 bis 10 bis zum Ende prüfen, mit allen Bossen</li>
 <li>Tests auf echter Hardware und MiSTer (Rückmeldungen willkommen)</li>
 <li>Die Überblendungen zwischen den Bildschirmen, noch etwas langsamer als am Automaten</li>
-<li>Das Werkzeug zum Erstellen der ROMs</li>
 </ul>
 <h3>Hinweise</h3>
 <ul>
 <li>Fanprojekt, nicht mit Capcom verbunden oder von Capcom genehmigt. <em>U.N. Squadron</em> / <em>Area 88</em> © Capcom; <em>Area 88</em> basiert auf dem Manga von Kaoru Shintani.</li>
-<li>Wie bei meinen anderen Portierungen werden keine Daten des Originalspiels verbreitet: Das Tool baut die ROMs aus eurem eigenen MAME-ROM-Set (<code>unsquad.zip</code>, US-Version) neu auf.</li>
+<li>Wie bei meinen anderen Portierungen werden keine Daten des Originalspiels verbreitet: Das Tool unten baut die ROMs aus eurem eigenen MAME-ROM-Set (<code>unsquad.zip</code>, US-Version) neu auf. Version 0.1 ist eine Testversion: Rückmeldungen sind willkommen.</li>
 <li>Fragen oder Anmerkungen? Schreibt sie in die Kommentare.</li>
 </ul>
