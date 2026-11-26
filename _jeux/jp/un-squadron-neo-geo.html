@@ -11,6 +11,13 @@ resume: "カプコンの『U.N.スコードロン』（1989年、CPS1）のネ�
 cover: /images/jeux/un-squadron-neo-geo/cover.jpg
 tags: ["2D", "capcom", "CPS1", "neogeo", "Pixel Art", "Shmup"]
 captures:
+  - /images/jeux/un-squadron-neo-geo/capture-1.png
+  - /images/jeux/un-squadron-neo-geo/capture-2.png
+  - /images/jeux/un-squadron-neo-geo/capture-3.png
+  - /images/jeux/un-squadron-neo-geo/capture-4.png
+  - /images/jeux/un-squadron-neo-geo/capture-5.png
+  - /images/jeux/un-squadron-neo-geo/capture-6.png
+  - /images/jeux/un-squadron-neo-geo/capture-7.png
   - /images/jeux/un-squadron-neo-geo/flyer-1.jpg
   - /images/jeux/un-squadron-neo-geo/flyer-2.jpg
 ---
@@ -25,20 +32,24 @@ captures:
 <li>パレットは垂直帰線期間中にその場で変換</li>
 </ul>
 <p>私の<a href="{{ '/jp/games/daimakaimura-neo-geo/' | relative_url }}">大魔界村</a>移植と同じ手法です。</p>
-<h3>予定</h3>
+<h3>実装済み</h3>
 <ul>
-<li>アーケード版の全ミッション・全ボスを60fpsで</li>
-<li>アーケード版から録音したオリジナルの音楽と効果音を、YM2610のADPCMで再生</li>
-<li>CPS1の横384ピクセルの画面を320ピクセルに合わせ、HUDを再配置</li>
-<li>BIOSメニューでのMVS設定：難易度、ダメージ、コンティニュー</li>
-<li>AESモード：STARTでクレジット、ポーズ</li>
-<li>起動時のオプション画面：難易度、ダメージ、ボタン配置、オート連射、サウンドテスト</li>
-<li>実機とMiSTerでのテスト</li>
+<li>オリジナルのプログラムがネオジオで動作：デモ画面一式（タイトル、パイロットと機体の紹介）、パイロット選択、ブリーフィング、ショップ、ミッション</li>
+<li>ミッション1を最初から最後まで、フルスピード（60fps）でプレイ可能。1人でも2人同時でも</li>
+<li>全10ミッションがフリーズせずに起動・進行（自動プレイで確認）。負荷の高いミッション2のボスも最適化し、60fpsを維持</li>
+<li>アーケード版から録音したオリジナルの音楽、効果音、音声をYM2610のADPCMで再生</li>
+<li>機体の手前を通る背景（ミッション1のクレーン、ジャングルの木など）をCPS1と同じくミッションごとに処理</li>
+<li>横384ピクセルの画面を320ピクセルに：HUDを再配置（1人用・2人用）してブラウン管テレビの表示範囲内に収め、タイトルロゴを描き直し、パイロット選択・ブリーフィング・ショップを縮小表示</li>
+<li>起動時のオプション画面：難易度（8段階）、ダメージ、コンティニュー、フリープレイ、オート連射。30秒間操作がなければ自動でゲーム開始（MVS筐体向け）</li>
+<li>AESモード：初期設定でフリープレイ、STARTでゲーム開始</li>
+<li>MiSTerでの最初の報告を反映：パレットを垂直帰線期間中に書き込み、フェード中のノイズを解消</li>
 </ul>
-<h3>現在の状況</h3>
+<h3>今後の作業</h3>
 <ul>
-<li>ROMセットの解析が完了：CPS-B-11基板、グラフィックマッパーAR24B、サウンドはOKI＋YM2151。</li>
-<li>次の段階：オリジナルのプログラムをネオジオで起動し、その後グラフィック、プレイ可能なミッション、サウンド、オプションへ。</li>
+<li>ミッション2〜10を全ボスまで最後まで確認</li>
+<li>実機とMiSTerでのテスト（ご報告歓迎）</li>
+<li>画面切り替えのフェードがアーケード版よりやや遅い点</li>
+<li>ROM作成ツール</li>
 </ul>
 <h3>注意事項</h3>
 <ul>

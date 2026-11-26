@@ -11,6 +11,13 @@ resume: "Fan-Portierung von U.N. Squadron (Capcom, 1989, CPS1) auf das Neo Geo: 
 cover: /images/jeux/un-squadron-neo-geo/cover.jpg
 tags: ["2D", "capcom", "CPS1", "neogeo", "Pixel Art", "Shmup"]
 captures:
+  - /images/jeux/un-squadron-neo-geo/capture-1.png
+  - /images/jeux/un-squadron-neo-geo/capture-2.png
+  - /images/jeux/un-squadron-neo-geo/capture-3.png
+  - /images/jeux/un-squadron-neo-geo/capture-4.png
+  - /images/jeux/un-squadron-neo-geo/capture-5.png
+  - /images/jeux/un-squadron-neo-geo/capture-6.png
+  - /images/jeux/un-squadron-neo-geo/capture-7.png
   - /images/jeux/un-squadron-neo-geo/flyer-1.jpg
   - /images/jeux/un-squadron-neo-geo/flyer-2.jpg
 ---
@@ -25,20 +32,24 @@ captures:
 <li>die Paletten werden während der vertikalen Austastlücke umgerechnet.</li>
 </ul>
 <p>Es ist dieselbe Technik wie bei meiner <a href="{{ '/de/spiele/daimakaimura-neo-geo/' | relative_url }}">Ghouls'n Ghosts</a>-Portierung.</p>
-<h3>Geplant</h3>
+<h3>Bereits umgesetzt</h3>
 <ul>
-<li>Das komplette Arcade-Spiel, alle Missionen und Bosse, mit 60 Bildern/s</li>
-<li>Die originale Musik und die Soundeffekte, vom Arcade-Spiel aufgenommen und vom YM2610 als ADPCM abgespielt</li>
-<li>Der 384 Pixel breite CPS1-Bildschirm auf 320 Pixel zugeschnitten, mit neu angeordnetem HUD</li>
-<li>MVS-Einstellungen im BIOS-Menü: Schwierigkeit, Schaden, Continues</li>
-<li>AES-Modus: Credits über START und Pause</li>
-<li>Ein Optionsbildschirm beim Start: Schwierigkeit, Schaden, Tasten, Dauerfeuer, Soundtest</li>
-<li>Tests auf echter Hardware und auf MiSTer</li>
+<li>Das Originalprogramm läuft auf dem Neo Geo: kompletter Attract-Modus (Titel, Vorstellung der Piloten und Flugzeuge), Pilotenwahl, Briefing, Shop und Missionen</li>
+<li>Die erste Mission ist von Anfang bis Ende spielbar, mit voller Geschwindigkeit (60 Bilder/s), für einen oder zwei Spieler gleichzeitig</li>
+<li>Alle zehn Missionen starten und laufen ohne Absturz (automatische Durchläufe); der sehr aufwendige Boss von Mission 2 wurde optimiert und bleibt bei 60 Bildern/s</li>
+<li>Originalmusik, Soundeffekte und Sprachausgabe, vom Arcade-Spiel aufgenommen und vom YM2610 als ADPCM abgespielt</li>
+<li>Kulissen, die vor den Flugzeugen liegen (Kräne in Mission 1, Dschungelbäume…), werden wie auf dem CPS1 für jede Mission einzeln behandelt</li>
+<li>Der 384 Pixel breite Bildschirm auf 320 Pixel angepasst: HUD neu angeordnet (ein und zwei Spieler) und im sichtbaren Bereich von Röhrenfernsehern, Titellogo neu gezeichnet, Pilotenwahl, Briefing und Shop neu skaliert</li>
+<li>Ein Optionsmenü beim Start: Schwierigkeit (8 Stufen), Schaden, Continue, Free Play, Dauerfeuer; ohne Eingabe startet das Spiel nach 30 Sekunden von selbst (MVS-Automaten)</li>
+<li>AES-Modus: standardmäßig Free Play, START beginnt das Spiel</li>
+<li>Erste MiSTer-Rückmeldung umgesetzt: Paletten werden in der vertikalen Austastlücke geschrieben, keine Störungen mehr bei Überblendungen</li>
 </ul>
-<h3>Aktueller Stand</h3>
+<h3>Noch zu tun</h3>
 <ul>
-<li>Analyse des ROM-Sets abgeschlossen: CPS-B-11-Platine, Grafik-Mapper AR24B, Sound OKI + YM2151.</li>
-<li>Nächste Schritte: Start des originalen Programms auf dem Neo Geo, danach Grafik, spielbare Missionen, Sound und Optionen.</li>
+<li>Missionen 2 bis 10 bis zum Ende prüfen, mit allen Bossen</li>
+<li>Tests auf echter Hardware und MiSTer (Rückmeldungen willkommen)</li>
+<li>Die Überblendungen zwischen den Bildschirmen, noch etwas langsamer als am Automaten</li>
+<li>Das Werkzeug zum Erstellen der ROMs</li>
 </ul>
 <h3>Hinweise</h3>
 <ul>
