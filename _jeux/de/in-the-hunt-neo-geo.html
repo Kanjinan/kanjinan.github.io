@@ -1,0 +1,48 @@
+---
+layout: jeu
+titre: "In The Hunt Neo"
+title: "In The Hunt Neo"
+plateforme: "Neo Geo (MVS/AES)"
+genre: "Shoot 'em up"
+statut: In Entwicklung
+commentaires: true
+ordre: 1
+resume: "Fan-Portierung von In The Hunt (Irem, 1993, M92) für das Neo Geo: das Unterwasser-Shoot 'em up, Bild für Bild aus dem Originalspiel übernommen."
+cover: /images/jeux/in-the-hunt-neo-geo/cover.png
+tags: ["2D", "irem", "M92", "neogeo", "Pixel Art", "Shmup"]
+captures:
+  - /images/jeux/in-the-hunt-neo-geo/capture-1.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-2.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-3.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-4.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-5.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-6.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-7.png
+---
+<p><strong>In The Hunt Neo: Irems Unterwasser-Shoot 'em up auf dem Neo Geo (Fanprojekt, in Entwicklung)</strong></p>
+<p>Eine Fan-Portierung des Arcade-Spiels <em>In The Hunt</em> (in Japan <em>Kaitei Daisensō</em>), Irems horizontal scrollendes Shoot 'em up (1993, M92-Platine), für das Neo Geo (MVS/AES), in C mit ngdevkit geschrieben. Am Steuer des U-Boots Granvia kämpft ihr gegen die Armee der D.A.S. – an der Oberfläche, am Meeresgrund und in Unterwasserhöhlen, mit Torpedos nach vorn, Raketen nach oben und sinkenden Wasserbomben.</p>
+<h3>Wie es funktioniert</h3>
+<p>Die M92-Platine hat nicht denselben Prozessor wie das Neo Geo (sondern einen NEC V33), das Originalprogramm kann also nicht unverändert laufen. Wie bei meiner Portierung von <a href="{{ '/de/spiele/undercover-cops-neo-geo/' | relative_url }}">Undercover Cops</a> auf derselben Platine wird das Spiel in C für den 68000 neu geschrieben: Ich lese den V33-Code und verfolge das Original Bild für Bild in MAME. Bewegungen, Kamera, Schüsse, Flugbahnen und die Erscheinungsskripte der Gegner werden aus dem Arcade-Spiel übernommen, nicht nach Augenmaß nachgebaut, und anschließend in nachgespielten Partien mit dem Original verglichen.</p>
+<h3>Schon vorhanden</h3>
+<ul>
+<li>Die komplette Kulisse von Stage 1, aus dem Arcade-Spiel rekonstruiert: horizontales und vertikales Scrolling, Parallax-Hintergrund, animierte Wasseroberfläche, Vordergrundebene und die Kulisse am Ende der Stage</li>
+<li>Der 240-Zeilen-Bildschirm an die 224 Zeilen des Neo Geo angepasst, mit etwas längerem Kameraweg: Oberfläche und Meeresgrund bleiben vollständig sichtbar</li>
+<li>Das U-Boot des Spielers: Bewegung, Kollisionen mit der Kulisse, Oberfläche, Schaukeln und Kamera, in einer nachgespielten Partie Bild für Bild identisch mit dem Original</li>
+<li>Die Grundwaffen: Torpedos, Raketen, Oberflächenraketen und Wasserbomben, mit Blasen, Blitzen, Wasserfontänen und Explosionen</li>
+<li>Alle Gegner von Stage 1 und ihr Boss: Minen, U-Boote, Überwasserschiff, Flugzeuge, Hubschrauber, Bomber, Küstenbatterien, Eisblöcke…</li>
+<li>Das HUD auf der Fix-Ebene (Punkte, Zeit, Credits), im sichtbaren Bereich von Röhrenfernsehern, und der STAGE-CLEAR-Bildschirm</li>
+<li>60 Bilder/s im größten Teil der Stage; einige sehr volle Stellen werden noch langsamer</li>
+</ul>
+<h3>Noch zu tun</h3>
+<ul>
+<li>Schaden und Verlust des U-Boots, Leben, der zweite Spieler und aufsammelbare Waffen</li>
+<li>Der Sound: Originalmusik und -effekte (YM2151 + GA20) für den YM2610 umgewandelt, wie bei Undercover Cops</li>
+<li>Das Intro, die Menüs und die weiteren Stages</li>
+<li>Die letzten langsamen Stellen von Stage 1</li>
+</ul>
+<h3>Hinweise</h3>
+<ul>
+<li>Fanprojekt ohne Verbindung zu Irem oder den Rechteinhabern von <em>In The Hunt</em>.</li>
+<li>Wie bei meinen anderen Portierungen werden keine Daten des Originalspiels verbreitet.</li>
+<li>Fragen oder Anmerkungen? Schreibt sie in die Kommentare.</li>
+</ul>

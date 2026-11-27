@@ -1,0 +1,48 @@
+---
+layout: jeu
+titre: "In The Hunt Neo"
+title: "In The Hunt Neo"
+plateforme: "ネオジオ（MVS/AES）"
+genre: "シューティング"
+statut: 開発中
+commentaires: true
+ordre: 1
+resume: "アイレムの『海底大戦争（In The Hunt）』（1993年、M92）のネオジオ用ファン移植。潜水艦シューティングを、オリジナルから1フレーム単位で再現します。"
+cover: /images/jeux/in-the-hunt-neo-geo/cover.png
+tags: ["2D", "irem", "M92", "neogeo", "Pixel Art", "Shmup"]
+captures:
+  - /images/jeux/in-the-hunt-neo-geo/capture-1.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-2.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-3.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-4.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-5.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-6.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-7.png
+---
+<p><strong>In The Hunt Neo：アイレムの潜水艦シューティングをネオジオへ（ファンプロジェクト・開発中）</strong></p>
+<p>アイレムの横スクロールシューティング『<em>海底大戦争</em>』（海外版『<em>In The Hunt</em>』、1993年、M92基板）を、ネオジオ（MVS/AES）へ移植するファンプロジェクトです。ngdevkitを使いC言語で書いています。潜水艦グランヴィアを操り、前方への魚雷、上方へのミサイル、沈んでいく爆雷で、海上・海底・海中洞窟を舞台にD.A.S.の軍隊と戦います。</p>
+<h3>しくみ</h3>
+<p>M92基板のCPU（NEC V33）はネオジオとは異なるため、オリジナルのプログラムをそのまま動かすことはできません。同じ基板の<a href="{{ '/jp/games/undercover-cops-neo-geo/' | relative_url }}">アンダーカバーコップス</a>の移植と同じく、V33のコードを読み、MAMEでオリジナルを1フレームずつ追跡しながら、68000用にC言語で書き直しています。移動、カメラ、攻撃、軌道、敵の出現スクリプトは目分量で作り直すのではなくアーケード版から取り込み、リプレイでオリジナルと比較しています。</p>
+<h3>実装済み</h3>
+<ul>
+<li>アーケード版から再構成したステージ1の背景すべて：縦横スクロール、多重スクロールの遠景、動く海面、前景、ステージ終盤の背景</li>
+<li>240ラインの画面を、カメラの移動範囲を少し広げてネオジオの224ラインに対応：海面も海底も欠けずに表示</li>
+<li>自機の潜水艦：移動、背景との当たり判定、浮上、揺れ、カメラ。リプレイで1フレーム単位でオリジナルと一致</li>
+<li>基本武器：魚雷、ミサイル、海上ミサイル、爆雷。泡、閃光、水しぶき、爆発も再現</li>
+<li>ステージ1の全ての敵とボス：機雷、潜水艦、水上艦、飛行機、ヘリコプター、爆撃機、沿岸砲台、氷塊など</li>
+<li>FIXレイヤーのHUD（スコア、タイマー、クレジット）をブラウン管テレビの表示範囲内に配置。STAGE CLEAR画面</li>
+<li>ステージの大部分で60fps。非常に混み合う一部の場面ではまだ処理落ちがあります</li>
+</ul>
+<h3>今後の予定</h3>
+<ul>
+<li>潜水艦のダメージとミス、残機、2人目のプレイヤー、武器アイテム</li>
+<li>サウンド：オリジナルの音楽と効果音（YM2151 + GA20）をYM2610用に変換（アンダーカバーコップスと同じ方法）</li>
+<li>オープニング、メニュー、ステージ2以降</li>
+<li>ステージ1に残る処理落ちの解消</li>
+</ul>
+<h3>注意事項</h3>
+<ul>
+<li>ファンプロジェクトであり、アイレムおよび『<em>海底大戦争</em>』の権利者とは関係ありません。</li>
+<li>他の移植と同じく、オリジナルゲームのデータは一切配布しません。</li>
+<li>質問やご意見はコメント欄へどうぞ。</li>
+</ul>

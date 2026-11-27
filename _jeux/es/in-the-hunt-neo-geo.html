@@ -1,0 +1,48 @@
+---
+layout: jeu
+titre: "In The Hunt Neo"
+title: "In The Hunt Neo"
+plateforme: "Neo Geo (MVS/AES)"
+genre: "Shoot 'em up"
+statut: En desarrollo
+commentaires: true
+ordre: 1
+resume: "Port de fan de In The Hunt (Irem, 1993, M92) para Neo Geo: el shoot 'em up submarino, trasladado fotograma a fotograma desde el juego original."
+cover: /images/jeux/in-the-hunt-neo-geo/cover.png
+tags: ["2D", "irem", "M92", "neogeo", "Pixel Art", "Shmup"]
+captures:
+  - /images/jeux/in-the-hunt-neo-geo/capture-1.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-2.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-3.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-4.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-5.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-6.png
+  - /images/jeux/in-the-hunt-neo-geo/capture-7.png
+---
+<p><strong>In The Hunt Neo: el shoot 'em up submarino de Irem en Neo Geo (proyecto de fan, en desarrollo)</strong></p>
+<p>Un port de fan del arcade <em>In The Hunt</em> (<em>Kaitei Daisensō</em> en Japón), el shoot 'em up de desplazamiento horizontal de Irem (1993, placa M92), para Neo Geo (MVS/AES), escrito en C con ngdevkit. Al mando del submarino Granvia, te enfrentas al ejército del D.A.S. en la superficie, en el fondo del mar y en grutas submarinas, con torpedos hacia delante, misiles hacia arriba y cargas de profundidad que se hunden.</p>
+<h3>Cómo funciona</h3>
+<p>La M92 no usa el mismo procesador que la Neo Geo (lleva un NEC V33), así que el programa original no puede ejecutarse tal cual. Como en mi port de <a href="{{ '/es/juegos/undercover-cops-neo-geo/' | relative_url }}">Undercover Cops</a>, de la misma placa, el juego se reescribe en C para el 68000 leyendo el código V33 y siguiendo el original fotograma a fotograma en MAME: los movimientos, la cámara, los disparos, las trayectorias y los scripts de aparición de los enemigos se toman del arcade, no se rehacen a ojo, y luego se comparan con el original en partidas repetidas.</p>
+<h3>Ya funciona</h3>
+<ul>
+<li>El decorado completo del nivel 1, reconstruido a partir del arcade: desplazamiento horizontal y vertical, fondo en parallax, superficie animada, plano frontal y el decorado del final del nivel</li>
+<li>La pantalla de 240 líneas adaptada a las 224 líneas de la Neo Geo con un recorrido de cámara algo mayor: la superficie y el fondo se ven enteros</li>
+<li>El submarino del jugador: movimiento, colisiones con el decorado, superficie, cabeceo y cámara, idénticos al original fotograma a fotograma en una partida repetida</li>
+<li>Las armas básicas: torpedos, misiles, misiles de superficie y cargas de profundidad, con sus burbujas, destellos, salpicaduras y explosiones</li>
+<li>Todos los enemigos del nivel 1 y su jefe: minas, submarinos, buque de superficie, aviones, helicópteros, bombarderos, baterías costeras, bloques de hielo…</li>
+<li>El HUD en la capa fija (puntuación, tiempo, créditos), dentro de la zona visible de los televisores CRT, y la pantalla STAGE CLEAR</li>
+<li>60 fps en la mayor parte del nivel; algunos pasajes muy cargados aún se ralentizan</li>
+</ul>
+<h3>Por hacer</h3>
+<ul>
+<li>Los daños y la pérdida del submarino, las vidas, el segundo jugador y las armas que se recogen</li>
+<li>El sonido: música y efectos originales (YM2151 + GA20) convertidos para el YM2610, como en Undercover Cops</li>
+<li>La introducción, los menús y los niveles siguientes</li>
+<li>Los últimos pasajes lentos del nivel 1</li>
+</ul>
+<h3>Notas</h3>
+<ul>
+<li>Proyecto de fans, sin relación con Irem ni con los titulares de los derechos de <em>In The Hunt</em>.</li>
+<li>Como en mis otros ports, no se distribuirá ningún dato del juego original.</li>
+<li>¿Alguna pregunta o comentario? Déjamelo en los comentarios.</li>
+</ul>
