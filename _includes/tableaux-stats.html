@@ -10,7 +10,7 @@
 
 <h2>{{ include.l_top_games }}</h2>
 <div class="table-wrap">
-<table data-sort>
+<table data-sort class="t-jeux">
   <thead><tr><th>{{ include.l_game }}</th><th>{{ t.platform }}</th><th class="num">{{ t.views }}</th><th class="num">{{ t.download_clicks }}</th><th class="num">{{ include.l_posts_short }}</th></tr></thead>
   <tbody>
   {% for j in jeux_l %}
@@ -19,9 +19,9 @@
     <tr>
       <td><a href="{{ j.url | relative_url }}">{{ j.titre }}</a></td>
       <td>{{ j.plateforme }}</td>
-      <td class="num" data-gc-path="{{ versions }}">…</td>
-      <td class="num">{% if j.itch %}<span data-gc-path="telechargement-{{ j.slug }}">…</span>{% else %}–{% endif %}</td>
-      <td class="num">{{ billets_jeu.size }}</td>
+      <td class="num" data-label="{{ t.views }}" data-gc-path="{{ versions }}">…</td>
+      <td class="num" data-label="{{ t.download_clicks }}">{% if j.itch %}<span data-gc-path="telechargement-{{ j.slug }}">…</span>{% else %}–{% endif %}</td>
+      <td class="num" data-label="{{ include.l_posts_short }}">{{ billets_jeu.size }}</td>
     </tr>
   {% endfor %}
   </tbody>
