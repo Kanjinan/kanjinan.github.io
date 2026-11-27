@@ -86,6 +86,16 @@ table { width: 100%; border-collapse: collapse; font-size: .95rem; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
 th { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* Tableau des billets sur téléphone : titre sur toute la largeur, date et vues dessous */
+@media (max-width: 640px) {
+  .t-billets, .t-billets tbody { display: block; }
+  .t-billets thead { display: none; }
+  .t-billets tr { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .t-billets td { border: 0; padding: 0; }
+  .t-billets td:first-child { grid-column: 1 / -1; overflow-wrap: anywhere; }
+  .t-billets td:nth-child(2) { color: var(--muted); font-size: .85rem; }
+  .t-billets td.num::after { content: " " attr(data-label); color: var(--muted); font-size: .85rem; }
+}
 
 pre, code { background: var(--code); border-radius: 4px; }
 pre { padding: 12px; overflow-x: auto; }

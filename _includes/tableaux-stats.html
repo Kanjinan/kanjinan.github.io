@@ -30,7 +30,7 @@
 
 <h2>{{ include.l_top_posts }}</h2>
 <div class="table-wrap">
-<table data-sort>
+<table data-sort class="t-billets">
   <thead><tr><th>{{ include.l_post }}</th><th>Date</th><th class="num">{{ t.views }}</th></tr></thead>
   <tbody>
   {% for p in posts_l %}
@@ -38,7 +38,7 @@
     <tr>
       <td><a href="{{ p.url | relative_url }}">{{ p.title }}</a></td>
       <td>{{ p.date | date: t.date_format }}</td>
-      <td class="num" data-gc-path="{{ versions }}">…</td>
+      <td class="num" data-label="{{ t.views }}" data-gc-path="{{ versions }}">…</td>
     </tr>
   {% endfor %}
   </tbody>
