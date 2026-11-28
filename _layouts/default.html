@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.prive %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: page.excerpt | default: t.description | strip_html | strip_newlines | truncate: 160 }}">
   {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
@@ -51,7 +52,6 @@
         <a href="{{ t.url_games | relative_url }}">{{ t.nav_games }}</a>
         <a href="{{ t.url_devlog | relative_url }}">{{ t.nav_devlog }}</a>
         <a href="{{ t.url_files | relative_url }}">{{ t.nav_files }}</a>
-        <a href="{{ t.url_stats | relative_url }}">{{ t.nav_stats }}</a>
         <a href="{{ t.url_about | relative_url }}">{{ t.nav_about }}</a>
         {% if versions_lang.size > 1 %}
         <details class="lang-menu">
