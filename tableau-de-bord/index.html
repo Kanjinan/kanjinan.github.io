@@ -5,20 +5,15 @@ prive: true
 sitemap: false
 ---
 {%- comment -%}
-Page privée : elle n'est liée nulle part, n'est pas indexée et ne contient aucune donnée.
-Les chiffres et les commentaires ne sont chargés qu'avec les jetons du propriétaire
-(GitHub + GoatCounter), gardés dans le navigateur de celui-ci (localStorage).
+Page privée par lien direct : liée nulle part, non indexée.
+Carte, pays, pages, origines : stats.json sur la branche stats-donnees (GitHub Action stats.yml, chaque heure).
+Commentaires : API publique des discussions GitHub (sans jeton).
 {%- endcomment -%}
 {% assign proprio = site.giscus.repo | split: "/" | first %}
 {% assign depot = site.giscus.repo | split: "/" | last %}
 {% assign jeux_fr = site.jeux | where: "lang", "fr" %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css">
 <style>
-  .tdb-form { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; max-width: 560px; display: grid; gap: 12px; }
-  .tdb-form label { display: grid; gap: 4px; font-weight: 600; }
-  .tdb-form input { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); width: 100%; box-sizing: border-box; }
-  .tdb-form small { color: var(--muted); font-weight: 400; }
-  .tdb-erreur { color: var(--accent); font-weight: 600; }
   .tdb-barre { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0; }
   .tdb-barre button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
   .tdb-barre button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
@@ -40,23 +35,9 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
 
 <h1>Tableau de bord</h1>
 
-<section id="tdb-connexion">
-  <p class="intro">Page réservée au propriétaire du blog. Connectez-vous avec vos jetons : ils restent dans ce navigateur et ne sont envoyés qu'à GitHub et GoatCounter.</p>
-  <form class="tdb-form" id="tdb-form">
-    <label>Jeton GitHub
-      <input type="password" id="tdb-gh" autocomplete="off" required>
-      <small>github.com → Settings → Developer settings → Fine-grained tokens, accès « Public repositories (read-only) ». Il doit appartenir au compte {{ proprio }}.</small>
-    </label>
-    <label>Jeton GoatCounter
-      <input type="password" id="tdb-gc" autocomplete="off" required>
-      <small>{{ site.goatcounter }}.goatcounter.com → User → API, permission « Read statistics ».</small>
-    </label>
-    <p class="tdb-erreur" id="tdb-erreur" hidden></p>
-    <p><button class="button" type="submit">Se connecter</button></p>
-  </form>
-</section>
+<p class="intro">Page privée : elle n'apparaît pas dans le menu et n'est pas indexée. Gardez le lien pour vous.</p>
 
-<section id="tdb" hidden>
+<section id="tdb">
   <div class="tdb-barre">
     <span>Période :</span>
     <button type="button" data-jours="7">7 jours</button>
@@ -65,10 +46,9 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
     <button type="button" data-jours="0">Tout</button>
     <span class="droite">
       <button type="button" id="tdb-skip"></button>
-      <button type="button" id="tdb-deco">Se déconnecter</button>
     </span>
   </div>
-  <p class="meta" id="tdb-qui"></p>
+  <p class="meta" id="tdb-qui">Chargement…</p>
 
   <div class="kpis">
     <div class="kpi"><span class="kpi-label">Visiteurs (période)</span><span class="kpi-value" id="k-total">…</span></div>
@@ -98,8 +78,8 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
 <script>
 (function () {
   var PROPRIO = {{ proprio | jsonify }}, DEPOT = {{ depot | jsonify }};
-  var CATEGORIE = {{ site.giscus.category_id | jsonify }};
-  var GC = 'https://{{ site.goatcounter }}.goatcounter.com/api/v0/';
+  var CATEGORIE = {{ site.giscus.category | jsonify }};
+  var DONNEES = 'https://raw.githubusercontent.com/' + PROPRIO + '/' + DEPOT + '/stats-donnees/stats.json';
   var JEUX = { {% for j in jeux_fr %}{{ j.slug | jsonify }}: { titre: {{ j.titre | jsonify }}, url: {{ j.url | relative_url | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %} };
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return (n || 0).toLocaleString('fr-FR'); };
@@ -107,42 +87,9 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
   };
-  var jetons = { gh: store.get('tdb-gh'), gc: store.get('tdb-gc') };
-  var carte = null, jours = 30;
-
-  function gh(query, vars) {
-    return fetch('https://api.github.com/graphql', {
-      method: 'POST',
-      headers: { 'Authorization': 'bearer ' + jetons.gh, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: query, variables: vars || {} })
-    }).then(function (r) {
-      if (!r.ok) throw new Error('GitHub a refusé le jeton (' + r.status + ').');
-      return r.json();
-    }).then(function (d) {
-      if (d.errors) throw new Error('GitHub : ' + d.errors[0].message);
-      return d.data;
-    });
-  }
-  // L'API GoatCounter limite à 4 requêtes par seconde : on les enchaîne une par une
-  var file = Promise.resolve();
-  function gc(chemin) {
-    var p = file.then(function () {
-      return fetch(GC + chemin, { headers: { 'Authorization': 'Bearer ' + jetons.gc } });
-    }).then(function (r) {
-      if (r.status === 401 || r.status === 403) throw new Error('GoatCounter a refusé le jeton (' + r.status + ').');
-      if (!r.ok) throw new Error('GoatCounter : erreur ' + r.status + '.');
-      return r.json();
-    });
-    file = p.catch(function () {}).then(function () { return new Promise(function (ok) { setTimeout(ok, 300); }); });
-    return p;
-  }
-
-  function debut() {
-    if (!jours) return '2020-01-01T00:00:00Z';
-    var d = new Date(Date.now() - jours * 864e5);
-    d.setUTCMinutes(0, 0, 0);
-    return d.toISOString().replace(/\.\d+Z$/, 'Z');
-  }
+  // Anciens jetons de la première version de la page : on les efface
+  store.set('tdb-gh', null); store.set('tdb-gc', null);
+  var carte = null, jours = '30', donnees = null;
 
   function liste(ul, items, vide) {
     ul.textContent = '';
@@ -159,7 +106,6 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
     return { vide: s.getPropertyValue('--line').trim() || '#ddd', fort: s.getPropertyValue('--accent').trim() || '#d63a3a',
              bord: s.getPropertyValue('--surface').trim() || '#fff' };
   }
-  // Mélange la couleur « vide » vers la couleur d'accent selon une échelle logarithmique
   function hex(c) { c = c.replace('#', ''); if (c.length === 3) c = c.replace(/./g, '$&$&'); return [0, 2, 4].map(function (i) { return parseInt(c.substr(i, 2), 16); }); }
   function melange(a, b, t) { var x = hex(a), y = hex(b); return 'rgb(' + x.map(function (v, i) { return Math.round(v + (y[i] - v) * t); }).join(',') + ')'; }
 
@@ -167,13 +113,8 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
     var el = $('tdb-carte');
     if (carte && carte.destroy) { try { carte.destroy(); } catch (e) {} }
     el.textContent = '';
-    var c = couleurs(), max = 0, noms = {}, valeurs = {};
-    pays.forEach(function (p) { if (p.id) { valeurs[p.id] = p.count; noms[p.id] = p.name; if (p.count > max) max = p.count; } });
-    var styles = {};
-    Object.keys(valeurs).forEach(function (code) {
-      var t = max > 1 ? 0.25 + 0.75 * Math.log(valeurs[code]) / Math.log(max) : 1;
-      styles[code] = { fill: melange(c.vide, c.fort, t) };
-    });
+    var c = couleurs(), max = 0, valeurs = {};
+    pays.forEach(function (p) { if (p.id) { valeurs[p.id] = p.n; if (p.n > max) max = p.n; } });
     carte = new jsVectorMap({
       selector: '#tdb-carte',
       map: 'world',
@@ -185,70 +126,90 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
         tooltip.text(tooltip.text() + ' : ' + fmt(n) + ' visiteur' + (n > 1 ? 's' : ''));
       }
     });
-    // Couleur par pays (fonctionne quelle que soit l'échelle de jsvectormap)
-    Object.keys(styles).forEach(function (code) {
+    // Couleur de chaque pays, sur une échelle logarithmique
+    Object.keys(valeurs).forEach(function (code) {
+      var t = max > 1 ? 0.25 + 0.75 * Math.log(valeurs[code]) / Math.log(max) : 1;
       var r = carte.regions && carte.regions[code];
-      if (r && r.element && r.element.setStyle) r.element.setStyle('fill', styles[code].fill);
+      if (r && r.element && r.element.setStyle) r.element.setStyle('fill', melange(c.vide, c.fort, t));
     });
   }
 
-  function chargerStats() {
-    ['k-total', 'k-pays', 'k-events'].forEach(function (id) { $(id).textContent = '…'; });
-    var s = 'start=' + encodeURIComponent(debut());
-    gc('stats/total?' + s).then(function (d) {
-      $('k-total').textContent = fmt((d.total || 0) - (d.total_events || 0));
-      $('k-events').textContent = fmt(d.total_events);
-    }).catch(erreurStats);
-    gc('stats/locations?limit=200&' + s).then(function (d) {
-      var pays = (d.stats || []).filter(function (p) { return p.count > 0; });
-      $('k-pays').textContent = fmt(pays.filter(function (p) { return p.id; }).length);
-      liste($('l-pays'), pays.map(function (p) { return [p.name || 'Inconnu', p.count]; }), 'Aucune visite sur la période.');
-      dessinerCarte(pays);
-    }).catch(erreurStats);
-    gc('stats/hits?limit=15&' + s).then(function (d) {
-      liste($('l-pages'), (d.hits || []).filter(function (h) { return !h.event; })
-        .map(function (h) { return [h.title ? h.title + ' (' + h.path + ')' : h.path, h.count]; }), 'Aucune page vue.');
-    }).catch(erreurStats);
-    gc('stats/toprefs?limit=15&' + s).then(function (d) {
-      liste($('l-refs'), (d.stats || []).map(function (r) { return [r.name || '(accès direct)', r.count]; }), 'Aucun site d\'origine.');
-    }).catch(erreurStats);
+  function afficherStats() {
+    var p = donnees && donnees.periodes[jours];
+    if (!p) return;
+    var pays = p.pays.filter(function (x) { return x.id; });
+    $('k-total').textContent = fmt(p.visiteurs);
+    $('k-pays').textContent = fmt(pays.length);
+    $('k-events').textContent = fmt(p.clics);
+    liste($('l-pays'), p.pays.map(function (x) { return [x.nom || 'Inconnu', x.n]; }), 'Aucune visite sur la période.');
+    liste($('l-pages'), p.pages.map(function (h) { return [h.titre ? h.titre + ' (' + h.chemin + ')' : h.chemin, h.n]; }), 'Aucune page vue.');
+    liste($('l-refs'), p.origines.map(function (r) { return [r.nom || '(accès direct)', r.n]; }), 'Aucun site d\'origine.');
+    dessinerCarte(p.pays);
   }
-  function erreurStats(e) { $('tdb-qui').textContent = e.message; }
 
+  function chargerStats() {
+    // Le paramètre change toutes les 10 min pour ne pas relire une ancienne copie en cache
+    fetch(DONNEES + '?t=' + Math.floor(Date.now() / 600000)).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (d) {
+      donnees = d;
+      $('tdb-qui').textContent = 'Carte et listes mises à jour le ' + new Date(d.maj).toLocaleString('fr-FR', { dateStyle: 'long', timeStyle: 'short' }) + ' (chaque heure).';
+      afficherStats();
+    }).catch(function () {
+      ['k-total', 'k-pays', 'k-events'].forEach(function (id) { $(id).textContent = '–'; });
+      $('tdb-qui').textContent = 'La carte n\'est pas encore activée : il manque le secret GOATCOUNTER_TOKEN dans les réglages du dépôt GitHub (ou la première mise à jour n\'a pas encore eu lieu).';
+      dessinerCarte([]);
+    });
+  }
+
+  // Commentaires : API publique des discussions GitHub (60 requêtes par heure sans jeton)
+  function api(chemin) {
+    return fetch('https://api.github.com/repos/' + PROPRIO + '/' + DEPOT + '/' + chemin, { headers: { 'Accept': 'application/vnd.github+json' } })
+      .then(function (r) {
+        if (r.status === 403 || r.status === 429) throw new Error('GitHub limite le nombre de lectures : réessayez dans une heure.');
+        if (!r.ok) throw new Error('GitHub : erreur ' + r.status + '.');
+        return r.json();
+      });
+  }
   function chargerCommentaires() {
-    var q = 'query($o:String!,$n:String!,$c:ID!){repository(owner:$o,name:$n){discussions(first:50,categoryId:$c,orderBy:{field:UPDATED_AT,direction:DESC}){nodes{title url ' +
-      'comments(last:30){nodes{author{login avatarUrl} bodyText createdAt url replies(last:30){nodes{author{login avatarUrl} bodyText createdAt url}}}}}}}}';
-    gh(q, { o: PROPRIO, n: DEPOT, c: CATEGORIE }).then(function (d) {
+    api('discussions?per_page=100').then(function (discs) {
+      discs = discs.filter(function (d) { return d.category && d.category.name === CATEGORIE && d.comments > 0; });
+      return Promise.all(discs.map(function (d) {
+        return api('discussions/' + d.number + '/comments?per_page=100').then(function (cs) { return { d: d, cs: cs }; });
+      }));
+    }).then(function (lots) {
       var tous = [], sansReponse = 0, moi = PROPRIO.toLowerCase();
-      var estMoi = function (c) { return c.author && c.author.login.toLowerCase() === moi; };
-      d.repository.discussions.nodes.forEach(function (disc) {
-        disc.comments.nodes.forEach(function (c) {
-          var reps = c.replies.nodes;
-          var attente = !estMoi(c) && !reps.some(estMoi);
-          if (attente) sansReponse++;
-          tous.push({ c: c, slug: disc.title, attente: attente });
-          reps.forEach(function (r) { tous.push({ c: r, slug: disc.title, reponse: true }); });
+      var estMoi = function (c) { return c.user && c.user.login.toLowerCase() === moi; };
+      lots.forEach(function (lot) {
+        lot.cs.forEach(function (c) {
+          var it = { c: c, slug: lot.d.title, reponse: !!c.parent_id };
+          if (!c.parent_id && !estMoi(c)) {
+            it.attente = !lot.cs.some(function (r) { return r.parent_id === c.id && estMoi(r); });
+            if (it.attente) sansReponse++;
+          }
+          tous.push(it);
         });
       });
       $('k-com').textContent = fmt(sansReponse);
-      tous.sort(function (a, b) { return b.c.createdAt < a.c.createdAt ? -1 : 1; });
+      tous.sort(function (a, b) { return b.c.created_at < a.c.created_at ? -1 : 1; });
       var box = $('l-com'); box.textContent = '';
       if (!tous.length) { box.innerHTML = '<p class="meta">Aucun commentaire pour l\'instant.</p>'; return; }
       tous.slice(0, 40).forEach(function (it) {
         var c = it.c, jeu = JEUX[it.slug];
         var div = document.createElement('div'); div.className = 'tdb-com';
         var img = document.createElement('img'); img.alt = ''; img.loading = 'lazy';
-        if (c.author) img.src = c.author.avatarUrl;
+        if (c.user) img.src = c.user.avatar_url;
         var corps = document.createElement('div'), meta = document.createElement('div'); meta.className = 'meta';
-        var qui = document.createElement('strong'); qui.textContent = c.author ? c.author.login : 'compte supprimé';
+        var qui = document.createElement('strong'); qui.textContent = c.user ? c.user.login : 'compte supprimé';
         meta.appendChild(qui);
         meta.appendChild(document.createTextNode((it.reponse ? ' a répondu' : ' a commenté') + ' · '));
         if (jeu) { var aj = document.createElement('a'); aj.href = jeu.url; aj.textContent = jeu.titre; meta.appendChild(aj); }
         else meta.appendChild(document.createTextNode(it.slug));
-        meta.appendChild(document.createTextNode(' · ' + new Date(c.createdAt).toLocaleString('fr-FR', { dateStyle: 'medium', timeStyle: 'short' }) + ' · '));
-        var lien = document.createElement('a'); lien.href = c.url; lien.textContent = 'Répondre sur GitHub'; meta.appendChild(lien);
+        meta.appendChild(document.createTextNode(' · ' + new Date(c.created_at).toLocaleString('fr-FR', { dateStyle: 'medium', timeStyle: 'short' }) + ' · '));
+        var lien = document.createElement('a'); lien.href = c.html_url; lien.textContent = 'Répondre sur GitHub'; meta.appendChild(lien);
         if (it.attente) { var b = document.createElement('span'); b.className = 'tdb-badge'; b.textContent = 'Sans réponse'; meta.appendChild(b); }
-        var p = document.createElement('p'); p.textContent = c.bodyText;
+        var p = document.createElement('p'); p.textContent = c.body;
         corps.appendChild(meta); corps.appendChild(p);
         div.appendChild(img); div.appendChild(corps); box.appendChild(div);
       });
@@ -256,50 +217,18 @@ Les chiffres et les commentaires ne sont chargés qu'avec les jetons du proprié
   }
 
   function majSkip() {
-    var off = store.get('skipgc') === 't';
-    $('tdb-skip').textContent = off ? 'Mes visites ne sont pas comptées ✓' : 'Ne plus compter mes visites';
+    $('tdb-skip').textContent = store.get('skipgc') === 't' ? 'Mes visites ne sont pas comptées ✓' : 'Ne plus compter mes visites';
   }
-
-  function ouvrir() {
-    $('tdb-connexion').hidden = true; $('tdb').hidden = false;
-    majSkip(); chargerStats(); chargerCommentaires();
-  }
-
-  // Vérifie que le jeton GitHub est bien celui du propriétaire et que le jeton GoatCounter fonctionne
-  function verifier() {
-    return gh('query{viewer{login}}').then(function (d) {
-      if (d.viewer.login.toLowerCase() !== PROPRIO.toLowerCase()) throw new Error('Ce jeton GitHub appartient à ' + d.viewer.login + ', pas à ' + PROPRIO + '.');
-      $('tdb-qui').textContent = 'Connecté en tant que ' + d.viewer.login + '.';
-      return gc('me');
-    });
-  }
-
-  $('tdb-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    jetons = { gh: $('tdb-gh').value.trim(), gc: $('tdb-gc').value.trim() };
-    $('tdb-erreur').hidden = true;
-    verifier().then(function () {
-      store.set('tdb-gh', jetons.gh); store.set('tdb-gc', jetons.gc);
-      ouvrir();
-    }).catch(function (err) { $('tdb-erreur').textContent = err.message; $('tdb-erreur').hidden = false; });
-  });
-  $('tdb-deco').addEventListener('click', function () {
-    store.set('tdb-gh', null); store.set('tdb-gc', null); location.reload();
-  });
   $('tdb-skip').addEventListener('click', function () {
     store.set('skipgc', store.get('skipgc') === 't' ? null : 't'); majSkip();
   });
   document.querySelectorAll('.tdb-barre [data-jours]').forEach(function (b) {
     b.addEventListener('click', function () {
       document.querySelectorAll('.tdb-barre [data-jours]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      jours = +b.dataset.jours; chargerStats();
+      jours = b.dataset.jours; afficherStats();
     });
   });
 
-  if (jetons.gh && jetons.gc) {
-    verifier().then(ouvrir).catch(function (err) {
-      $('tdb-erreur').textContent = err.message + ' Reconnectez-vous.'; $('tdb-erreur').hidden = false;
-    });
-  }
+  majSkip(); chargerStats(); chargerCommentaires();
 })();
 </script>

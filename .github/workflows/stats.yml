@@ -1,0 +1,38 @@
+# Met à jour les données du tableau de bord (/tableau-de-bord/) chaque heure.
+# Le JSON est poussé seul sur la branche « stats-donnees » (un seul commit, écrasé à chaque fois),
+# pour ne pas encombrer l'historique de main ni relancer la construction du site.
+# Il faut le secret GOATCOUNTER_TOKEN (Settings → Secrets and variables → Actions).
+name: Statistiques du tableau de bord
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    env:
+      GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+      GOATCOUNTER_SITE: nicoklem
+    steps:
+      - uses: actions/checkout@v4
+        if: env.GOATCOUNTER_TOKEN != ''
+      - name: Récupérer les statistiques
+        if: env.GOATCOUNTER_TOKEN != ''
+        run: |
+          mkdir out
+          python3 .github/scripts/stats.py > out/stats.json
+      - name: Publier sur la branche stats-donnees
+        if: env.GOATCOUNTER_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd out
+          git init -q -b stats-donnees
+          git add stats.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Statistiques"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" stats-donnees
+      - name: Secret manquant
+        if: env.GOATCOUNTER_TOKEN == ''
+        run: echo "Ajoutez le secret GOATCOUNTER_TOKEN pour activer la carte."
