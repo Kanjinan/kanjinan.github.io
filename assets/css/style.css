@@ -20,7 +20,7 @@ img { max-width: 100%; height: auto; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
 .logo { font-family: "Press Start 2P", monospace; font-size: .95rem; color: var(--accent); text-decoration: none; }
-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 18px; position: relative; }
 nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; }
 nav a:hover { color: var(--accent); }
 main { padding-top: 32px; padding-bottom: 48px; }
@@ -160,7 +160,8 @@ code { padding: 1px 4px; }
 .commentaires .meta { margin-top: -4px; }
 
 /* Sélecteur de langue */
-.lang-menu { position: relative; }
+/* Liste alignée sur le bord droit du menu (et non du bouton) : reste à l'écran quand le menu passe sur deux lignes */
+.lang-menu { position: static; }
 .lang-menu summary { list-style: none; cursor: pointer; color: var(--muted); font-weight: 600; font-size: .95rem; border: 1px solid var(--line); border-radius: 6px; padding: 0 8px; }
 .lang-menu summary::-webkit-details-marker { display: none; }
 .lang-menu summary:hover, .lang-menu[open] summary { color: var(--accent); }
